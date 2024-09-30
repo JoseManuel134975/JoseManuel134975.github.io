@@ -1,0 +1,123 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* Fuente legible */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina rellenos predeterminados */
+    background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+header {
+    background-color: #333; /* Fondo oscuro para el encabezado */
+    color: white; /* Texto en blanco */
+    padding: 20px; /* Espaciado alrededor del contenido */
+    display: flex; /* Utiliza flexbox para la disposición */
+    justify-content: space-between; /* Espacio entre elementos */
+}
+
+header img {
+    vertical-align: middle; /* Alinea la imagen verticalmente */
+}
+
+header nav {
+    display: flex; /* Navegación en fila */
+    justify-content: flex-end; /* Alinea la navegación a la derecha */
+    flex-grow: 1; /* Ocupa el espacio restante */
+    margin-left: 20px; /* Margen izquierdo para separación */
+}
+
+header nav div {
+    margin: 0 15px; /* Margen horizontal para cada elemento del nav */
+}
+
+header nav a {
+    color: white; /* Color de texto en enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 18px; /* Tamaño de fuente para los enlaces */
+}
+
+header nav a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+header nav a h1 {
+    margin: 0; /* Sin margen para el título */
+    font-size: 32px; /* Tamaño grande para el título */
+    color: #ffcc00; /* Color amarillo para destacar */
+    text-align: center; /* Centra el título */
+}
+
+/* Estilos del main */
+main {
+    margin: 20px auto; /* Margen vertical y centrado */
+    width: 80%; /* Ancho del contenido principal */
+    background-color: white; /* Fondo blanco para el contenido */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    font-size: 2em; /* Tamaño del título principal */
+}
+
+h1, h2 {
+    color: #333; /* Color oscuro para títulos */
+    text-align: center; /* Centra los títulos */
+}
+
+section {
+    margin: 20px 0; /* Margen vertical para secciones */
+}
+
+article {
+    margin-bottom: 30px; /* Espacio entre artículos */
+}
+
+ol, ul {
+    margin-left: 40px; /* Margen izquierdo para listas */
+    padding-left: 20px; /* Espaciado interno para listas */
+    color: #555; /* Color gris para el texto de listas */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+}
+
+li {
+    margin-bottom: 10px; /* Espacio entre elementos de lista */
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #333; /* Fondo oscuro para el pie de página */
+    color: white; /* Texto en blanco */
+    padding: 10px 0; /* Espaciado vertical */
+    text-align: center; /* Centra el contenido del footer */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+
+footer div {
+    margin-bottom: 5px; /* Espacio entre elementos del footer */
+}
+
+footer address {
+    margin: 0; /* Sin margen para la dirección */
+    font-style: normal; /* Estilo normal para la dirección */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        width: 95%; /* Aumenta el ancho en pantallas pequeñas */
+    }
+
+    header {
+        flex-direction: column; /* Cambia a disposición vertical */
+        align-items: center; /* Centra los elementos */
+    }
+
+    header nav {
+        margin-left: 0; /* Sin margen izquierdo en navegación */
+        justify-content: center; /* Centra la navegación */
+    }
+
+    header nav div {
+        margin: 10px 0; /* Espacio vertical entre elementos del nav */
+    }
+}

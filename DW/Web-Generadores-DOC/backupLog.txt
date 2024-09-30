@@ -1,0 +1,78 @@
+commit 16c11ec7cffd2bfb0f77aba410359a66667d9350
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 14:45:26 2024 +0200
+
+    Inicialización de repositorio local >> HTML & CSS
+commit 4992d9a0010a91cea69568eefea65eeb8fc761a1
+Merge: 06d5c1b f876f9c
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:37:04 2024 +0200
+
+    Merge branch 'Comentarios_HTML_CSS'
+
+commit 06d5c1bceb684d86da8716dd56f0abdc7daceed5
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:34:50 2024 +0200
+
+    Cambio de medidas para .png
+
+commit 52effe7a87171294cdb3108879aac0a092d8f866
+Merge: b700479 d30897d
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:28:31 2024 +0200
+
+    Merge branch 'JavaScript'
+
+commit f876f9c4f51f5d47292a0836c04c5210435e9334
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:26:36 2024 +0200
+
+    ejemplos.css comentado
+
+commit be7bbefd44e8a7a12e78998e75a5ed2537894bc3
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:25:23 2024 +0200
+
+    vent-desv-y-mas.css comentado
+
+commit 504cd831022917041e51fdd265102a36b8743d2f
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:22:31 2024 +0200
+
+    index.css comentado
+
+commit b7004797a4dec5009fcdb1a28a138496cb87b551
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:18:08 2024 +0200
+
+    Arreglos menores...
+
+commit d30897d014f1eb79ba5f0a4d66e606ea88b03bfb
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:07:10 2024 +0200
+
+    vent-desv-y-mas.html con JavaScript >> /js/vent-desv-y-mas.js
+
+commit ba83883af042994eec1b40454b0a20adb03a5e3d
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 15:01:37 2024 +0200
+
+    ejemplos.html con JavaScript >> /js/ejemplos.js
+
+commit 740e0f472b477415631805ba941cca49c936e881
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 14:56:05 2024 +0200
+
+    index.html con JavaScript >> /js/index.js
+
+commit 1ef3f0ed13f2621623ff68142d376db050e54f62
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 14:49:19 2024 +0200
+
+    Copia de seguridad para fichero log.txt
+
+commit 16c11ec7cffd2bfb0f77aba410359a66667d9350
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 14:45:26 2024 +0200
+
+    Inicialización de repositorio local >> HTML & CSS

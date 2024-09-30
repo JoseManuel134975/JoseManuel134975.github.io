@@ -1,0 +1,60 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+header {
+    background-color: #333; /* Fondo oscuro del header */
+    display: flex; /* Flexbox para alinear el logo y la navegación */
+    justify-content: space-between;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end; /* Navegación alineada a la derecha */
+    flex-grow: 1; /* Navegación ocupa el espacio restante */
+}
+
+header nav a {
+    color: white;
+    text-decoration: none; /* Sin subrayado en enlaces */
+}
+
+header nav a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+header nav a h1 {
+    font-size: 32px; /* Título grande */
+    color: #ffcc00; /* Color amarillo para destacar el título */
+}
+
+/* Estilos del main */
+main {
+    width: 80%; /* Ancho del contenido principal */
+    background-color: white; /* Fondo blanco */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center; /* Centrar el contenido del footer */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        width: 95%; /* Ajustar el ancho en pantallas pequeñas */
+    }
+    header {
+        flex-direction: column; /* Cambiar a disposición vertical en pantallas pequeñas */
+        align-items: center;
+    }
+    header nav {
+        justify-content: center; /* Centrar la navegación */
+    }
+}
