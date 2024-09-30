@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jose Manuel">
+    <meta name="keywords" content="HTML, CSS, JS">
+    <link rel="stylesheet" href="../css/examples.css">
+    <title>Ejemplos</title>
+</head>
+<!-- Anchura temporal de las imagenes: 200px -->
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="../img/logo.jpg" alt="logo">
+        </a>
+        <div>
+            <h1>WebDOC</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Ejemplos</a></li>
+                <li><a href="jsdoc.html">JSDoc</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Algunos generadores de documentación</h2>
+        <section class="partOne-columns">
+            <article>
+                <h2>JSDoc</h2>
+                <!-- data-info se usa para mostrar la información de la imagen cuando se hace click -->
+                <!-- Así JavaScript también puede acceder a la información de la imagen (más información abajo <script>) -->
+                <img class="info-img" src="../img/articles/examples - article 1.png" alt="JSDoc logo" data-info="
+                Simple y fácil de integrar en proyectos de JavaScript.
+                Genera documentación detallada de funciones, clases y métodos.">
+                <p>Herramienta utilizada para generar documentación a partir de comentarios en código JavaScript.</p>
+            </article>
+            <article>
+                <h2>Docusaurus</h2>
+                <img class="info-img" src="../img/articles/examples - article 2.png" alt="Docusaurus logo" data-info="
+                Soporte para Markdown.
+                Generación de sitios web estáticos.
+                Fácil de integrar con proyectos de JavaScript/React.">
+                <p>Herramienta de código abierto basada en React, diseñada para crear documentación de proyectos de forma rápida y fácil.</p>
+            </article>
+            <article>
+                <h2>MKDocs</h2>
+                <img class="info-img" src="../img/articles/examples - article 3.png" alt="MKDocs logo" data-info="
+                Facilidad de uso y configuración.
+                Permite crear sitios web de documentación con un tema atractivo.
+                Amplia personalización mediante temas y extensiones.">
+                <p>Generador de documentación estática simple y rápido que usa archivos Markdown.</p>
+            </article>
+        </section>
+        <section class="partTwo-columns">
+            <article>
+                <h2>Sphinx</h2>
+                <img class="info-img" src="../img/articles/examples - article 4.png" alt="Sphinx logo" data-info="
+                Soporte para múltiples salidas (HTML, PDF, ePub).
+                Integración con sistemas de control de versiones como Git.
+                Se usa ampliamente en proyectos como Python, Flask, Django.">
+                <p>Popular entre proyectos de Python, Sphinx genera documentación a partir de archivos reStructuredText.</p>
+            </article>
+            <article>
+                <h2>TypeDoc</h2>
+                <img class="info-img" src="../img/articles/examples - article 5.png" alt="TypeDoc logo" data-info="
+                Extrae información directamente de tus archivos TypeScript.
+                Genera documentación legible para humanos.
+                Se integra con frameworks como Angular.">
+                <p>Herramienta de generación de documentación para proyectos TypeScript.</p>
+            </article>
+            <article>
+                <h2>DocFX</h2>
+                <img class="info-img" src="../img/articles/examples - article 6.png" alt="DocFX logo" data-info="
+                Soporte para C#, .NET y otros lenguajes de Microsoft.
+                Compatible con Markdown y comentarios en el código fuente.">
+                <p>Generador de documentación de Microsoft, utilizado principalmente para proyectos .NET.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Jose Manuel</p>
+        <p>2024</p>
+        <p>
+            <a target="_blank" href="https://github.com/JoseManuel134975">
+                <img src="../img/github-mark/github-mark.png" alt="My GitHub">
+            </a>
+        </p>
+    </footer>
+
+    <!-- Hace uso de una función para mostrar la información de la imagen dando click en ella -->
+    <script src="../js/examples.js"></script>
+</body>
+</html>

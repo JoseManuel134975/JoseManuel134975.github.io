@@ -1,0 +1,181 @@
+commit c18307da97843bf607c5755bad9d350fe2d16153
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 19:23:18 2024 +0200
+
+    Confirmación inicial
+
+commit a7f27a42af99bed152460521c1fed0f3393a3248
+Author: José Manuel <149500751+JoseManuel134975@users.noreply.github.com>
+Date:   Thu Sep 26 19:21:28 2024 +0200
+
+    Initial commit
+commit 931cf6b85e69d738c9d593a81b26caa96de50cb9
+Merge: 81625ca 08b49e6
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:34:05 2024 +0200
+
+    Merge branch 'JSDoc'
+
+commit 81625ca338fd317927b4fdb5c072a931fab8e109
+Merge: 375da02 108f7ee
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:33:51 2024 +0200
+
+    Merge branch 'Examples'
+
+commit 08b49e60a6e4bc76fc5d70497918505d497f3f1a
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:32:59 2024 +0200
+
+    Última página completada
+
+commit 108f7ee45f0ea083551cce68bde1c6cbc5a59813
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:31:55 2024 +0200
+
+    Retoques finales
+
+commit e7279a47f6cb6242f8098e0cd75c60dbe9f53adc
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 13:32:05 2024 +0200
+
+    Imagenes para examples.html
+
+commit 0b3fc29edbabc33a369ce0db1eb073e5b5b0c218
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 13:31:23 2024 +0200
+
+    Estructuración más .js más .css completo
+
+commit 375da025d17a001b7f998bea249bd967fe10e1ed
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 13:26:35 2024 +0200
+
+    Retoques finales
+
+commit 3917c0c6e03e7a2111e1945d1c8f46310ad6298a
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 12:07:23 2024 +0200
+
+    Comentarios para index.css
+
+commit 06ee11c23a735fdee06601ca7c0d1ce44c179c21
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 12:00:42 2024 +0200
+
+    Retoques para index.html y CSS completado
+
+commit 64f510b6627f584376f63f2e2e0b01cc8ba2efe9
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 21:27:30 2024 +0200
+
+    HTML terminado (CSS y JS inacabados)
+
+commit 36c824cea50a1ad62baf31cad2710d17aca97df8
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 19:25:07 2024 +0200
+
+    Copia de seguridad para los log
+
+commit c18307da97843bf607c5755bad9d350fe2d16153
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 19:23:18 2024 +0200
+
+    Confirmación inicial
+
+commit a7f27a42af99bed152460521c1fed0f3393a3248
+Author: José Manuel <149500751+JoseManuel134975@users.noreply.github.com>
+Date:   Thu Sep 26 19:21:28 2024 +0200
+
+    Initial commit
+commit 4ac1ab69edd59eada5898ac629333bf0eb53b0ca
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:45:35 2024 +0200
+
+    Comentarios añadidos y uso de JSDoc >> Fin del proyecto :)))
+
+commit cf849f1886c16acc8811855ebac9e04304fd1819
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:35:24 2024 +0200
+
+    Log actualizado
+
+commit 931cf6b85e69d738c9d593a81b26caa96de50cb9
+Merge: 81625ca 08b49e6
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:34:05 2024 +0200
+
+    Merge branch 'JSDoc'
+
+commit 81625ca338fd317927b4fdb5c072a931fab8e109
+Merge: 375da02 108f7ee
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:33:51 2024 +0200
+
+    Merge branch 'Examples'
+
+commit 08b49e60a6e4bc76fc5d70497918505d497f3f1a
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:32:59 2024 +0200
+
+    Última página completada
+
+commit 108f7ee45f0ea083551cce68bde1c6cbc5a59813
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 15:31:55 2024 +0200
+
+    Retoques finales
+
+commit e7279a47f6cb6242f8098e0cd75c60dbe9f53adc
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 13:32:05 2024 +0200
+
+    Imagenes para examples.html
+
+commit 0b3fc29edbabc33a369ce0db1eb073e5b5b0c218
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 13:31:23 2024 +0200
+
+    Estructuración más .js más .css completo
+
+commit 375da025d17a001b7f998bea249bd967fe10e1ed
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 13:26:35 2024 +0200
+
+    Retoques finales
+
+commit 3917c0c6e03e7a2111e1945d1c8f46310ad6298a
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 12:07:23 2024 +0200
+
+    Comentarios para index.css
+
+commit 06ee11c23a735fdee06601ca7c0d1ce44c179c21
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Fri Sep 27 12:00:42 2024 +0200
+
+    Retoques para index.html y CSS completado
+
+commit 64f510b6627f584376f63f2e2e0b01cc8ba2efe9
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 21:27:30 2024 +0200
+
+    HTML terminado (CSS y JS inacabados)
+
+commit 36c824cea50a1ad62baf31cad2710d17aca97df8
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 19:25:07 2024 +0200
+
+    Copia de seguridad para los log
+
+commit c18307da97843bf607c5755bad9d350fe2d16153
+Author: José Manuel <josemanuel3606@gmail.com>
+Date:   Thu Sep 26 19:23:18 2024 +0200
+
+    Confirmación inicial
+
+commit a7f27a42af99bed152460521c1fed0f3393a3248
+Author: José Manuel <149500751+JoseManuel134975@users.noreply.github.com>
+Date:   Thu Sep 26 19:21:28 2024 +0200
+
+    Initial commit

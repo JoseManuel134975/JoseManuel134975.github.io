@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jose Manuel">
+    <meta name="keywords" content="HTML, CSS, JS">
+    <link rel="stylesheet" href="../css/jsdoc.css">
+    <title>JSDoc</title>
+</head>
+<!-- Anchura temporal de las imagenes: 200px -->
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="../img/logo.jpg" alt="logo">
+        </a>
+        <div>
+            <h1>WebDOC</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="examples.html">Ejemplos</a></li>
+                <li><a href="#">JSDoc</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>JSDoc</h2>
+        <section class="normal">
+            <article>
+                <h2>Descripción</h2>
+                <img src="../img/articles/jsdoc - article 1.png" alt="">
+                <p>JSDoc es una herramienta y un formato de documentación que se utiliza para generar documentación a partir de comentarios en el código JavaScript. Permite a los desarrolladores escribir comentarios estructurados y anotaciones dentro del código para describir la funcionalidad de funciones, variables, clases, métodos, y otros elementos. JSDoc es especialmente útil para crear documentación legible por humanos de manera automática, mejorando la mantenibilidad y comprensión del código por otros desarrolladores.</p>
+            </article>
+        </section>
+        <section class="columns">
+            <article>
+                <h2>Características clave:</h2>
+                <ol>
+                    <li><b>Documentación automática</b></li>
+                    <li><b>Soporte para varios tipos de datos</b></li>
+                    <li><b>Anotaciones específicas como:</b>
+                        <ul>
+                            <br>
+                            <li>@param - Argumentos pasados a una función</li>
+                            <li>@return - Retorno de una función</li>
+                            <li>@example - Ejemplos de uso para el código</li>
+                            <li>@function - Indicador que es una función</li>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+            <article>
+                <h2>Ejemplo de uso:</h2>
+                <pre>
+                    <code>
+/**
+ * Suma dos números.
+ * 
+ * @param {number} a - El primer número a sumar.
+ * @param {number} b - El segundo número a sumar.
+ * @returns {number} La suma de los dos números.
+ */
+function sumar(a, b) {
+    return a + b;
+}
+
+// Ejemplo de uso de la función
+const resultado = sumar(5, 3);
+console.log(`La suma de 5 y 3 es: ${resultado}`); // La suma de 5 y 3 es: 8
+
+                    </code>
+                </pre>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Jose Manuel</p>
+        <p>2024</p>
+        <p>
+            <a target="_blank" href="https://github.com/JoseManuel134975">
+                <img src="../img/github-mark/github-mark.png" alt="My GitHub">
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
