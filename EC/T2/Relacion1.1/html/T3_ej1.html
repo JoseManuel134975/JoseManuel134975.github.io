@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        /*
+            Crea un programa que muestre el número de días que quedan desde hoy hasta las vacaciones de Navidad
+            (19 de diciembre).
+        */
+
+        const today = new Date();
+        const christmas = new Date("Dec 19, 2024");
+        // Hago un redondeo/aproximación para obtener el número de día hasta Navidad
+        // Para ello, hago el calculo: (christmas - today) / (1000 * 60 * 60 * 24)
+        // Explicacion del calculo: (1000 * 60 * 60 * 24) = 1 segundo * 60 minutos * 60 horas * 24 dias
+        const days = Math.round((christmas - today) / (1000 * 60 * 60 * 24));
+        
+        document.write("Quedan " + days + " días");
+    </script>
+</body>
+</html>
