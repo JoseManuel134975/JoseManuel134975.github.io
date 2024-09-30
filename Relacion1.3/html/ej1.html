@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/relacion1-3.js"></script>
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <p id="ages"></p>
+
+    <script>
+        let cYear = new Date().getFullYear() // Calcula el año actual
+        let bYear = 2005 // Año de nacimiento
+
+        document.getElementById("ages").innerHTML = "They are either " + ageCalculator(cYear, bYear)
+    </script>
+</body>
+</html>
