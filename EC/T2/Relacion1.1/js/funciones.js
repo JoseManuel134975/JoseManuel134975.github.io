@@ -12,3 +12,9 @@ function sundayBirthday(birth = new Date()) {
         year++
     }while(year <= 2100)
 }
+
+// Ejercicio 3: Función
+function contarSegundos(segundos){
+    segundos++;
+    setTimeout(contarSegundos, 1000);
+}

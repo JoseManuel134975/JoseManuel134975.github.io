@@ -6,12 +6,26 @@
     <title>Ejercicio 4</title>
 </head>
 <body>
+    <script src="../js/funciones.js"></script>
     <script>
         /*
-        Realiza un script que pida un nombre y dos apellidos e indique el tiempo que se tardó en introducir los
-        datos. La salida sería algo así como: En introducir Juan Torres Lago has tardado 25 segundos
-        
+            Realiza un script que pida un nombre y dos apellidos e indique el tiempo que se tardó en introducir los
+            datos. La salida sería algo así como: En introducir Juan Torres Lago has tardado 25 segundos
         */
+        let segundos = 0
+        let name = ""
+        let surname1 = ""
+        let surname2 = ""
+
+        while(name === "" || surname1 === "" || surname2 === ""){
+            contarSegundos(segundos)
+            name = prompt("Introduce tu nombre")
+            surname1 = prompt("Introduce tu apellido")
+            surname2 = prompt("Introduce tu segundo apellido")
+
+        }
+
+
 
         
     </script>
