@@ -12,3 +12,8 @@ function sundayBirthday(birth = new Date()) {
         year++
     }while(year <= 2100)
 }
+
+// Ejercicio 5: Funciones
+function potencia(){
+    
+}

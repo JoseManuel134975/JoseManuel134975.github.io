@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let op
+        op = parseInt(prompt("Introduce una opción:\n 1. Potencia\n 2. Raíz\n 3. Redondeo\n 4. Trigonometría"))
+
+        switch (op) {
+            case 1:
+                let base = parseInt(prompt("Introduce la base"))
+                let exponent = parseInt(prompt("Introduce el exponente"))
+                document.write("La potencia es: " + Math.pow(base, exponent))
+                break
+            case 2:
+                let num1 = 0
+
+                do {
+                    num1 = parseInt(prompt("Introduce un numero"))
+                } while (num1 < 0)
+
+                document.write("La raíz es: " + Math.sqrt(num1))
+                break
+            case 3:
+                let num2 = parseFloat(prompt("Introduce un número"))
+
+                document.write("El redondeo alto es: " + Math.round(num2) + "<br>")
+                document.write("El redondeo abajo es: " + Math.floor(num2))
+                break
+            case 4:
+                let num3 = 0
+                do {
+                    num3 = parseInt(prompt("Introduce un angulo"))
+                } while (num3 < 0 || num3 > 360)
+
+                document.write("El seno es: " + Math.sin(num3) + "<br>")
+                document.write("El coseno es: " + Math.cos(num3) + "<br>")
+                document.write("La tangente es: " + Math.tan(num3))
+                break
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

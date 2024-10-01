@@ -6,14 +6,21 @@
     <title>Ejercicio 4</title>
 </head>
 <body>
+    <script src="../js/funciones.js"></script>
     <script>
-        /*
-        Realiza un script que pida un nombre y dos apellidos e indique el tiempo que se tardó en introducir los
-        datos. La salida sería algo así como: En introducir Juan Torres Lago has tardado 25 segundos
-        
-        */
+        let nowDate1 = new Date();
+        let second1 = parseInt(nowDate1.getSeconds())
+        let operation = 0
 
-        
+        let name = prompt("Introduce tu nombre")
+        let surname1 = prompt("Introduce tu primer apellido")
+        let surname2 = prompt("Introduce tu segundo apellido")
+
+        let nowDate2 = new Date();
+        let second2 = parseInt(nowDate2.getSeconds())
+        operation = second2 - second1
+
+        document.write("En introducir " + name + " " + surname1 + " " + surname2 + " has tardado " + operation + " segundos")
     </script>
 </body>
 </html>
