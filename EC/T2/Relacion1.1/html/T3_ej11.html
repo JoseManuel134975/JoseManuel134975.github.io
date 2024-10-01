@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let frase, fraseAlReves = ""
+        frase = prompt("Introduce una frase")
+
+        for (let i = frase.length; i > 0; i--) {
+            fraseAlReves += frase.charAt(i - 1)
+
+        }
+
+        document.write(fraseAlReves)
+    </script>
+</body>
+
+</html>

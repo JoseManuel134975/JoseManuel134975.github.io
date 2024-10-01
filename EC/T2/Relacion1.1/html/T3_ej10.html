@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        let frase
+        let contA = 0
+        let contE = 0
+        let contI = 0
+        let contO = 0
+        let contU = 0
+        frase = prompt("Introduce una frase")
+
+        frase = frase.toLowerCase()
+        for (let i = 0; i < frase.length; i++) {
+            switch (frase.charAt(i)) {
+                case "a":
+                    contA++
+                    break
+                case "e":
+                    contE++
+                    break
+                case "i":
+                    contI++
+                    break
+                case "o":
+                    contO++
+                    break
+                case "u":
+                    contU++
+                    break
+            }
+        }
+
+
+        document.write("La frase tiene " + contA + " letras 'a', " + contE + " letras 'e', " + contI + " letras 'i', " + contO + " letras 'o', " + contU + " letras 'u'")
+    </script>
+</body>
+
+</html>

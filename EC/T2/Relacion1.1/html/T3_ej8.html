@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let frase
+        let cont = 0
+        frase = prompt("Introduce una frase")
+
+        frase = frase.toLowerCase()
+        for (let i = 0; i < frase.length; i++) {
+            if (frase.charAt(i) === "a") {
+                cont++
+            }
+        }
+
+        document.write("La frase tiene " + cont + " letras 'a'")
+    </script>
+</body>
+
+</html>

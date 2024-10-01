@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let frase
+        let cont = 0
+        frase = prompt("Introduce una frase")
+
+        frase = frase.toLowerCase()
+        for (let i = 0; i < frase.length; i++) {
+            if (frase.charAt(i) === "a" || frase.charAt(i) === "e" || frase.charAt(i) === "i" || frase.charAt(i) === "o" || frase.charAt(i) === "u") {
+                cont++
+            }
+        }
+
+        document.write("La frase tiene " + cont + " vocales")
+    </script>
+</body>
+
+</html>

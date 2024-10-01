@@ -14,8 +14,12 @@
         console.log("Tamaño del nombre: " + allName.length + ", Nombre completo: " + allName)
         console.log("Minusculas: " + allName.toLowerCase())
         console.log("Mayusculas: " + allName.toUpperCase())
-        console.log()
 
+        allName = allName.split(" ")
+
+        for(let i=0;i<allName.length;i++){
+            console.log(allName[i].toString())
+        }
     </script>
 </body>
 
