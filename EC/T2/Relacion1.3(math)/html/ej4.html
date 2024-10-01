@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/funciones.js"></script>
+    <script>
+let continuar = true;
+
+while (continuar) {
+    let cateto1 = parseInt(prompt("Introduce el primer cateto:"));
+    let cateto2 = parseInt(prompt("Introduce el segundo cateto:"));
+
+    let result = hipotenusa(cateto1, cateto2);
+    document.write("La hipotenusa es: " + result + "<br>");
+
+    // Pregunta al usuario si desea continuar
+    let respuesta = prompt("¿Quieres calcular otra hipotenusa? (si/no)");
+    continuar = respuesta.toLowerCase() === 'si'; // Continuar si la respuesta es "sí"
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../js/funciones.js"></script>
+    <script>
+        let num1 = randomCeroUno()
+        let num2 = randomCienDoscientos()
+
+        document.write(num1 + "<br>")
+        document.write(num2 + "<br>")
+
+        let userNum1 = parseInt(prompt("Introduce el primer numero"))
+        let userNum2 = parseInt(prompt("Introduce el segundo numero"))
+
+        let num3 = randomUser(userNum1, userNum2)
+
+        document.write(num3)
+    </script>
+</body>
+
+</html>
