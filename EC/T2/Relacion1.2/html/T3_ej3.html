@@ -6,9 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="reloj"></p>
+
     <script src="../js/funciones.js"></script>
     <script>
-        let timerId = setInterval(contadorAtras, 1000)
-    </script>
+        let timerId = setInterval(reloj, 1000) // Repite el reloj
+        let timerId2 = setInterval(relojGoogle, 1000) // Repite la comprobacion de manera que estan sincronizados
+</script>
 </body>
 </html>
