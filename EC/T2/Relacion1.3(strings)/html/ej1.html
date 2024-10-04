@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/funciones.js"></script>
+    <script>
+        let inputS = prompt("Introduce una cadena")
+        let cadenaInvertida = invierteCadena(inputS)
+        document.write(cadenaInvertida)
+        document.write("<br>")
+        let inputS2 = prompt("Introduce una cadena de palabras")
+        let cadenaInvertida2 = inviertePalabras(inputS2)
+        document.write(cadenaInvertida2)
+        document.write("<br>")
+        let inputS3 = prompt("Introduce una cadena de palabras")
+        let palabraMasLarga = encuentraPalabraMasLarga(inputS3)
+        document.write(palabraMasLarga)
+        document.write("<br>")
+        let inputS4 = prompt("Introduce una cadena de palabras")
+        let pMasLarFil = filtraPalabrasMasLargas(inputS4, 5)
+        document.write(pMasLarFil)
+        document.write("<br>")
+        let inputS5 = prompt("Introduce una cadena de palabras")
+        let cBienFormada = cadenaBienFormada(inputS5)
+        document.write(cBienFormada)
+    </script>
+</body>
+</html>
