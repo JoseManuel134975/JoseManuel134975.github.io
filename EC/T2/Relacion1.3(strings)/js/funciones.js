@@ -59,12 +59,11 @@ function deleteCharRepeated(cad_arg){
 
 function checkSecondString(cad_arg, cad_arg2){
     let position = 0
-    const conversion = convertirMinusculas(cad_arg, cad_arg2)
-    conversion[0] = conversion[0].replace(/\s/g, "")
-    console.log(conversion[0])
+    let conversion = convertirMinusculas(cad_arg, cad_arg2)
+    conversion = borrarEspacios(conversion[0], conversion[1])
 
     if(insideSubstring(conversion[0], conversion[1])){
-        position = conversion[0].indexOf(conversion[1])
+        position = conversion[0].indexOf(conversion[1]) // indexOf nos devuelve el primer indice de la subcadena
 
         return position
     }else{
@@ -72,13 +71,34 @@ function checkSecondString(cad_arg, cad_arg2){
     }
 }
 
-function convertirMinusculas(...args){
-    const minusculas = []
+function convertirMinusculas(...args){ // Función auxiliar (ej6)
 
     for(let i = 0; i < args.length; i++){
-        minusculas.push(args[i].toLowerCase())
+        args[i] = args[i].toLowerCase()
     }
 
-    return minusculas
+    return args
 }
 
+function borrarEspacios(...args){ // Función auxiliar (ej6)
+
+    for(let i = 0; i < args.length; i++){
+        args[i] = args[i].replace(/\s/g, "")
+    }
+
+    return args
+}
+
+function palindromo(cad_arg){
+    cad_arg = cad_arg.toLowerCase().replace(/\s/g, "")
+
+    return cad_arg === cad_arg.split("").reverse().join("")
+}
+
+function contarPalabras(cad_arg){
+    return cad_arg.trim().replace(/\s+/g, " ").split(" ").length // split no nos sirve para los espacios cuando estos son más de 1*
+    // Al decirle a split un espacio nos devuelve un array de palabras separadas
+    // Sin embargo, si le decimos que no haya espacios, nos devuelve un array de caracteres (cada uno en su posición)
+    // Por eso el orden de las funciones aquí es importante
+    // Primero se quitan los espacios, y luego se separan las palabras :)
+}
