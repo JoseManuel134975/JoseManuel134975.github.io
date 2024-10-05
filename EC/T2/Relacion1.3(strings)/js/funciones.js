@@ -56,3 +56,29 @@ function deleteCharRepeated(cad_arg){
     // Resumidamente, como un bucle for
     return cad_arg.split("").filter((c, index) => cad_arg.indexOf(c) === index).join("");
 }
+
+function checkSecondString(cad_arg, cad_arg2){
+    let position = 0
+    const conversion = convertirMinusculas(cad_arg, cad_arg2)
+    conversion[0] = conversion[0].replace(/\s/g, "")
+    console.log(conversion[0])
+
+    if(insideSubstring(conversion[0], conversion[1])){
+        position = conversion[0].indexOf(conversion[1])
+
+        return position
+    }else{
+        return "No existe la subcadena"
+    }
+}
+
+function convertirMinusculas(...args){
+    const minusculas = []
+
+    for(let i = 0; i < args.length; i++){
+        minusculas.push(args[i].toLowerCase())
+    }
+
+    return minusculas
+}
+

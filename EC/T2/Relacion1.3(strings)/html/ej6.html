@@ -8,9 +8,11 @@
 <body>
     <script src="../js/funciones.js"></script>
     <script>
-        let cadena = "HOLA QUE TAL ESTAS"
-        let eliminacion = deleteCharRepeated(cadena)
-        document.write(eliminacion)
+        let cadena = prompt("Introduce una cadena")
+        let subcadena = prompt("Introduce una subcadena")
+        let posicion = checkSecondString(cadena, subcadena)
+
+        document.write(posicion)
     </script>
 </body>
 </html>
