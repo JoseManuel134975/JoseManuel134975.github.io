@@ -102,3 +102,29 @@ function contarPalabras(cad_arg){
     // Por eso el orden de las funciones aquí es importante
     // Primero se quitan los espacios, y luego se separan las palabras :)
 }
+
+function validateCreditCard(card){
+    card = card.split("").map(Number) // Con map convertimos el string en un array de enteros
+    const uniqueDigits = new Set(card) // Set nos sirve para eliminar los elementos repetidos
+    const sum = card.reduce((acc, digit) => acc + digit, 0); // reduce nos sirve para sumar los elementos
+    
+    if(card.length === 16 && uniqueDigits.size >= 2 && sum > 16 && card[15] % 2 === 0){
+        return true
+    }else{
+        return false
+    }
+}
+
+function validateCreditCard2(card){
+    card = card.replace(/-/g, ""); // Con replace reemplazamos los guiones por vacíos
+    card = card.split("").map(Number) // Con map convertimos el string en un array de enteros
+    const uniqueDigits = new Set(card) // Set nos sirve para eliminar los elementos repetidos
+    const sum = card.reduce((acc, digit) => acc + digit, 0); // reduce nos sirve para sumar los elementos
+
+    console.log(card)
+    if(card.length === 16 && uniqueDigits.size >= 2 && sum > 16 && card[15] % 2 === 0){
+        return true
+    }else{
+        return false
+    }
+}
