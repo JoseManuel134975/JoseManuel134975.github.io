@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <caption>Navigator</caption>
+        <thead>
+            <tr>
+                <th rowspan="2"></th>
+                <th>cookieEnbled</th>
+                <th>geolocation</th>
+                <th>language</th>
+                <th>onLine</th>
+                <th>platform</th>
+                <th>product</th>
+                <th>userAgent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Descripción</th>
+                <td>Retorna si las cookies están habilitadas</td>
+                <td>Muestra diferentes datos sobre la localización del usuario</td>
+                <td>Muestra el idioma</td>
+                <td>Retorna si el navegador está online</td>
+                <td>Retorna para que plataforma está compilado el navegador</td>
+                <td>Muestra el motor del navegador</td>
+                <td>Retorna varia información sobre el navegador</td>
+            </tr>
+            <tr>
+                <th>Resultado</th>
+                <td id="cookieEnabled"></td>
+                <td id="geolocation"></td>
+                <td id="language"></td>
+                <td id="onLine"></td>
+                <td id="platform"></td>
+                <td id="product"></td>
+                <td id="userAgent"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+
+    <script src="../js/funciones.js"></script>
+    <script>
+        ejercicio1();
+        // navigator.geolocation.getCurrentPosition(position => {
+        //     console.log(position);
+        // });
+
+        // let browser = navigator.appCodeName;
+        // console.log(browser);
+    </script>
+</body>
+
+</html>
