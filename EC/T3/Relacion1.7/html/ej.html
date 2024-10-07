@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Se incluye tanto el CSS como la API de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Document</title>
+
+    <style>
+        #map { height: 700px; width: 700px;}
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+        // Se comprueba que el navegador soporte la Geolocation API
+        if ("geolocation" in navigator) { // Esta condición también llama a la ventanita de alerta para que el usuario acepte o decline
+            // Obtener la ubicación del usuario
+            navigator.geolocation.getCurrentPosition(function (position) {
+                // Obtener las coordenadas del usuario
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+
+                // Inicializar el mapa (L hace referencia a Leaflet)
+                const map = L.map('map').setView([lat, lon], 13); // Con setView establecemos la ubicación inicial
+
+                // Cargar y mostrar el mapa desde OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                // Agregar un marcador en la ubicación del usuario
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup('¡Estás aquí!') // Agrega un mensaje al popup
+                    .openPopup(); // Y se abre el popup
+            }, function (error) {
+                alert('No se pudo obtener tu ubicación: ' + error.message);
+            });
+        } else {
+            alert('Tu navegador no soporta la Geolocation API');
+        }
+    </script>
+</body>
+</html>
