@@ -1,7 +1,7 @@
 var browser
 var userScreen
 
-function ejercicio1(){
+function ejercicio1() {
     browser = navigator.userAgent
     document.getElementById("userAgent").textContent = browser
 
@@ -21,7 +21,7 @@ function ejercicio1(){
     document.getElementById("product").textContent = browser
 }
 
-function ejercicio2(){
+function ejercicio2() {
     userScreen = screen.width
     document.getElementById("width").textContent = userScreen
 
@@ -45,4 +45,26 @@ function ejercicio2(){
 
     userScreen = screen.availLeft
     document.getElementById("availLeft").textContent = userScreen
+}
+
+var ventanaGeneral
+var ventana
+
+function windowConfirm(id) { // Le pasamos el id del elemento (con this.id desde HTML)
+    const item = document.getElementById(id); // Obtenemos el elemento dentro del objeto para poder acceder a su id y mostrarlo
+
+    // Asignar el evento onclick al elemento clicado
+    // Abrir una nueva ventanaGeneral y mostrar el id del elemento clicado
+    ventanaGeneral = window.open("", "_blank");
+    ventanaGeneral.document.write("<h1>Has pulsado la opción número " + item.id + "</h1>");
+}
+
+function checkWindow(){
+    ventana = window.open("", "_blank");
+
+    if (ventana.closed) {
+        window.document.getElementById("checkWindow").innerHTML = "La ventanaGeneral ha cerrado"
+    }else{
+        window.document.getElementById("checkWindow").innerHTML = "La ventanaGeneral no ha cerrado"
+    }
 }
