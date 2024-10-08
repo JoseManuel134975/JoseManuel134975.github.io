@@ -7,27 +7,21 @@
 </head>
 <body>
     <ol>
-        <li><a id="1" onclick="windowConfirm(this.id)" href="">Abre una ventana de confirmacin, mostrando que opción ha pulsado el
-            usuario</a></li>
-        <li><a id="2" onclick="windowConfirm(this.id); checkWindow();" href="">Abre una ventana y después analiza si esta se cerrado o no</a></li>
-        <li><a id="3" onclick="windowConfirm(this.id)" href="">Abre una ventana y pide al usuario un nuevo nombre para ella.</a></li>
-        <li><a id="4" onclick="windowConfirm(this.id)" href="">El primer enlace permite cerrar la ventana actual y el segundo cierra una
-            ventana abierta con el método open() en la variable ventanaNueva.</a></li>
-        <li><a id="5" onclick="windowConfirm(this.id)" href="">Abre una ventana de un tama o de 300x100 que puede ser cambiada de tamaño</a></li>
-        <li><a id="6" onclick="windowConfirm(this.id)" href="">Mejora el apartado f) para que escriba algún texto en la página padre.</a></li>
-        <li><a id="7" onclick="windowConfirm(this.id)" href="">Mueve la ventana 50 pixeles hacia abajo y hacia la derecha al activar el enlace</a></li>
-        <li><a id="8" onclick="windowConfirm(this.id)" href="">Provoca que la ventana se sitúe en una posición concreta de la pantalla.
-            El punto de referencia es la esquina superior izquierda de la ventana del
-            navegador y de la pantalla del ordenador.</a></li>
-        <li><a id="9" onclick="windowConfirm(this.id)" href="">Mueve la barra de desplazamiento 10 pixeles hacia abajo</a></li>
-        <li><a id="10" onclick="windowConfirm(this.id)" href="">Desplaza la barra de desplazamiento a una determinada posición.</a></li>
+        <li><a href="#" onclick="openConfirmWindow()">Ventana de confirmacion</a></li>
+        <li><a href="#" onclick="openWindowAndCheckIfClosed()">Abrir ventana y comprobar si se ha cerrado</a></li>
+        <li><a href="#" onclick="openWindowAndPutNewName()">Abrir ventana y poner nuevo nombre</a></li>
+        <li><a href="#" onclick="openWindowWithSize()">Abrir ventana con tamaño</a></li>
+        <li><a href="#" onclick="moveDisplacementBar()">Mover barra de desplazamiento</a></li>
     </ol>
 
     <p id="checkWindow"></p>
+    <p id="newName"></p>
+    <p id="newSize"></p>
+    <p id="displacementBar"></p>
 
     <script src="../js/funciones.js"></script>
     <script>
-
+        
     </script>
 </body>
 </html>
