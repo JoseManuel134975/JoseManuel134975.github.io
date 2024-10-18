@@ -1,0 +1,25 @@
+.bg-red{
+    background-color: red;
+}
+
+.text-white{
+    color: white;
+}
+
+table th:nth-last-child(1), table td:nth-last-child(1){
+    font-weight: bold;
+}
+
+.bg-red th:nth-child(1), .bg-red th:nth-child(2), .bg-red th:nth-child(3){
+    font-weight: lighter;
+}
+
+.bg-blue-nth-child-even-text-white tr:nth-child(odd){
+    background-color: blue;
+    color: white;
+}
+
+.bg-white-nth-child-odd-text-blue tr:nth-child(even){
+    background-color: white;
+    color: blue;
+}

@@ -1,0 +1,30 @@
+/*Etiquetas*/
+p{
+    color: midnightblue;
+}
+
+/*ID*/
+#parrafo-dos{
+    background-color: skyblue;
+}
+
+/*Clases*/
+.bg-skyblue{
+    background-color: skyblue;
+}
+
+.bg-coral{
+    background-color: coral;
+}
+
+.text-20{
+    font-size: 20px;
+}
+
+.text-32{
+    font-size: 32px;
+}
+
+.text-white{
+    color: white;
+}

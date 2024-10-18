@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+
+section:first-of-type{
+    background-color: skyblue;
+    overflow: hidden;
+    width: 300px;
+    height: 150px;
+}
+
+section:nth-of-type(2){
+    background-color: lightgreen;
+    width: 300px;
+    height: 100px;
+    overflow-x: visible;
+    overflow-y: hidden;
+}
+
+section:last-of-type{
+    background-color: lightcoral;
+    width: 150px;
+    height: 200px;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+section{
+    border: 2px solid black;
+    padding: 1rem;
+}

@@ -1,0 +1,25 @@
+input[type="text"]{
+    background-color: greenyellow;
+}
+
+input[type="number"]:disabled{
+    background-color: coral;
+}
+
+input[type="text"]:focus{
+    background-color: skyblue;
+}
+
+input[type="text"]:hover{
+    background-color: white;
+    cursor: alias;
+}
+
+#hombre:checked + label, #mujer:checked + label{
+    font-style: italic;
+}
+
+#agree:checked + label{
+    font-weight: bold;
+    background-color: yellow;
+}

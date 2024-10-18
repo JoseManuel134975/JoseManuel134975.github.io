@@ -1,0 +1,8 @@
+body{
+    counter-reset: numero_capitulo;
+}
+
+h2::before{
+    content: "Capitulo " counter(numero_capitulo) " ";
+    counter-increment: numero_capitulo;
+}

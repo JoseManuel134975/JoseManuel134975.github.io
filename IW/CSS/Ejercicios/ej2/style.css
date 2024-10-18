@@ -1,0 +1,64 @@
+.bg-black{
+    background-color: black;
+    padding: 2rem;
+}
+
+.text-white{
+    color: white;
+    text-align: center;
+}
+
+nav ul{
+    padding: 0;
+}
+
+nav li{
+    display: inline-block;
+    list-style: none;
+    margin-right: 1rem;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover{
+    color: red;
+}
+
+.first-letter-blue::first-letter{
+    color: blue;
+}
+
+.before-symbol-emoji::before{
+    content: "*.👌 ";
+}
+
+.first-paragraph-green::first-line{
+    color: green;
+}
+
+.after-second-paragraph-text-red-emoji::after{
+    color: red;
+    content: " - Aloja more don 👌";
+}
+
+p::selection{
+    background-color: yellow;
+}
+
+nav::after{
+    font-weight: bold;
+    content: "Título del artículo";
+}
+
+section::after{
+    content: " - Fin del artículo";
+}
+
+section:last-child::before{
+    font-weight: bold;
+    content: "Título del artículo";
+}
+

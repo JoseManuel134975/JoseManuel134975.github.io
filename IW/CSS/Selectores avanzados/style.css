@@ -1,0 +1,23 @@
+li{
+    color: blue;
+}
+
+/*> = Hijos directos*/
+.hijos-directos > li {
+    color: red;
+}
+
+/*" " = Hijos descendientes*/
+.hijos-descendientes b{
+    background-color: thistle;
+}
+
+/*~ = Hermanos generales*/
+.hermanos-generales ~ li{
+    background-color: thistle;
+}
+
+/*+ = Hermanos adyacentes*/
+.hermanos-adyacentes + li{
+    background-color: thistle;
+}

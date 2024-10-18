@@ -1,0 +1,21 @@
+p:first-of-type{
+    display: inline;
+}
+
+a:link{
+    color: blue;
+}
+
+a:visited{    
+    color: lawngreen;
+}
+
+h2:target{
+    color: green;
+}
+
+h2:target::before{
+    content: "›";
+    color: green;
+    margin-right: 0.25rem;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            color: white;
+        }
+
+        ul, ol{
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HOJA DE INSCRIPCIÓN EN LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h1>
+    <form action="">
+        <fieldset style="background-color: #63594D;">
+            <legend><button>Datos personales</button></legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <td> <label for="nombre">Nombre (*)</label></td>
+                        <td> <label for="apellidos">Apellidos (*)</label></td>
+                        <td> <label for="dni">DNI (*)</label></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" id="nombre" required></td>
+                        <td> <input type="text" id="apellidos" required></td>
+                        <td> <input type="text" id="dni" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="localidad">Localidad de nacimiento</label></td>
+                        <td><label for="provincia">Provincia</label></td>
+                        <td><label for="fecha">Fecha de Nacimiento</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="localidad"></td>
+                        <td>
+                            <select id="" >
+                                <optgroup label="Andalucia">
+                                    <option value="" selected>Huelva</option>
+                                    <option value="">Sevilla</option>
+                                    <option value="">Cádiz</option>
+                                    <option value="">Córdoba</option>
+                                    <option value="">Jaén</option>
+                                    <option value="">Granada</option>
+                                    <option value="">Málaga</option>
+                                    <option value="">Almería</option>
+                                </optgroup>
+                                <optgroup label="Castilla">
+                                    <option value="">Ávila</option>
+                                    <option value="">Burgos</option>
+                                    <option value="">León</option>
+                                    <option value="">Palencia</option>
+                                    <option value="">Segovia</option>
+                                    <option value="">Soria</option>
+                                    <option value="">Salamanza</option>
+                                    <option value="">Valladolid</option>
+                                    <option value="">Zamora</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td><input type="date" id="fecha"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label for="direccion">Dirección (*)</label></td>
+                        <td><label for="cPostal">Código postal</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" id="direccion" size="40" required></td>
+                        <td><input type="number" id="cPostal" maxlength="5"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label for="email">Email (*)</label></td>
+                        <td><label for="telefono">Teléfono (*)</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" id="email" size="40" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required></td>
+                        <td><input type="number" id="telefono" maxlength="9" required></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset style="background-color: #B18272;">
+            <legend><button>Forma de acceso</button></legend>
+            <ul>
+                <li><input type="radio">Directo</li>
+                <ul>
+                    <li><input type="radio">Bachillerato Log Modalidad <input type="text"></li>
+                    <li><input type="radio">Experimental</li>
+                    <li><input type="radio">COU Opción <input type="text"></li>
+                    <li><input type="radio">FP2</li>
+                    <li><input type="radio">Otros (especifique) <input type="text"></li>
+                </ul>
+                <li><input type="radio">Prueba libre</li>
+            </ul>
+        </fieldset>
+        <fieldset style="background-color: #C2B291;">
+            <legend><button>Documentos adjuntados</button></legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" id="">Fotocopia DNI</td>
+                        <td><input type="checkbox" id="">Certificado académico</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox">Otros documentos (especifique) <input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Adjuntar documentos (puedes subir más de un documento) <input type="file"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset style="background-color: #D6E4C3;">
+            <legend><button>Personaliza</button></legend>
+            Código personalizado <input type="text" pattern="[A-Za-z]{3}[0-9]{4}">
+            <p></p>
+            Grupo del curso <input type="text" pattern="^(A|B|AA|BB|ABA)$">
+            <p></p>
+            Idioma certificado <select name="" id="">
+                <option value="" selected>Inglés</option>
+                <option value="">Francés</option>
+                <option value="">Alemán</option>
+                <option value="">Portugués</option>
+                <option value="">Italiano</option>
+                <option value="">Japones</option>
+            </select>
+            <p></p>
+            Certificación en idiomas <input type="text" pattern="^(A[12]|B[12]|C[12])$">
+        </fieldset>
+        <fieldset style="background-color: #EAE3D1;">
+            <legend><button>Otros datos</button></legend>
+            Indique cualquier otra cosa a tener en cuenta:
+            <br>
+            <textarea name="" id="" cols="30" rows="5">      Déjanos tu comentario</textarea>
+        </fieldset>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+/* Ejercicio 1 */
+ol li:first-child{
+    color: green;
+}
+
+ol li:last-child{
+    color: red;
+}
+
+/* Ejercicio 2 */
+section p:first-child{
+    border-top: 1px solid black;
+}
+
+section p:last-child{
+    border-bottom: 1px solid black;
+}
+
+/* Ejercicio 3 */
+h2:nth-of-type(3) + section ol:first-of-type li:nth-child(even){
+    text-decoration: underline;
+}
+
+h2:nth-of-type(3) + section ol:first-of-type li:nth-child(odd){
+    text-decoration: line-through;
+}
+
+/* Ejercicio 5 */
+h2:nth-of-type(4) + section h2:nth-of-type(odd){
+    text-decoration: underline;
+}
+
+/* Ejercicio 6 */
+h2:nth-of-type(5) + section p strong:first-of-type{
+    color: springgreen;
+}
+
+/* Ejercicio 7 */
+h2:nth-of-type(6) + ol li::first-letter{
+    text-decoration: underline;
+}
+
+/* Ejercicio 8 */
+h2:nth-of-type(5) + section p strong::before{
+    content: "¡";
+}
+
+h2:nth-of-type(5) + section p strong::after{
+    content: "!";
+}
+
+/* Ejercicio 9 */
+h2:nth-of-type(7) + section p::before{
+    content: "- ✓ ";
+    color: red;
+}

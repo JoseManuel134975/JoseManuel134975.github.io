@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores avanzados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h2>Selectores avanzados</h2>
+        <h3>Selectores hijos</h3>
+        <h4>Selectores hijos directos</h4>
+        <ul class="hijos-directos">
+            <!-- <li> son hijos directos* -->
+            <li><b>Primavera</b></li>
+            <li><b>Verano</b></li>
+            <li><b>Otoño
+                <ul>
+                    <li>Septiembre</li>
+                    <li>Octubre</li>
+                </ul>
+            </b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+
+
+
+
+
+        <h4>Selectores hijos descendientes</h4>
+        <ul class="hijos-descendientes">
+            <!-- *mientras que <b> son hijos descendientes -->
+            <li><b>Primavera</b></li>
+            <li><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+
+        <h3>Selectores hermanos</h3>
+        <h4>Selectores hermanos-generales</h4>
+        <ul>
+            <!-- *mientras que <b> son hijos descendientes -->
+            <li><b>Primavera</b></li>
+            <li class="hermanos-generales"><b>Verano</b></li>
+            <!-- <li> son hermanos generales de class="hermanos-generales"-->
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+
+
+
+
+
+
+
+        <h4>Selectores hermanos-adyacentes</h4>
+        <ul>
+            <!-- *mientras que <b> son hijos descendientes -->
+            <li><b>Primavera</b></li>
+            <li class="hermanos-adyacentes"><b>Verano</b></li>
+            <!-- <li> numero 1 es hermano adyacente de class="hermanos-adyacentes"-->
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+    </article>
+</body>
+</html>

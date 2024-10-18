@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+section:first-of-type p{
+    font-family: 'Dancing Script', cursive;
+    background-color: wheat;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+section:nth-of-type(2) p{
+    font-family: 'Dancing Script', cursive;
+    background-color: wheat;
+    border: 1px solid black;
+    padding: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body > p:first-of-type{
+    text-indent: 20px;
+    text-align: justify;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+body > p:nth-of-type(2), body > p:nth-of-type(3){
+    font-family: 'Bungee Shade', cursive;
+}
+
+body > p:nth-of-type(2) span{
+    vertical-align: sub;
+    font-size: 0.8rem;
+}
+
+body > p:nth-of-type(3) span{
+    vertical-align: super;
+    font-size: 0.8rem;
+}
+
+input{
+    color: white;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: none;
+}
+
+input:hover{
+    cursor: pointer;
+    background-color: orangered;
+}
+
+input:active{
+    background-color: red;
+}
