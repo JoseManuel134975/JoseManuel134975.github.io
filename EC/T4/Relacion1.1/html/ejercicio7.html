@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
+    <table border="1">
         <thead>
             <th>1</th>
             <th>2</th>
@@ -38,7 +38,9 @@
 
     <script src="../js/funciones.js"></script>
     <script>
-
+        for(let i=0;i<10;i++){
+            document.getElementById(i+1).innerHTML = calcularFactorial(i+1);
+        }
     </script>
 </body>
 </html>

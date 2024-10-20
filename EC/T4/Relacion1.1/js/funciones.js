@@ -63,5 +63,5 @@ function calcularFactorial(n) {
         factorial *= i;
     }
     
-    
+    return factorial;
 }
