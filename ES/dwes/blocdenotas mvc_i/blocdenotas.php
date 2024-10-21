@@ -31,7 +31,7 @@ session_start();
         <input type="submit" value="Guardar" name="accion"/>
         <input type="submit" value="Imprimir en pdf" name="accion"/>
         <input type="submit" value="Explorar" name="accion"/>
-        
+        <input type="submit" value="Descargar" name="accion">
     <form>
         
 </body>

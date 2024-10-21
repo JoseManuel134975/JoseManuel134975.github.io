@@ -1,5 +1,11 @@
 <?php
 session_start();
+require_once 'vendor/autoload.php'; // Autoload de Composer
+
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
+
 /* Si no existe la variable de sesión usuario, es porque la identificación no se 
  ha producido correctamente redirigimos a la página principal */
 if (!isset($_SESSION["usuario"])) {
@@ -54,7 +60,13 @@ if (isset($_REQUEST["accion"])) {
                         $_SESSION["ficheros"] = $ficheros;
                         header("Location: explorar.php");
                         break;
-        
+    case "imprimirenpdf": $fichero = $_SESSION["nombre_fichero"];
+                        imprimirPDF($fichero);
+                        break;
+    case "descargar": $fichero = $_SESSION["nombre_fichero"];
+                        descargar($fichero);
+                        break;
+                        
     }
 }
 

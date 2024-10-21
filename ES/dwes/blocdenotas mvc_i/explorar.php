@@ -16,7 +16,13 @@ $ficheros = $_SESSION["ficheros"];
             <?php foreach ($ficheros as $fichero): ?>
                 <?php if (!is_dir($fichero)): ?>
                     <li>
-                        <?php echo $fichero; ?>
+                        <a href="controladorBloc.php?accion=abrir&nombre_fichero=<?php echo $fichero; ?>">
+                            <?php echo $fichero; ?>
+                        </a>
+                        <form action="controladorBloc.php">
+                            <input type="hidden" name="nombre_fichero" value="<?php echo $fichero; ?>">
+                            <input type="submit" value="Abrir" name="accion">
+                        </form>
                     </li>
                 <?php endif; ?>
             <?php endforeach; ?>
