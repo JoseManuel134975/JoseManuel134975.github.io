@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+}
+
+div{
+    display: inline-block;
+    background-color: whitesmoke;
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    text-align: center;
+    line-height: 100px;
+    color: gray;
+    font-size: 25px;
+}
+
+div:first-of-type{
+    box-shadow: -5px -5px red;
+}
+
+div:nth-of-type(2){
+    box-shadow: -5px -5px 5px blue;
+}
+
+div:nth-of-type(3){
+    box-shadow: -10px -10px rgb(0, 255, 38);
+}
+
+div:nth-of-type(4){
+    box-shadow: -10px -10px 5px rgb(0, 153, 255), 1px 1px 5px rgb(0, 153, 255);
+}
+
+div:nth-of-type(5){
+    box-shadow: 1px 1px 20px pink, -1px -1px 20px pink;
+}
+
+div:nth-of-type(6){
+    box-shadow: 1px 1px 40px gold, -1px -1px 40px gold;
+}
+
+div:nth-of-type(7){
+    box-shadow: inset -10px -10px 1px purple;
+}
+
+div:nth-of-type(8){
+    box-shadow: inset -10px -10px 10px turquoise;
+}
+
+div:nth-of-type(9){
+    box-shadow: inset -15px -15px 1px palevioletred;
+}
+
+div:nth-of-type(10){
+    box-shadow: inset -10px -10px 10px rgb(4, 228, 4), inset -1px -1px 10px rgb(4, 228, 4);
+}
+
+div:nth-of-type(11){
+    box-shadow: inset -1px -1px 5px blue, inset 1px 1px 5px blue;
+}
+
+div:last-of-type{
+    box-shadow: inset -10px -10px 10px gray, inset 10px 10px 10px gray;
+}
+
