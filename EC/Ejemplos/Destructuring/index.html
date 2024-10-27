@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="funciones.js"></script>
+    <script>
+        // Objeto con 3 propiedades
+        const articulo = {
+            codigo: 5,
+            nombre: "Teclado",
+            precio: 9.5
+        }
+
+        const articulo2 = {
+            codigo: 7,
+            nombre: "Raton",
+            precio: 5.3
+        }
+
+        // Función común
+        // function pvp(articulo) {
+        //     return articulo.precio * 1,21 // Se accede a la propiedad precio con '.'
+        // }
+
+        // Función arrow común
+        let pvp = (articulo) => {
+            return articulo.precio * 1.21
+        }
+
+        // Arrow con destructuring
+        let pvp2 = ({precio}) /* Se llama a la propiedad con las llaves */ => precio * 1.21 // Arrow sin llaves ni return
+
+        console.log(pvp(articulo))
+        console.log(pvp2(articulo))
+
+        const array = [1, 2, 3, 4, 5]
+
+        // Destructuring
+        let [primero, tercero, ...resto] = array
+
+        console.log(array)
+        console.log(primero)
+        console.log(tercero)
+        console.log(resto)
+    </script>
+</body>
+</html>
