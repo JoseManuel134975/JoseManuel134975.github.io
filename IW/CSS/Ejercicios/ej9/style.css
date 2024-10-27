@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+
+div{
+    width: 500px;
+    height: 100px;
+    margin-bottom: 50px;
+}
+
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to bottom, rgb(85, 1, 149) 40%, rgb(248, 145, 160) 90% 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+div:first-of-type{
+    background: linear-gradient(to right, black 5%, blue 25%, yellow 50%, green 75%, red 95%, rgb(255, 20, 20) 100%);
+}
+
+div:nth-of-type(2){
+    background: repeating-linear-gradient(to bottom, blue 0 10%, yellow 10% 20%, rgb(251, 10, 50) 20% 30%);
+}
+
+div:nth-of-type(3){
+    height: 250px;
+    background: radial-gradient(ellipse, yellow 0%, orange 10%, red 40%, rgb(250, 18, 57) 60%, black 100%);
+}
+
+div:nth-of-type(4){
+    height: 250px;
+    background: radial-gradient(ellipse, yellow 50%, red 55%, rgb(250, 18, 57) 1%, black 70%);
+}
+
+div:nth-of-type(5){
+    height: 250px;
+    background: radial-gradient(circle, yellow 50%, red 55%, rgb(250, 18, 57) 1%, black 70%);
+}
+
+div:nth-of-type(6){
+    height: 250px;
+    background: radial-gradient(circle at left, yellow 50%, red 55%, rgb(250, 18, 57) 1%, black 70%);
+}
+
+div:nth-of-type(7){
+    height: 150px;
+    background: radial-gradient(circle,blue, brown, rgb(250, 18, 57), red, orange,yellow);
+}
+
+div:nth-of-type(8){
+    height: 150px;
+    background: radial-gradient(farthest-side ellipse,blue, brown, rgb(250, 18, 57),orange,yellow);
+}
+
+div:nth-of-type(9){
+    height: 150px;
+    background: radial-gradient(circle,blue 10%, brown , rgb(250, 18, 57) 50%, red 70%, orange 90%,yellow);
+}
+
+div:nth-of-type(10){
+    height: 300px;
+    background: repeating-radial-gradient(circle,pink 0 10%, rgb(250, 18, 57) 10% 20%, brown 20% 30%);
+}
+
+div:nth-of-type(11){
+    height: 300px;
+    background: conic-gradient(from 0deg at top, blue, rgb(0, 0, 0));
+}
+
+div:last-of-type{
+    height: 300px;
+    background: conic-gradient(
+    yellow 0deg, 
+    orange 30deg, 
+    red 60deg, 
+    blue 90deg,
+    yellow 120deg, 
+    orange 150deg, 
+    red 180deg,
+    blue 210deg,
+    yellow 240deg, 
+    orange 270deg, 
+    red 300deg,
+    blue 330deg,
+    yellow 360deg
+);
+}
