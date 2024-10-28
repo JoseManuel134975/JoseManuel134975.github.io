@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+
+p{
+    background-color: lightgreen;
+    font-weight: bold;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+li{
+    list-style: none;
+}
