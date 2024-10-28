@@ -14,7 +14,8 @@
             <input type="submit" value="volver" />
         </form> -->
         <ul>
-            <?php $dir = "./usuarios"; echo $_SESSION["clave"];?>
+            <?php $dir = "./usuarios";
+            echo $_SESSION["clave"]; ?>
             <?php foreach (scandir($dir) as $subdir): ?>
                 <?php if ($subdir != "usuarios.ini" && $subdir != "." && $subdir != ".."): ?>
                     <li>
@@ -27,16 +28,16 @@
                         </form>
                     </li>
                     <ul>
-                            <?php foreach (scandir($dir . "/" . $subdir) as $fichero): ?>
-                                <?php if (!is_dir($fichero) && $fichero != "." && $fichero != ".." && $fichero != "usuarios.ini"): ?>
-                                    <li>
-                                        <a href="?accionnoticia=abrir&nombre_subdir=<?php echo $subdir; ?>&nombre_fichero=<?php echo $fichero; ?>">
-                                            <?php echo $fichero; ?>
-                                        </a>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </ul>
+                        <?php foreach (scandir($dir . "/" . $subdir) as $fichero): ?>
+                            <?php if (!is_dir($fichero) && $fichero != "." && $fichero != ".." && $fichero != "usuarios.ini"): ?>
+                                <li>
+                                    <a href="?accionnoticia=abrir&nombre_subdir=<?php echo $subdir; ?>&nombre_fichero=<?php echo $fichero; ?>">
+                                        <?php echo $fichero; ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
