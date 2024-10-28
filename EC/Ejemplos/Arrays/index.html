@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="funciones.js"></script>
+    <script>
+        // muestraArray()
+
+        // const alumno = {
+        //     nombre: "Juan",
+        //     grupo: "1SMR",
+        //     notas: [4, 6],
+        //     showNotas: function(){
+        //         console.log(this.notas.forEach((nota) => console.log(nota)))
+        //     },
+        //     addNota: function(nota){
+        //         this.notas.push(nota)
+        //     },
+        //     addNotas: function(array){
+        //         this.notas = this.notas.concat(array)
+        //     }
+        // }
+        // alumno.showNotas()
+        // alumno.addNota(8)
+        // alumno.addNotas([1, 2, 3])
+        // alumno.showNotas()
+
+        // Array de objetos
+        const arrAlumnos = [{
+            nombre: "Juan",
+            grupo: "1SMR",
+            notas: [4, 6],
+            edad: 19
+        },
+            {
+            nombre: "Antonio",
+            grupo: "1SMR",
+            notas: [5, 0],
+            edad: 15
+        }]
+
+        // Función de comparación a pasar a sort (por nombre)
+        const fCompareNombre = (obj1, obj2) => obj1.nombre.localeCompare(obj2.nombre)
+        const fCompareNombreYEdad = (obj1, obj2) => obj1.edad - obj2.edad
+        const fCompareNota = (obj1, obj2) => obj1.notas.foreach
+
+
+        console.log(arrAlumnos.sort(fCompareNota)) // No hace falta pasar parámetros a la segunda función (comparación)
+
+    </script>
+</body>
+
+</html>
