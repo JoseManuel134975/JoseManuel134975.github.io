@@ -52,6 +52,19 @@ function existe($usuario)
     return $ok;
 }
 
+function cambiarUsuario($usuario){
+
+    // Partimos de la hipótesis de que el usuario no va a existir
+
+    $ok = NULL;
+
+    $usuarios = parse_ini_file("./usuarios/usuarios.ini");
+
+    if(!isset($usuario[$usuarios])){
+        
+    }
+}
+
 // Función 'acceder' que devuelve true si el usuario existe y coincide su contraseña o false en caso contrario
 
 function acceder($usuario, $clave)

@@ -14,11 +14,11 @@
             <input type="submit" value="volver" />
         </form> -->
         <ul>
-            <?php $dir = "./usuarios"; ?>
+            <?php $dir = "./usuarios"; echo $_SESSION["clave"];?>
             <?php foreach (scandir($dir) as $subdir): ?>
                 <?php if ($subdir != "usuarios.ini" && $subdir != "." && $subdir != ".."): ?>
                     <li>
-                        <a href="?usuario=<?php echo $subdir; ?>&clave=<?php echo $_SESSION["clave"]; ?>">
+                        <a href="?usuario=<?php echo $subdir; ?>&clave=<?php existe($_SESSION["clave"]); ?>&accionusuarios=Acceder">
                             <?php echo $subdir; ?>
                         </a>
                         <form action="">
