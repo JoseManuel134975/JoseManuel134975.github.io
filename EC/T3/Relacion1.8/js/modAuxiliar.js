@@ -11,8 +11,17 @@ s
 * @example
 * filterNumbersGreaterThan([3, 8, 12, 1, 7, 4], 7) // returns [3, 1, 4]
 */
-function filterNumbersGreaterThan(numbers, filter) {
-    return numbers.filter(number => number < filter);
+
+const filterNumbersGreaterThan = (arrayNumeros, numero) => {
+    const numerosFiltradosA = []
+
+    arrayNumeros.forEach(element => {
+        if (element < numero) {
+            numerosFiltradosA.push(element)
+        }
+    });
+
+    return numerosFiltradosA
 }
 
 /**
@@ -27,26 +36,33 @@ transformar las "a" en 4, las "e" en 3, las "i"
 * @example
 * toHackerSpeak("I'm a hacker now") // returns "1'm 4 h4ack3r n0w"
 */
-function toHackerSpeak(text) {
-    return text
-        .split("")
-        .map(character => {
-            switch (character) {
-                case "a":
-                    return "4";
-                case "e":
-                    return "3";
-                case "i":
-                    return "1";
-                case "o":
-                    return "0";
-                case "s":
-                    return "5";
-                default:
-                    return character;
-            }
-        })
-        .join("");
+
+const toHackerSpeak = (texto) => {
+    let textoConvertido = ""
+
+    for (let i = 0; i < texto.length; i++) {
+        switch (texto[i].toLowerCase()) {
+            case 'a':
+                textoConvertido += '4'
+                break
+            case 'e':
+                textoConvertido += '3'
+                break
+            case 'i':
+                textoConvertido += '1'
+                break
+            case 'o':
+                textoConvertido += '0'
+                break
+            case 's':
+                textoConvertido += '5'
+                break
+            default:
+                textoConvertido += texto[i]
+        }
+    }
+
+    return textoConvertido
 }
 
 /**
@@ -59,8 +75,18 @@ function toHackerSpeak(text) {
 * @example
 * getFileExtension("imagen.jpg") // returns "jpg"
 */
-function getFileExtension(file) {
-    return file.split(".").pop();
+
+const getFileExtension = (archivo) => {
+    let extension = ""
+
+    for (let i = 0; i < archivo.length; i++) {
+        if (archivo[i] === '.') {
+            extension = archivo.substring(i + 1, archivo.length)
+            break
+        }
+    }
+
+    return extension
 }
 
 /**
@@ -74,8 +100,9 @@ function getFileExtension(file) {
 * @example
 * flatArray([[1, 5, 4], [3, 10], [2, 5]]) // returns [1, 5, 6, 3, 10, 2, 5]
 */
-function flatArray(arr) {
-    return arr.flat();
+
+const flatArray = (array2D) => {
+    return array2D.flat()
 }
 
 /**
@@ -88,39 +115,14 @@ function flatArray(arr) {
 * @example
 * removeDuplicates([4, 5, 10, 4, 10, 2]) // returns [4, 5, 10, 2]
 */
-function removeDuplicates(arr) {
-    return [...new Set(arr)];
-}
 
-/**
-* @name countLetter
-* @description Devuelve la cantidad de veces que una letra aparece en un str
-ing
-*
-* @param {string} letter - Letra a contar
-* @param {string} text - Texto sobre el que realizar la cuenta de {letter}
-* @returns {Number} - Número de veces que aparece {letter} en {text}
-*
-* @example
-* countLetter("a", "javascript") // returns 2
-*/
-function countLetter(letter, text) {
-    return text.split("").filter(char => char === letter).length;
-}
+const removeDuplicates = (array) => {
+    const sinDuplicados = new Set()
 
-/**
-* @name removeWords
-* @description Dado un string y un array de palabras a remover, devuelve el
-string sin las palabras removidas
-*
-* @param {string} str - Texto a recortar
-* @param {string[]} words - Palabras a remover
-* @returns {string} - Texto resultante con las palabras removidas
-*
-* @example
-* removeWords("This is a really bad test", ["really", "bad"]) // returns
-"This is a test"
-*/
-function removeWords(str, words) {
-    return str.split(" ").filter(word => !words.includes(word)).join(" ");
+    array.forEach(element => {
+        sinDuplicados.add(element)
+    })
+
+
+    return sinDuplicados
 }

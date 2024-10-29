@@ -134,7 +134,7 @@ function empresa() {
                 break
             case 2:
                 let eligeVend = parseInt(prompt("Elige el vendedor (EJ: 1): " + empresa.map((vend, index) => `${index + 1}. ${vend.nombre}`).join("\n")
-            ));
+                ));
                 let ventas = parseInt(prompt("Introduce las ventas: "))
                 sueldoFinal = 200 + (ventas * 0.09) + ventas
                 empresa[eligeVend].ventas = ventas
@@ -146,10 +146,83 @@ function empresa() {
                 break
         }
     }
+}
+
+const arrayCero = (array) => {
+    return array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+}
+
+const addOne = (array) => {
+    const arraySalida = []
+
+    array.forEach(element => {
+        arraySalida.push(element + 1)
+    })
+
+    return arraySalida
+}
+
+const showSeparated = (array) => {
+    console.log(array.join(" "))
+}
+
+const lanzarDosDados = () => {
+    const array = []
+    let dado1 = 0
+    let dado2 = 0
+
+    for (let uno = 0; uno < 36000; uno++) {
+        numRand = Math.floor(Math.random() * 6) + 1
+        for (let dos = 0; dos < 36000; dos++) {
+            numRand2 = Math.floor(Math.random() * 6) + 1
+        }
+    }
+}
+
+const aerolinea = () => {
+    const vuelo = {
+        capacidad: 10,
+        tipo_asiento: ["First", "Turista"],
+        tarjeta_embarque: []
+    }
 
 
+    let op = ""
+    op = prompt("¿Quieres introducir un pasajero? (S/N)")
 
-    //vendedor.push(alta, ventas, sueldoFinal)
+    while (vuelo.capacidad > 0 && op.toLowerCase() !== "n") {
+        const pasajero = {
+            nombre: "",
+            n_asiento: 0,
+            tipo_asiento: ""
+        }
 
-    //return vendedor[2]
+        let tipoAsiento = prompt("Introduce el tipo de asiento (First o Turista)")
+        pasajero.tipo_asiento = tipoAsiento
+
+        let asiento = parseInt(prompt("Introduce el nº de asiento (First: 1-5, Turista: Resto)"))
+        if (tipoAsiento.toLowerCase() === vuelo.tipo_asiento[0].toLowerCase()) {
+            do {
+                alert("El asiento debe estar entre 1 y 5")
+                asiento = parseInt(prompt("Introduce el nº de asiento (First: 1-5, Turista: Resto)"))    
+            } while (asiento < 1 || asiento > 5)
+        }else {
+            do {
+                alert("El asiento debe ser mayor a 5")
+                asiento = parseInt(prompt("Introduce el nº de asiento (First: 1-5, Turista: Resto)"))
+            } while(asiento >= 0 && asiento <= 5)
+        }
+
+        pasajero.n_asiento = asiento
+
+        let nombre = prompt("Introduce el nombre del pasajero")
+        pasajero.nombre = nombre
+
+        vuelo.capacidad--
+        vuelo.tarjeta_embarque.push(pasajero)
+
+        op = prompt("¿Quieres introducir otro pasajero? (S/N)")
+    }
+
+    return vuelo.tarjeta_embarque
 }

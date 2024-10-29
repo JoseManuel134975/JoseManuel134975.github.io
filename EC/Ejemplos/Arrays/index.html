@@ -12,24 +12,35 @@
     <script>
         // muestraArray()
 
-        // const alumno = {
-        //     nombre: "Juan",
-        //     grupo: "1SMR",
-        //     notas: [4, 6],
-        //     showNotas: function(){
-        //         console.log(this.notas.forEach((nota) => console.log(nota)))
-        //     },
-        //     addNota: function(nota){
-        //         this.notas.push(nota)
-        //     },
-        //     addNotas: function(array){
-        //         this.notas = this.notas.concat(array)
-        //     }
-        // }
-        // alumno.showNotas()
-        // alumno.addNota(8)
-        // alumno.addNotas([1, 2, 3])
-        // alumno.showNotas()
+        const alumno = {
+            nombre: "Juan",
+            grupo: "1SMR",
+            notas: [4, 6],
+            showNotas: function(){
+                console.log(this.notas.forEach((nota) => console.log(nota)))
+            },
+            addNota: function(nota){
+                this.notas.push(nota)
+            },
+            addNotas: function(array){
+                this.notas = this.notas.concat(array)
+            },
+            filtraNotas: function(filtro){
+                let arraySalida = []
+
+                this.notas.forEach((element) => {
+                    if(filtro(element)){
+                        arraySalida.push(element)
+                    }
+                })
+                
+                return arraySalida
+            }
+        }
+        alumno.showNotas()
+        alumno.addNota(8)
+        alumno.addNotas([1, 2, 3])
+        alumno.showNotas()
 
         // Array de objetos
         const arrAlumnos = [{
@@ -53,6 +64,17 @@
 
         console.log(arrAlumnos.sort(fCompareNota)) // No hace falta pasar parámetros a la segunda función (comparación)
 
+
+        console.log(doble([4, 8, 16, 32, 64, 128]))
+        console.log(incrementa([4, 8, 16, 32, 64, 128]))
+
+        arrayMod = modificaArray([3, 4, 6], valor => valor - 1)
+        console.log(arrayMod)
+
+        arrayFil = filtraArray([2, 4, 6], valor => valor > 5)
+        console.log(arrayFil)
+
+        
     </script>
 </body>
 
