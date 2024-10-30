@@ -12,11 +12,11 @@ s
 * filterNumbersGreaterThan([3, 8, 12, 1, 7, 4], 7) // returns [3, 1, 4]
 */
 
-const filterNumbersGreaterThan = (arrayNumeros, numero) => {
+const filterNumbersGreaterThan = (numbers, filter) => {
     const numerosFiltradosA = []
 
-    arrayNumeros.forEach(element => {
-        if (element < numero) {
+    numbers.forEach(element => {
+        if (element < filter) {
             numerosFiltradosA.push(element)
         }
     });
@@ -37,11 +37,11 @@ transformar las "a" en 4, las "e" en 3, las "i"
 * toHackerSpeak("I'm a hacker now") // returns "1'm 4 h4ack3r n0w"
 */
 
-const toHackerSpeak = (texto) => {
+const toHackerSpeak = (text) => {
     let textoConvertido = ""
 
-    for (let i = 0; i < texto.length; i++) {
-        switch (texto[i].toLowerCase()) {
+    for (let i = 0; i < text.length; i++) {
+        switch (text[i].toLowerCase()) {
             case 'a':
                 textoConvertido += '4'
                 break
@@ -58,7 +58,7 @@ const toHackerSpeak = (texto) => {
                 textoConvertido += '5'
                 break
             default:
-                textoConvertido += texto[i]
+                textoConvertido += text[i]
         }
     }
 
@@ -76,12 +76,12 @@ const toHackerSpeak = (texto) => {
 * getFileExtension("imagen.jpg") // returns "jpg"
 */
 
-const getFileExtension = (archivo) => {
+const getFileExtension = (file) => {
     let extension = ""
 
-    for (let i = 0; i < archivo.length; i++) {
-        if (archivo[i] === '.') {
-            extension = archivo.substring(i + 1, archivo.length)
+    for (let i = 0; i < file.length; i++) {
+        if (file[i] === '.') {
+            extension = file.substring(i + 1, file.length)
             break
         }
     }
@@ -101,8 +101,8 @@ const getFileExtension = (archivo) => {
 * flatArray([[1, 5, 4], [3, 10], [2, 5]]) // returns [1, 5, 6, 3, 10, 2, 5]
 */
 
-const flatArray = (array2D) => {
-    return array2D.flat()
+const flatArray = (arr) => {
+    return arr.flat()
 }
 
 /**
@@ -116,13 +116,59 @@ const flatArray = (array2D) => {
 * removeDuplicates([4, 5, 10, 4, 10, 2]) // returns [4, 5, 10, 2]
 */
 
-const removeDuplicates = (array) => {
+const removeDuplicates = (arr) => {
     const sinDuplicados = new Set()
 
-    array.forEach(element => {
+    arr.forEach(element => {
         sinDuplicados.add(element)
     })
 
 
     return sinDuplicados
+}
+
+/** * @name countLetter * 
+ * @description Devuelve la cantidad de veces que una letra aparece en un string * *
+ * @param {string} letter - Letra a contar * 
+ * @param {string} text - Texto sobre el que realizar la cuenta de {letter} * 
+ * @returns {Number} - Número de veces que aparece {letter} en {text} * * 
+ * @example * countLetter("a", "javascript") // returns 2 */
+
+const countLetter = (letter, text) => {
+    let nVeces = 0
+    letter.toLowerCase()
+    text.toLowerCase()
+
+    for (let i = 0; i < text.length; i++) {
+        if (text[i] === letter) {
+            nVeces++
+        }
+    }
+
+    return nVeces
+}
+
+/** * @name removeWords * 
+ * @description Dado un string y un array de palabras a remover, devuelve el string sin las palabras removidas * * 
+ * @param {string} str - Texto a recortar * 
+ * @param {string[]} words - Palabras a remover * 
+ * @returns {string} - Texto resultante con las palabras removidas * * 
+ * @example * removeWords("This is a really bad test", ["really", "bad"]) // returns "This is a test" */
+
+const removeWords = (str, words) => {
+    const textoConvertido = str.split(" ")
+    let textoResultante = ""
+
+    words.forEach(elementInclude => {
+        if (textoConvertido.includes(elementInclude)) {
+            textoConvertido.forEach((element, index) => {
+                if (element === elementInclude) {
+                    textoConvertido.splice(index, 1)
+                }
+            })
+        }
+    })
+    textoResultante = textoConvertido.join(" ")
+
+    return textoResultante
 }

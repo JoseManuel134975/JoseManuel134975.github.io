@@ -41,32 +41,32 @@ function nota(n, t) {
     return calificacion
 }
 
-// Comentar si quieres ver la primera parte************
-function nota(n, t) {
-    let nota_media = 0
+// Descomentar si quieres verlo en funcionamiento************
+// function nota(n, t) {
+//     let nota_media = 0
 
-    const estudiantes = [{
-        n_estudiante: 7,
-        trimestre: 1,
-        nota_examenes: [6, 7, 8]
-    },
-    {
-        n_estudiante: 8,
-        trimestre: 2,
-        nota_examenes: [3, 5, 6]
-    }]
+//     const estudiantes = [{
+//         n_estudiante: 7,
+//         trimestre: 1,
+//         nota_examenes: [6, 7, 8]
+//     },
+//     {
+//         n_estudiante: 8,
+//         trimestre: 2,
+//         nota_examenes: [3, 5, 6]
+//     }]
 
-    estudiantes.forEach(estudiante => {
-        if (estudiante.n_estudiante == n && estudiante.trimestre != t) {
-            estudiante.nota_examenes.forEach(examen => {
-                nota_media += examen
-            });
-            nota_media = nota_media / 3
-        }
-    });
+//     estudiantes.forEach(estudiante => {
+//         if (estudiante.n_estudiante == n && estudiante.trimestre != t) {
+//             estudiante.nota_examenes.forEach(examen => {
+//                 nota_media += examen
+//             });
+//             nota_media = nota_media / 3
+//         }
+//     });
 
-    return nota_media
-}
+//     return nota_media
+// }
 
 function edadMedia() {
     const clase = [{
@@ -130,17 +130,21 @@ function empresa() {
                     sueldo: 0
                 }
                 empresa.push(vendedor)
-                console.log(empresa[empresa.length - 1])
+                console.log(vendedor)
                 break
             case 2:
-                let eligeVend = parseInt(prompt("Elige el vendedor (EJ: 1): " + empresa.map((vend, index) => `${index + 1}. ${vend.nombre}`).join("\n")
-                ));
+                let eligeVend = parseInt(prompt("Elige el vendedor (EJ: 1): " + empresa.map((vend, index) => `${index}- ${vend.nombre}`).join(" ")));
                 let ventas = parseInt(prompt("Introduce las ventas: "))
                 sueldoFinal = 200 + (ventas * 0.09) + ventas
                 empresa[eligeVend].ventas = ventas
+                console.log(`Ventas asignadas a ${empresa[eligeVend].nombre}: ${empresa[eligeVend].ventas}`)
                 break
             default:
-                let eligeVendMostrar = parseInt(prompt("Elige el vendedor (EJ: 1): " + empresa.map(vendedor => "\n" + vendedor.nombre).join("\n")))
+                if (empresa.length === 0) {
+                    alert(`No hay vendedores dados de alta. Recarga la página...`)
+                    break
+                }
+                let eligeVendMostrar = parseInt(prompt("Elige el vendedor (EJ: 1): " + empresa.map((vend, index) => `${index}- ${vend.nombre}`).join(" ")))
                 empresa[eligeVendMostrar].sueldo = sueldoFinal
                 console.log("Sueldo final: " + empresa[eligeVendMostrar].sueldo)
                 break
@@ -149,7 +153,9 @@ function empresa() {
 }
 
 const arrayCero = (array) => {
-    return array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    return array
 }
 
 const addOne = (array) => {
@@ -164,19 +170,6 @@ const addOne = (array) => {
 
 const showSeparated = (array) => {
     console.log(array.join(" "))
-}
-
-const lanzarDosDados = () => {
-    const array = []
-    let dado1 = 0
-    let dado2 = 0
-
-    for (let uno = 0; uno < 36000; uno++) {
-        numRand = Math.floor(Math.random() * 6) + 1
-        for (let dos = 0; dos < 36000; dos++) {
-            numRand2 = Math.floor(Math.random() * 6) + 1
-        }
-    }
 }
 
 const aerolinea = () => {
@@ -200,13 +193,12 @@ const aerolinea = () => {
         let tipoAsiento = prompt("Introduce el tipo de asiento (First o Turista)")
         pasajero.tipo_asiento = tipoAsiento
 
-        let asiento = parseInt(prompt("Introduce el nº de asiento (First: 1-5, Turista: Resto)"))
         if (tipoAsiento.toLowerCase() === vuelo.tipo_asiento[0].toLowerCase()) {
             do {
                 alert("El asiento debe estar entre 1 y 5")
                 asiento = parseInt(prompt("Introduce el nº de asiento (First: 1-5, Turista: Resto)"))    
             } while (asiento < 1 || asiento > 5)
-        }else {
+        } else {
             do {
                 alert("El asiento debe ser mayor a 5")
                 asiento = parseInt(prompt("Introduce el nº de asiento (First: 1-5, Turista: Resto)"))

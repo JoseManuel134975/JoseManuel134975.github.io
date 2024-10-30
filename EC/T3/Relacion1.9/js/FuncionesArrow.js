@@ -1,26 +1,35 @@
-// function sum(num1, num2) {
-//     return num1 + num2
-// }
-// sum(40, 2)
-// sum(42, 0)
+// EJERCICIO 1
+const sum = (num1, num2) => {
+    return num1 + num2
+}
 
-// 1.1
-const sum = (num1, num2) => num1 + num2
+let stringLength = (str) => {
+    console.log(`the length of "${str}" is:`, str.length)
+}
 
-// function stringLength(str) {
-//     console.log(`the length of "${str}" is:`, str.length)
-// }
-// let longestCityNameInTheWorld = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu"
-// stringLength(longestCityNameInTheWorld)
+stringLength = (str) => {
+    let length = str.length 
+    console.log(`the length of "${str}" is:`, length) 
+    return str.length
+}
 
-// 1.2
-const stringLength = str => str.length
+const showAlert = (name) => {
+    alert(alerts[(Math.floor(Math.random()*alerts.length))] + `, ${name}!`)
+}
 
-let alerts = ["Hey, you are awesome", "You are so wonderful", "What a marvelyou are", "You're so lovely", "You're so sweet that I'd think you're a sweetpotato -- and I LOOOOVE POTATOES"]
-// function showAlert(name) {
-//     alert(alerts[(Math.floor(Math.random() * alerts.length))] + `, ${name}!`)
-// }
-// showAlert("you ball of fluff")
+// EJERCICIO 2
+const saludar = (name, age) => {
+    return `Hello, I am ${name}, and I am ${age} years old`
+}
 
-// 1.4
-const showAlert = name => alert(alerts[(Math.floor(Math.random() * alerts.length))] + `, ${name}!`)
+// EJERCICIO 3
+const sumaArray = (arrayIntegers) => {
+    const valoresSumados = arrayIntegers.reduce((suma, numero) => suma + numero)
+
+    return valoresSumados
+}
+
+// EJERCICIO 4
+const fire = () => `bulls-`
+
+// EJERCICIO 5
