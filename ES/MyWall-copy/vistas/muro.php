@@ -11,22 +11,23 @@
 
         <aside>
             <h2>Usuarios</h2>
-            <?php $usersDir = "./usuarios"; ?>
+            <?php $usersDir = "./usuarios"; $cont = 0; ?>
             <ul>
                 <?php foreach (scandir($usersDir) as $subdir): ?>
                     <?php if ($subdir != "usuarios.ini" && $subdir != "." && $subdir != ".."): ?>
                         <li>
-                            <a href="?usuario=<?php echo $subdir; ?>&clave=<?php echo existe($subdir); ?>&accionusuarios=Acceder">
-                                <?php echo $subdir; ?>
+                            <a href="?usuario=<?php echo $subdir; ?>&clave=<?php echo existe($subdir); ?>&dir=<?php echo $subdir; ?>">
+                                <?php echo $subdir;  ?>
                             </a>
                         </li>
+                        <?php $cont++; ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
             <form action="">
-                <input type="submit" name="accionmuros" value="Abrir">
+                <input type="submit" name="accionmuros" value="Ver publicaciones">
             </form>
-
+            <?php echo $_SESSION["usuario"]; echo $_SESSION["dir"]?>
         </aside>
     </body>
 </html>

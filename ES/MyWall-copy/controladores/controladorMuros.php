@@ -24,8 +24,8 @@ if (isset($_REQUEST["accionmuros"])) {
             // Establecemos la vista adecuada
             $vista = "muro.php";
             break;
-        case "abrir":   // Construimos la ruta y el nombre de fichero 
-            $path = "./usuarios" . DIRECTORY_SEPARATOR . $_SESSION["usuario"];
+        case "verpublicaciones":   // Construimos la ruta y el nombre de fichero 
+            $path = "./usuarios" . DIRECTORY_SEPARATOR . $_SESSION["dir"];
             // Intentamos leer el archivo
             $contenido = abrir($path);
             // Comprobamos si hemos podido leer o no
@@ -34,7 +34,17 @@ if (isset($_REQUEST["accionmuros"])) {
                 $mensaje = "No se ha podido abrir el archivo $path";
             }
             // De cualquier forma volvemos a mostrar el bloc de notas
-            $vista = "otroMuro.php";
+            header("Location: vistas/otroMuro.php?dir=" . $_SESSION["dir"]);
+            break;
+        case "volver":
+            $vista = "muro.php";
+            break;
+        case "responder":
+            $vista = "responder.php";
+            break;
+        case "enviar":
+
+            $vista = "";
             break;
         case "explorar": // Establecemos la ruta del usuario para leer el directorio 
             $path = $_SESSION["usuario"];
@@ -42,9 +52,6 @@ if (isset($_REQUEST["accionmuros"])) {
             $ficheros = scandir($path);
             // Y mostramos la vista donde aparecerá los ficheros y las carpetas del usuario
             $vista = "explorar.php";
-            break;
-        case "descargar": /* Recuperamos el nombre del fichero que queremos descargar  */
-            descargar($_REQUEST["nombre_fichero"]);
             break;
     }
 }
