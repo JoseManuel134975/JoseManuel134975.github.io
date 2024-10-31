@@ -16,15 +16,18 @@ function guardar($nombre_fichero, $contenido)
 function abrir($nombre_dir){
     $array = [];
 
-    echo "<h2>Tus publicaciones</h2>";
     echo "<form action=''>";
     if (file_exists($nombre_dir)) {
         foreach (scandir($nombre_dir) as $archivo) {
             if ($archivo != "." && $archivo != ".." && $archivo != "usuarios.ini" && !is_dir($archivo)) {
                 $contenido = file_get_contents($nombre_dir . DIRECTORY_SEPARATOR . $archivo);
                 array_push($array, $contenido);
-                echo "<textarea rows='10' cols='120' name=" . $contenido . ">" . $contenido . "</textarea>";
-                echo "<input type='submit' name='accionmuros' value='Responder'>";
+                if ($_SESSION["usuario"] != $_SESSION["dir"]) {
+                    echo "<textarea disabled rows='10' cols='120' name=" . $contenido . ">" . $contenido . "</textarea>";
+                } else {
+                    echo "<textarea rows='10' cols='120' name=" . $contenido . ">" . $contenido . "</textarea>";
+                }
+                    echo "<input type='submit' name='accionmuros' value='Responder'>";
             }
         }
         echo "</form>";
@@ -34,8 +37,12 @@ function abrir($nombre_dir){
     }
 }
 
-function mostrarPublicaciones () {
-    
+function responder ($ruta) {
+    echo "<textarea name='contenido' rows='10' cols='120' id='publicar'></textarea>";
+
+    foreach (scandir($ruta) as $subdir) {
+
+    }
 }
 
 /* Función 'existe' que recibe el nombre de un usuario y devuelve:

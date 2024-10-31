@@ -34,17 +34,16 @@ if (isset($_REQUEST["accionmuros"])) {
                 $mensaje = "No se ha podido abrir el archivo $path";
             }
             // De cualquier forma volvemos a mostrar el bloc de notas
-            header("Location: vistas/otroMuro.php?dir=" . $_SESSION["dir"]);
+            $vista = "otroMuro.php";
             break;
         case "volver":
             $vista = "muro.php";
             break;
         case "responder":
-            $vista = "responder.php";
-            break;
-        case "enviar":
+            $path = "./usuarios" . DIRECTORY_SEPARATOR . $_SESSION["dir"];
+            $respuesta = responder($path);
 
-            $vista = "";
+            $vista = "otroMuro.php";
             break;
         case "explorar": // Establecemos la ruta del usuario para leer el directorio 
             $path = $_SESSION["usuario"];
