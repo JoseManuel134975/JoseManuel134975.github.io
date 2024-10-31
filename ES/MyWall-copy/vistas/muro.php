@@ -10,7 +10,7 @@
         </form>
 
         <aside>
-            <h2>Usuarios</h2>
+            <h2>Muros</h2>
             <?php $usersDir = "./usuarios"; ?>
             <?php foreach (scandir($usersDir) as $subdir): ?>
                 <?php if ($subdir = $_SESSION["usuario"]): ?>
@@ -22,7 +22,7 @@
                 <?php foreach (scandir($usersDir) as $subdir): ?>
                     <?php if ($subdir != "usuarios.ini" && $subdir != "." && $subdir != ".."): ?>
                         <li>
-                            <a href="?usuario=<?php echo $subdir; ?>&clave=<?php echo existe($subdir); ?>&dir=<?php echo $subdir; ?>">
+                            <a href="?dir=<?php echo $subdir; ?>">
                                 <?php echo $subdir;  ?>
                             </a>
                         </li>

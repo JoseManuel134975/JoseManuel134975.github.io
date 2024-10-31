@@ -26,8 +26,10 @@ if (isset($_REQUEST["accionmuros"])) {
             break;
         case "verpublicaciones":   // Construimos la ruta y el nombre de fichero 
             $path = "./usuarios" . DIRECTORY_SEPARATOR . $_SESSION["dir"];
+            $_SESSION["ruta"] = $path;
+            $array = [];
             // Intentamos leer el archivo
-            $contenido = abrir($path);
+            $contenido = abrir($path, $array);
             // Comprobamos si hemos podido leer o no
             if (!$contenido) {
                 // Dejamos un mensaje de aviso

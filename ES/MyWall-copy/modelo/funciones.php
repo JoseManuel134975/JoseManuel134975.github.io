@@ -13,25 +13,16 @@ function guardar($nombre_fichero, $contenido)
     return $ok;
 }
 
-function abrir($nombre_dir){
-    $array = [];
+function abrir($nombre_dir, $guardaContenido){
 
-    echo "<form action=''>";
     if (file_exists($nombre_dir)) {
         foreach (scandir($nombre_dir) as $archivo) {
             if ($archivo != "." && $archivo != ".." && $archivo != "usuarios.ini" && !is_dir($archivo)) {
                 $contenido = file_get_contents($nombre_dir . DIRECTORY_SEPARATOR . $archivo);
-                array_push($array, $contenido);
-                if ($_SESSION["usuario"] != $_SESSION["dir"]) {
-                    echo "<textarea disabled rows='10' cols='120' name=" . $contenido . ">" . $contenido . "</textarea>";
-                } else {
-                    echo "<textarea rows='10' cols='120' name=" . $contenido . ">" . $contenido . "</textarea>";
-                }
-                    echo "<input type='submit' name='accionmuros' value='Responder'>";
+                array_push($guardaContenido, $contenido);
             }
         }
-        echo "</form>";
-        return $array;
+        return $guardaContenido;
     }else{
         return false;
     }
