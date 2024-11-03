@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../js/funciones.js"></script>
+    <script>
+        const array1 = [1, 3, 2, 5]
+
+        document.write(`Array: ${array1}`)
+        document.write(` - Número más grande: ${largestNumber(array1)}`)
+
+        const array2 = ["Hola", "Adios", "Ola", "Yo"]
+
+        document.write(`<br> Array: ${array2}`)
+        document.write(` - Cadena más larga: ${longestString(array2)}`)
+
+        const array3 = [2, 4, 1, 3, 6, 8, 7]
+
+        document.write(`<br> Array: ${array3}`)
+        document.write(` - Números pares: ${evenNumbers(array3)}`)
+
+        const array4 = [2, 4, 1, 3, 6, 8, 7]
+
+        document.write(`<br> Array: ${array4}`)
+        document.write(` - Números pares: ${oddNumbers(array4)}`)
+
+        const array5 = ["Hello", "Is", "Bye"]
+
+        document.write(`<br> Array: ${array5}`)
+        document.write(` - Palabras que contienen 'is': ${containIs(array5)}`)
+
+        const array6 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+
+        document.write(`<br> Array: ${array6}`)
+        document.write(` - ¿Los números son divibles entre 3?: ${divisibleByThree(array6)}`)
+    </script>
+</body>
+
+</html>
