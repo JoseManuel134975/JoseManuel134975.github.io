@@ -22,6 +22,7 @@ require("controladores" . DIRECTORY_SEPARATOR . "controladorMuros.php");
 <html>
     <head>
         <title>MyWall</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>

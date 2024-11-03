@@ -42,10 +42,10 @@ if (isset($_REQUEST["accionmuros"])) {
             $vista = "muro.php";
             break;
         case "responder":
-            $path = "./usuarios" . DIRECTORY_SEPARATOR . $_SESSION["dir"];
-            $respuesta = responder($path);
+            $vista = "responder.php";
+            break;
+        case "publicar":
 
-            $vista = "otroMuro.php";
             break;
         case "explorar": // Establecemos la ruta del usuario para leer el directorio 
             $path = $_SESSION["usuario"];

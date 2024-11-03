@@ -28,13 +28,7 @@ function abrir($nombre_dir, $guardaContenido){
     }
 }
 
-function responder ($ruta) {
-    echo "<textarea name='contenido' rows='10' cols='120' id='publicar'></textarea>";
 
-    foreach (scandir($ruta) as $subdir) {
-
-    }
-}
 
 /* Función 'existe' que recibe el nombre de un usuario y devuelve:
 
