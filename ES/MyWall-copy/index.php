@@ -26,11 +26,15 @@ require("controladores" . DIRECTORY_SEPARATOR . "controladorMuros.php");
     </head>
 
     <body>
-        <?php include $ruta . "menu.php" /* include menú */ ?>
+        <?php if ($vista != "identificacion.php"): ?>
+            <?php include $ruta . "menu.php" /* include menú */ ?>
+            <?php include $ruta . "mensajes.php" ?>
+            <?php require $ruta . $vista ?>
+            <?php include $ruta . "footer.php" /* include pie de página */ ?>
+        <?php else: ?>
+            <?php require $ruta . $vista ?>
+        <?php endif; ?>
         <!-- include porque un mensaje no es importante o grave -->
-        <?php include $ruta . "mensajes.php" ?>
         <!-- Incluimos el contenido -->
-        <?php require $ruta . $vista ?>
-        <?php include $ruta . "footer.php" /* include pie de página */ ?>
     </body>
 </html>

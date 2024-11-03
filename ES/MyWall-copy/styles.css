@@ -1,7 +1,281 @@
+/* GENERAL */
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.otroMuro{
-    float: left;
+textarea{
+    background-color: lightcyan;
+
 }
+
+a{
+    text-decoration: none;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+body{
+    width: 100%;
+    background-color: rgb(226, 249, 249);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+section{
+    float: left;
+    height: 100%;
+    overflow: auto;
+}
+
+/* OTROMURO.PHP */
+.otroMuro{
+    width: 40%;
+    margin-right: 5%;
+    margin-left: 5%;
+    background-color: white;
+    box-shadow: 0px 0px 10px;
+    padding: 20px;
+}
+
+.respuestas{
+    width: 45%;
+    background-color: white;
+    box-shadow: 0px 0px 10px;
+    padding: 20px;
+}
+
+#respuesta{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: royalblue;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+#respuesta:hover{
+    cursor: pointer;
+    background-color: lightseagreen;
+}
+
+#respuesta:focus{
+    background-color: black;
+}
+
+#volver{
+    clear: both;
+    text-align: left;
+}
+
+#volver input{
+    padding: 10px;
+    background-color: lightseagreen;
+    color: white;
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 30px;
+    border: none;
+}
+
+#volver input:hover{
+    background-color: brown;
+    cursor: pointer;
+}
+
+/* IDENTIFIACION.PHP */
+#login{
+    width: 25%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px;
+    margin-top: 7.5%;
+    overflow: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#login label{
+    color: royalblue;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#login input{
+    margin-bottom: 40px;
+    width: 300px;
+    height: 40px;
+    background-color: lightcyan;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+#login input[type="submit"]{
+    padding: 0;
+    cursor: pointer;
+    background-color: royalblue;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+#login input[type="submit"]:hover{
+    background-color: lightseagreen;
+}
+
+#login input[type="submit"]:focus{
+    background-color: black;
+}
+
+/* MURO.PHP */
+#cerrarSesion{
+    padding: 10px;
+    color: white;
+    background-color: lightseagreen;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#cerrarSesion:hover{
+    background-color: brown;
+}
+
+.tuMuro{
+    margin: 20px;
+    width: 70%;
+    float: right;
+    background-color: white;
+    box-shadow: 0px 0px 10px;
+    padding: 20px;
+}
+
+#crearPublic{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: royalblue;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+}
+
+#crearPublic:hover{
+    cursor: pointer;
+    background-color: lightseagreen;
+}
+
+#crearPublic:focus{
+    background-color: black;
+}
+
+.tuMuro > textarea{
+    width: 85%;
+    background-color: lightcyan;
+    font-size: 20px;
+}
+
+.asideMuros{
+    width: 25%;
+    margin-right: 5%;
+    background-color: lightblue;
+    box-shadow: 0px 5px 10px;
+    padding: 15px;
+    height: 100%;
+}
+
+.asideMuros ul{
+    padding: 10px;
+}
+
+.asideMuros ul li{
+    padding: 5px;
+}
+
+.asideMuros a{
+    color: black;
+    font-weight: bold;
+}
+
+#verPublic{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#verPublic:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+p{
+    text-align: justify;
+}
+
+/* MENU.PHP */
+nav{
+    background-color: white;
+    box-shadow: 0px 0px 10px;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+nav ul{
+    display: inline-block;
+}
+
+nav form{
+    width: 10%;
+    text-align: center;
+    float: right;
+}
+
+/* FOOTER.PHP */
+footer{
+    background-color: white;
+    box-shadow: 0px 0px 10px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+
+footer p{
+    text-align: center;
+    color: royalblue;
+}
+
+/* MENSAJES.PHP */
+#mensaje{
+    width: 50%;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    float: right;
+}
+
