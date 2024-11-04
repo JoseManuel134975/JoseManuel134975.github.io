@@ -1,0 +1,77 @@
+/* GENERAL */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Raleway", "Sans-serif";
+    background-color: lightgrey;
+    margin: 0;
+    padding: 0;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* HEADER */
+header{
+    width: 100%;
+    background-color: darkblue;
+}
+
+header nav{
+    padding: 10px;
+    padding-right: 15rem;
+}
+
+header nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: end;
+}
+
+header nav ul li{
+    margin-right: 15px;
+}
+
+/* SECCIÓN */
+section{
+    width: 70%;
+    height: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding-left: 20px;
+    justify-content: space-around;
+}
+
+section article h1{
+    font-size: 30px;
+}
+
+section > article:first-child{
+    width: 45%;
+}
+
+section > article:last-child{
+    width: 50%;
+}
+
+section article input{
+    background-color: royalblue;
+    color: white;
+    border-radius: 100px;
+    padding: 15px;
+    border: none;
+}
+
+section article img{
+    width: 100%;
+}
