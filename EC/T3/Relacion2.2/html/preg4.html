@@ -1,23 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio3</title>
 </head>
+
 <body>
     <script>
-        function Person (name) {
-            function sayName () {
-                return console.log(`my name is ${name}`)
-            }
+        /* const Person = (name) => {
+            const sayName = () => console.log(my name is ${name})
+            return { sayName }
+        } */
 
-            return sayName()
+        function Person(name) {
+            function sayName() {
+                console.log(`my name is ${ name }`)
+            }
+            return { sayName }
+        }
+        /*Para pasar de una function arrow a una normal tenemos que quitar el const y añadir function ,
+            eliminar el ""=" que hay antes de los argumentos y tambien eliminaremos "=>" que hay antes del {.
+            ahora dentro de la funcion principal tenemos otra funcion arrow que aremos lo mismo que la anterior salvo que esta 
+            devolvera el console.log directamente.
+            Y en la funcion principal "Person" devolveremos la funcion interior sayName()
+         */
+
+        /* const Nerd = (name) => {
+            // simply create a person and pull out the sayName function!
+            const { sayName } = Person(name) // . . . .  . . . ( 1 )
+            const doSomethingNerdy = () => console.log('nerd stuff')
+            return { sayName, doSomethingNerdy }
+        } */
+
+        /* Exactamente igual que el anterior las funciones arrow las pasamos a funciones normales */
+        function Nerd(name) {
+            const { sayName } = Person(name);
+            function doSomethingNerdy() {
+                console.log('nerd stuff')
+            }
+            return { sayName, doSomethingNerdy };
         }
 
-        Person("Jose")
 
+        const jeff = Nerd("jeff");
 
+        jeff.sayName(); // my name is jeff
+        jeff.doSomethingNerdy(); // nerd stuff
     </script>
 </body>
+
 </html>

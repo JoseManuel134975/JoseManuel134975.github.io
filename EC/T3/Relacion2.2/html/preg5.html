@@ -9,12 +9,21 @@
 
 <body>
     <script>
+        // console.clear();
+        // var sum;
+        // sum = (a, b) => { a + b };
+        // console.log(sum);
+
+
         console.clear();
         var sum;
         sum = (a, b) => a + b;
         console.log(sum(2, 2));
 
-        /*  */
+        /* La function arrow no funcionaba por dos motivos:
+        1. Si solo se retorna un valor, no es necesario usar las llaves (pueden dar problemas)
+        2. El console.log no llama a la función como es debido, le faltan los parámetros (a & b)
+        */
     </script>
 </body>
 
