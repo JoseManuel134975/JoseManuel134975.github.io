@@ -72,6 +72,10 @@ section article input{
     border: none;
 }
 
+section article input:hover{
+    cursor: pointer;
+}
+
 section article img{
     width: 100%;
 }
