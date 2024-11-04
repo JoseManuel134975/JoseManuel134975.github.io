@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+
+<body>
+    <script>
+        function mysteryFunc(arr, num) {
+            return arr.map(x => (x % num))
+        }
+        const arraynums = [4, 7, 9, 8, 3]
+        console.log(mysteryFunc(arraynums, 2))
+        // Respuesta a la pregunta ¿Estás llamando al método map en el parámetro "arr", correcto?
+        /* Efectivamente el parametro arr hace referencia a un array introducido al llamar 
+        la funcion y termina devolviendo un nuevo array de este gracias al método map  */
+        // Resouesta a la pregunta ¿por qué tengo que crear una nueva variable xcuando uso la función de flecha?
+        /* El método map sigue una sintaxis en la que necesita una función que le indique que hacer
+        en el array donde se ejecuta en este caso una función arrow y la x hace referencia a los elementos
+         del array introducido y num hace referencia al numero por el que quieres dividirlos*/
+        /* Respuesta a las preguntas ¿Por qué no puedo usar(arr => (arr % num)) ?? y
+        ¿Qué hace exactamente la xvariable "? */
+        /* La función que le pasas al .map es un callback .*/
+        /*La variable x toma un valor que cambia según en que posición del array este leyendo */
+    </script>
+</body>
+
+</html>

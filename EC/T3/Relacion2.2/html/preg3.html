@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+</head>
+
+<body>
+
+    <script>
+        const users = [
+            { name: 'John', age: 34 },
+            { name: 'Amy', age: 20 },
+            { name: 'camperCat', age: 10 }
+        ];
+
+        const names = users.map(user => user.name);
+        console.log(names); // [ 'John', 'Amy', 'camperCat' ]
+        // Respuesta a la pregunta ¿por qué la función también usa el singular "user" y cómo se distingue de su forma plural?
+        /* El método map sigue una sintaxis en la que necesita una función que le indique que hacer
+        en el array"users" donde se ejecuta, en este caso una función arrow y "user" hace referencia a los objetos
+         del array introducido y "user.name" hace referencia al nombre de ese usuario*/
+    </script>
+</body>
+
+</html>

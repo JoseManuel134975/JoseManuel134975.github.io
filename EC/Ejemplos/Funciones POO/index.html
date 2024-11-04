@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Usuario (dni, nombre, edad) {
+            this.dni = dni
+            this.nombre = nombre
+            this.edad = edad
+            this.showMe = function () {
+                console.log(`DNI: ${this.dni} -- Nombre: ${this.nombre}`)
+            }
+        }
+
+        let objuser1 = new Usuario('7554444X', 'Juan', '16')
+        let objuser2 = new Usuario('7661111F', 'Pedro', '19')
+
+        const arrayUsers = []
+        arrayUsers.push(objuser1)
+        arrayUsers.push(objuser2)
+
+        console.log(arrayUsers)
+
+        console.log(objuser1)
+        
+        console.log(objuser1.dni)
+        objuser1.showMe()
+
+        class Empleado{
+            constructor (codigo, nombre, telefono) {
+                this.codigo = codigo
+                this.nombre = nombre
+                this.telefono = telefono
+            }
+
+            muestraEmpleado () {
+                console.log(`Empleado: ${this.codigo} - ${this.nombre}`)
+            }
+        }
+
+        let objEmp1 = new Empleado(1, 'Maria', 6555556)
+        let objEmp2 = new Empleado(2, 'Ana', 657888923)
+        console.log(objEmp1.muestraEmpleado())
+
+        const arrayEmples = []
+        arrayEmples.push(objEmp1)
+        arrayEmples.push(objEmp2)
+
+        console.log(arrayEmples)
+    </script>
+</body>
+</html>
