@@ -39,6 +39,28 @@
 
         document.write(`<br> Array: ${array6}`)
         document.write(` - ¿Los números son divibles entre 3?: ${divisibleByThree(array6)}`)
+
+        const array7 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+        const array8 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        document.write(`<br> Arrays: ${array7} - ${array8}`)
+        document.write(` - Arrays concatenadas: ${zipArrays(array7, array8)}`)
+
+        const arrayJunta = zipArrays(array7, array8)
+
+        document.write(`<br> Array: ${arrayJunta}`)
+        document.write(` - Array ordenada de menor a mayor: ${sortJoinedArray(arrayJunta)}`)
+
+        const array9 = ["Hola", "Adios", "Hasta luego"]
+
+        document.write(`<br> Array: ${array9}`)
+        document.write(` - Primera palabra eliminada de la array: ${deleteFirstWord(array9)}`)
+
+        document.write(`<br> Array: ${array9}`)
+        document.write(` - Palabra añadida al principio de la array: ${newWordAtTheStart(array9)}`)
+
+        document.write(`<br> Array: ${array9}`)
+        document.write(` - Palabra reemplazada: ${array9[2]} - Nueva: ${replaceSomeElements(array9)}`)
     </script>
 </body>
 
