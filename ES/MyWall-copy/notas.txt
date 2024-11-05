@@ -1,0 +1,5 @@
+- Los usuarios pueden registrarse
+- Los usuarios pueden iniciar sesión (la cual se queda guardada)
+- Los usuarios pueden publicar en SU muro (se guardan en ficheros.txt con un sello del tiempo)
+- Los usuarios pueden responder (inacabado/no funciona)
+- Los usuarios pueden subir imagenes (inacabado/no funciona)
