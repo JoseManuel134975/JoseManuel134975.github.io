@@ -1,0 +1,226 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ESTILOS GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --padding-container: 80px 0;
+    --color-primary: #f77062;
+    --color-secondary: #1b998b;
+    --color-bg: #fafafa;
+    --align-title: center;
+    --box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+body{
+    font-family: "Lato", "sans-serif";
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--padding-container);
+}
+
+/* ENCABEZADO */
+
+header{
+    height: 100vh;
+    background: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+}
+
+header > section{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header figure{
+    width: 45%;
+    margin: 0;
+}
+
+header img{
+    max-width: 80%;
+}
+
+header > section > article{
+    width: 45%;
+    color: #fff;
+}
+
+header h1{
+    font-size: 4rem;
+}
+
+header h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Sección About */
+
+.title{
+    font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+    text-align: var(--align-title);
+}
+
+.about{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about figure{
+    width: 45%;
+    margin: 0;
+}
+
+.about img{
+    max-width: 80%;
+}
+
+.about article{
+    width: 50%;
+}
+
+.about p{
+    line-height: 1.5;
+}
+
+.about a{
+    display: inline-block;
+    margin-top: 20px;
+    background-color: var(--color-primary);
+    padding: 20px 40px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 1px solid transparent;
+}
+
+.about a:hover{
+    background-color: #fff;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+/* Sección portfolio */
+
+.portfolio{
+    background-color: var(--color-bg);
+}
+
+.portfolio__card{
+    width: 27%;
+    background-color: #fff;
+    height: auto;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.portfolio img{
+    width: 100%;
+    display: block;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.portfolio__texts{
+    padding: 30px 20px 40px;
+}
+
+.portfolio h3{
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--color-secondary);
+    margin: 0;
+}
+
+.portfolio p{
+    font-weight: 300;
+    margin: 30px 0;
+}
+
+.portfolio a{
+    display: block;
+    background-color: var(--color-secondary);
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.portfolio a:hover{
+    background-color: #fff;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+}
+
+.portfolio__cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Sección Central */
+.central{
+    background-color: var(--color-primary);
+}
+
+.central article h2{
+    color: #fff;
+    margin: 0;
+}
+
+/* Sección Galería */  
+
+.gallery article{
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery__picture{
+    width: 30%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    display: block;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Sección languages */
+
+.languages{
+    background-color: var(--color-bg);
+}
+
+.languages article{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.languages img{
+    width: 20%;
+    height: 100px;
+}
