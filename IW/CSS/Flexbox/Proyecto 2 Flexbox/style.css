@@ -224,3 +224,63 @@ header h2{
     width: 20%;
     height: 100px;
 }
+
+/* Footer */
+
+footer{
+    background-color: var(--color-primary);
+    color: #fff;
+    text-align: center;
+}
+
+footer .title{
+    color: #fff;
+}
+
+footer section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer article{
+    width: 50%;
+}
+
+.footer__icon{
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0 30px;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 0.5em;
+}
+
+.footer__icon:hover{
+    background-color: #fff;
+    color: var(--color-primary);
+    cursor: cell;
+}
+
+footer nav > a{
+    display: inline-block;
+    color: #fff;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+footer nav > a:hover{
+    text-decoration: none;
+}
+
+footer figure{
+    width: 35%;
+    margin: 0;
+}
+
+footer img{
+    width: 90%;
+}
