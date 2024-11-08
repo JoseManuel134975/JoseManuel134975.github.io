@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="alumno1"></p>
+    <p id="alumno2"></p>
+
+    <script src="../js/clases.js"></script>
+    <script>
+        // EJERCICIO 5:
+        class Alumno {
+            constructor(id, nombre, notaMedia) {
+                this.id = id
+                this.nombre = nombre
+                this.notaMedia = notaMedia
+            }
+        }
+
+        class Colegio {
+            constructor(nombre, numAulas, numAlumnos) {
+                this.nombre = nombre
+                this.numAulas = numAulas
+                this.numAlumnos = numAlumnos
+                this.datosAlumnos = []
+
+                for (let i = 0; i < numAlumnos; i++) {
+                    const alumno = new Alumno(i, `alumno${i}`, 5.00)
+                    this.datosAlumnos.push(alumno)
+                }
+            }
+
+            getNotaMedia(id) {
+                const alum = this.datosAlumnos.find((alumno) => alumno.id === id)
+
+                return `Nota media del alumno ${alum.nombre}: ${alum.notaMedia}`
+            }
+
+            setNotaMedia(id, nuevaNM) {
+                const alum = this.datosAlumnos.find((alumno) => alumno.id === id)
+                alum.notaMedia = nuevaNM
+
+                return `Nueva nota media del alumno ${alum.nombre}: ${alum.notaMedia}`
+            }
+
+            getDatosAlumnos() {
+                return this.datosAlumnos
+            }
+        }
+
+        const colegio = new Colegio("IES Iliberis", 2, 5)
+        document.getElementById('alumno1').innerHTML = `${colegio.getNotaMedia(3)}`
+        document.getElementById('alumno2').innerHTML = `${colegio.setNotaMedia(3, 7)}`
+    </script>
+</body>
+
+</html>

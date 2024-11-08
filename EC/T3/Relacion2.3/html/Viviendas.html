@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="casaA"></p>
+    <p id="casaC"></p>
+
+    <script src="../js/clases.js"></script>
+    <script>
+        // EJERCICIO 4:
+
+        class vivienda {
+            constructor(calle, numero, c_postal) {
+                this.calle = calle
+                this.numero = numero
+                this.c_postal = c_postal
+
+                console.log(`Nueva casa en calle: ${this.getCalle()}, nº: ${this.getNumero()}, CP: ${this.getC_postal()}`)
+            }
+
+            setCalle(calle) {
+                this.calle = calle
+            }
+
+            setNumero(numero) {
+                this.numero = numero
+            }
+            setC_postal(c_postal) {
+                this.c_postal = c_postal
+            }
+
+            getCalle() {
+                return `${this.calle}`
+            }
+
+            getNumero() {
+                return `${this.numero}`
+            }
+
+            getC_postal() {
+                return `${this.c_postal}`
+            }
+        }
+
+        const casaA = new vivienda("Garcia Prieto", 58, "15706")
+        const casaB = new vivienda("Camino Caneiro", 29, "32004")
+        const casaC = new vivienda("San Clemente", "s/n", "15705")
+
+        document.getElementById('casaA').innerHTML = `El codigo postal de la casaA es: ${casaA.getC_postal()}`
+        document.getElementById('casaC').innerHTML = `La calle de la casaC es: ${casaC.getCalle()}`
+    </script>
+</body>
+
+</html>
