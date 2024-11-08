@@ -5,84 +5,121 @@
     box-sizing: border-box;
 }
 
-ul, li{
-    list-style: none;
+a { text-decoration: none }
+
+ul, li { list-style: none }
+
+li { font-weight: bold }
+
+body { font-family: Arial, Helvetica, sans-serif }
+
+/* HEADER */
+header{
+    position: sticky;
+    top: 0;
+    background-color: lightgray;
+    z-index: 10;
+    height: 80px;
 }
 
-a{
-    text-decoration: none;
-}
-
-body{
-    font-family: Arial, Helvetica, sans-serif;
+/* LOGO */
+nav div{
+    float: right;
+    padding: 31px;
+    background-color: mediumaquamarine;
+    color: white;
+    font-weight: bold;
 }
 
 /* NAV */
 nav{
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: lightgray;   
-    padding: 15px; 
+    width: 60%;
+    margin: 0 auto;
 }
 
-nav ul li{
+/* MENÚ */
+nav .menu { padding: 10px; 
+    float: left;
+}
+
+nav .menu li{
     display: inline-block;
-    width: 100px;
-    text-align: center;
-    margin: 0;
-}
-
-nav ul li:hover{
-    background-color: mediumorchid;
-}
-
-nav ul ul li{
-    background-color: greenyellow;
-}
-
-nav > ul:first-child > li:nth-child(2){
-    position: relative;
-}
-
-nav > ul:first-child > li:nth-child(2) > ul:first-child{
-    position: absolute;
-    right: 0;
-    margin-top: 10px;
-}
-
-nav > ul:first-child > li:nth-child(2):hover > ul:first-child{
-    display: block;
-}
-
-nav > ul:first-child > li:nth-child(2):hover > ul:first-child > li{
-    position: relative;
-}
-
-nav > ul:first-child > li:nth-child(2):hover > ul:first-child > li:hover > ul{
-    display: block;
-    left: 90%;
-}
-
-nav ul li{
-    color: black;
-    font-weight: bold;
     padding: 10px;
 }
 
-nav > ul:first-child > li:first-child{
+nav > .menu > li:first-child{
     background-color: orangered;
     color: white;
 }
 
-nav > ul:first-child > li:hover{
-    background-color: mediumorchid;
+nav > .menu > li:first-child:hover{
+    background-color: mediumpurple;
     color: black;
-    cursor: pointer;
 }
 
-nav ul ul{
+nav > .menu > li:hover{ 
+    background-color: mediumpurple;
+    cursor: pointer; 
+}
+
+/* SUBMENÚ1 */
+/* GENERAL */
+nav .menu ul{
     display: none;
+    background-color: lime;
+}
+
+nav .menu ul > li { width: 200px }
+
+nav .menu ul li:hover { background-color: mediumpurple }
+
+/* SUBMENÚS */
+nav > .menu > li:nth-child(2) { position: relative }
+
+nav > .menu > li:last-child { position: relative }
+
+nav > .menu > li:nth-child(2):hover > .submenu1 {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+}
+
+nav > .menu > li:last-child:hover > .submenu2 {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+}
+
+/* SUBSUBMENÚ1 HORIZONTAL */
+nav > .menu > li:nth-child(2) > .submenu1 > li:first-child { position: relative }
+
+nav > .menu > li:nth-child(2) > .submenu1 > li:hover > .submenu1-horizontal{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 100%;
+}
+
+/* SUBSUBSUBMENÚ1 HORIZONTAL */
+nav > .menu > li:nth-child(2) > .submenu1 > li:first-child > .subSubMenu1-horizontal { position: relative }
+
+nav > .menu > li:nth-child(2) > .submenu1 > li:hover > .submenu1-horizontal > li:first-child:hover > .subSubMenu1-horizontal{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 100%;
+}
+
+/* SUBMENÚ2 */
+nav > .menu > li:last-child > .submenu2 > li:last-child { position: relative }
+
+nav > .menu > li:last-child > .submenu2 > li:last-child:hover > .submenu2-horizontal{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 100%;
 }
 
 /* SECTION */
@@ -96,18 +133,14 @@ section{
     margin-top: 100px;
 }
 
-section h1{
-    font-weight: bold;
-}
+section h1 { font-weight: bold }
 
 section h1, section p{
     color: white;
     font-size: 40px;
 }
 
-section p{
-    margin-bottom: 30px;
-}
+section p { margin-bottom: 30px }
 
 section a{
     color: white;
