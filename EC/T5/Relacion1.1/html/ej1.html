@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Crear 3 párrafos con 5 enlaces
+        var bloque = document.createElement('div')
+        var nodoTextoAux = document.createTextNode('Pincha aquí')
+
+        for (let i = 0; i < 3; i++) {
+            var parrafo = document.createElement('p')
+            for (let j = 0; j < 5; j++) {
+                var enlace = document.createElement('a')
+                enlace.appendChild(nodoTextoAux)
+                parrafo.appendChild(enlace)
+            }
+        }
+
+        var links = document.getElementsByName('a')
+        
+    </script>
+</body>
+</html>

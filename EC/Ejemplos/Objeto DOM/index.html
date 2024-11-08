@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="hobby-list">
+        <li class="hobby">Playing the banjo</li>
+        <li class="hobby">Paddleboarding</li>
+    </ul>
+
+    <script></script>
+    <script>
+        (() => {
+            // By ID
+            var hobbiesList = document.getElementById('hobby-list')
+
+            // By Tag Name
+            var hobbies = document.getElementsByTagName('li')
+            // hobbies.forEach(element => {
+            //     console.log(element)
+            // });
+
+            for (let i = 0; i < hobbies.length; i++) {
+                console.log(hobbies[i].textContent)
+            }
+            // By Class Name
+            var alsoHobbies = document.getElementsByClassName('hobby')
+
+            // By CSS Query
+            var firstHobby = document.querySelector('ul li.hobby')
+            var againAlsoHobbies = document.querySelectorAll('ul li.hobby')
+
+            // Mostrar
+            console.log(hobbiesList)
+            console.log(hobbies)
+            console.log(alsoHobbies)
+            console.log(firstHobby)
+            console.log(againAlsoHobbies)
+
+            var bloque = document.createElement('div')
+
+            var contenido = document.createTextNode('Hola mundo')
+
+            bloque.appendChild(contenido)
+
+            document.body.appendChild(bloque)
+
+            console.log()
+
+            // Crear 5 párrafos y meterlo en un div
+            var div = document.createElement('div')
+
+            for (let i = 0; i < 5; i++) {
+                var parrafo = document.createElement('p')
+                var nodoTextoAux = document.createTextNode(`Hola número ${i}`)
+                div.appendChild(nodoTextoAux)
+            }
+
+
+
+            document.body.appendChild(div)
+
+        }) ()
+    </script>
+</body>
+
+</html>
