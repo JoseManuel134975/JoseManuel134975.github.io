@@ -28,19 +28,20 @@ class Puzzle {
     }
 
     dibujar () {
-        const tablero = [[
-            
-        ]]
-
-        for (let x = 0; x < this.dimensionX; x++) {
-            console.log(`A`)
-            for (let y = 0; y < this.dimensionY; y++) {
-                console.log(`B`)
-            }
-        }
+        
     }
 }
 
-const puzzle1 = new Puzzle(3, 3, 60, 10)
-console.log(puzzle1.toString())
-console.log(puzzle1.dibujar())
+// EJERCICIO 2
+class TresEnRaya {
+    constructor () {
+
+    }
+}
+
+// EJERCICIO 3
+class Buscaminas {
+    constructor () {
+
+    }
+}
