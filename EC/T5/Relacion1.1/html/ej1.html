@@ -7,21 +7,44 @@
 </head>
 <body>
     <script>
-        // Crear 3 párrafos con 5 enlaces
-        var bloque = document.createElement('div')
-        var nodoTextoAux = document.createTextNode('Pincha aquí')
+        var parrafo = ""
+        var nodoTextoAux = ""
+        var enlace = ""
 
+        // Crea 3 párrafos con 3 enlaces dentro de cada uno
         for (let i = 0; i < 3; i++) {
-            var parrafo = document.createElement('p')
-            for (let j = 0; j < 5; j++) {
-                var enlace = document.createElement('a')
+            parrafo = document.createElement('p')
+            for (let j = 0; j < 3; j++) {
+                enlace = document.createElement('a')
+                nodoTextoAux = document.createTextNode('Pincha aquí')
                 enlace.appendChild(nodoTextoAux)
                 parrafo.appendChild(enlace)
             }
+            document.body.appendChild(parrafo)
         }
-
-        var links = document.getElementsByName('a')
         
+        // Añade un enlace a Google en el primer enlace
+        document.getElementsByTagName('a')[0].setAttribute("href", "https://www.google.com/?safe=active&ssui=on")
+
+        // Comprueba la longitud de la nodeList de enlaces
+        var nodeList = document.getElementsByTagName('a')
+        document.write(`Hay un total de ${nodeList.length} enlaces en esta página`)
+
+        // Comprueba hacia donde apunta el penúltimo enlace de la nodeList
+        document.write(` El penúltimo enlace va hacia ${nodeList[nodeList.length-1].getAttribute('href')} (ningún sitio...)`)
+
+        // Comprueba que enlaces tienen valor (en este caso lo hago así porque no hace falta complicarse, pero sería mejor de otra forma)
+        var numero = 0
+        for (const nodo of nodeList) {
+            if (nodo.getAttribute('href') !== null) {
+                numero++
+            }
+        }
+        document.write(` El número de enlaces hacia Google es de: ${numero}`)
+        
+        // Comprueba cuantos enlaces hay en el tercer párrafo (los nodos hijos mediante una query)
+        var nodeList2 = document.querySelectorAll('p:last-child > a')
+        document.write(` El número de enlaces en el tercer párrafo es de: ${nodeList2.length}`)
     </script>
 </body>
 </html>
