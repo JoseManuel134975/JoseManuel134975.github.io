@@ -1,31 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto con Flexbox</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
+    <!-- HEADER -->
     <header>
         <nav class="header__container">
-            <a href="#"><img src="assets/img/logo-removebg-preview.png" alt="Logo Spotify"></a>
+            <a href="#"><img class="logo" src="assets/img/logo-removebg-preview.png" alt="Logo Spotify"></a>
             <div class="header__icons">
-                <div class="header__icon--modifier">
+                <div class="header__icon">
                     <a class="fa-solid fa-house"></a>
                 </div>
-                <div class="header__icon--modifier">
+                <div class="header__icon">
                     <a class="fa-solid fa-magnifying-glass"></a>
                     <a class="fa-solid fa-list"></a>
                     <input type="text" name="" id="" placeholder="¿Qué quieres reproducir?">
                 </div>
             </div>
             <div class="header__logins">
-                <a href="#">Registrarte</a>
-                <a href="#">Iniciar sesión</a>
+                <a class="header__logins-link header__logins-link--secondary" href="#">Registrarte</a>
+                <a class="header__logins-link header__logins-link--primary" href="#">Iniciar sesión</a>
             </div>
-            </nav>
+        </nav>
     </header>
+    <!-- HEADER -->
+
+    <!-- MAIN -->
+    <main>
+        <!-- ASIDE -->
+        <aside>
+            <section class="aside__container-library aside__container">
+                <article class="aside__library-item aside__library-item--primary">
+                    <a class="fa-solid fa-book"></a>
+                    <h3>Tu biblioteca</h3>
+                </article>
+                <article class="aside__library-item aside__library-item--secondary">
+                    <a class="fa-solid fa-plus"></a>
+                </article>
+            </section>
+            <section class="aside__container-firstPlaylist aside__container">
+                <article class="aside__firstPlaylist-item aside__firstPlaylist-item--primary">
+                    <h3 class="aside__firstPlaylist-title">Crea tu primera lista</h3>
+                    <p class="aside__firstPlaylist-paragraph">Es muy fácil, te echaremos una mano</p>
+                    <a href="#">Crear lista</a>
+                </article>
+                <article class="aside__firstPlaylist-item aside__firstPlaylist-item--secondary">
+                    <h3 class="aside__firstPlaylist-title">Encuentra pódcasts que quieras seguir</h3>
+                    <p class="aside__firstPlaylist-paragraph">Te avisaremos cuando salgan nuevos episodios</p>
+                    <a href="#">Explorar pódcasts</a>
+                </article>
+            </section>
+            <section class="aside__container-navLinks aside__container">
+                <nav class="aside__navLinks-item aside__navLinks-item--primary">
+                    <a class="aside__navLink" href="#">Legal</a>
+                    <a class="aside__navLink" href="#">Centro de seguridad y privacidad</a>
+                    <a class="aside__navLink" href="#">Política de Privacidad</a>
+                    <a class="aside__navLink" href="#">Configuración de cookies</a>
+                    <a class="aside__navLink" href="#">Información sobre los anuncios</a>
+                    <a class="aside__navLink" href="#">Accesibilidad</a>
+                    <a class="aside__navLink aside__navLink--modifier" href="#"><span>Cookies</span></a>
+                </nav>
+                <article class="aside__navLinks-item aside__navLinks-item--secondary">
+                    <a class="fa-solid fa-globe"></a>
+                    <a href="#">Español de España</a>
+                </article>
+            </section>
+        </aside>
+        <!-- ASIDE -->
+    </main>
+    <!-- MAIN -->
 </body>
+
 </html>
