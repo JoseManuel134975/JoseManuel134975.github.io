@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrando datos json</title>
+</head>
+
+<body>
+
+    <!-- <script type="module" src="main.js">  </script> -->
+    <script type="module">
+        import { arrArticulos } from "./modulos/articulos.mjs";
+
+        function formateaArtículos() {
+            var table = document.createElement('table')
+            var tbody = document.createElement('tbody')
+            var tr = document.createElement('tr')
+            var trDatos
+            var th, td
+            var nodoTextoAux
+            var img
+            const nameProperties = Object.keys(arrArticulos[0]) // Recoje el nombre de las propiedades para mostrarlas como <th> en la tabla (más adelante no me hace falta***)
+
+            // Añado como hijos lo principal
+            table.appendChild(tbody)
+            tbody.appendChild(tr)
+
+            // Añade los nombres de las propiedades a la primera fila
+            nameProperties.forEach(name => {
+                th = document.createElement('th')
+                nodoTextoAux = document.createTextNode(`${name}`)
+                th.appendChild(nodoTextoAux)
+                tr.appendChild(th)
+            })
+
+            // Añade todo lo demás con filas y celdas
+            for (const articulo of arrArticulos) {
+                // Creación de nodos
+                trDatos = document.createElement('tr')
+                tbody.appendChild(trDatos)
+
+                // Hace comprobaciones para que no haya problemas
+                for (const propiedad in articulo) {
+                    td = document.createElement('td')
+
+                    // Si el nombre de la propiedad es image o rating hago lo necesario para mostrar correctamente
+                    if (propiedad === 'image') {
+                        img = document.createElement('img')
+                        img.src = articulo[propiedad]
+                        td.appendChild(img)
+                    } else if (propiedad === 'rating') {
+                        for (const subpropiedad in articulo[propiedad]) {
+                            nodoTextoAux = document.createTextNode(`${subpropiedad} ${articulo[propiedad][subpropiedad]} `)
+                            td.appendChild(nodoTextoAux)
+                        }
+                        // Sino solamente muestro el valor de cada propiedad
+                    } else {
+                        nodoTextoAux = document.createTextNode(`${articulo[propiedad]}`)
+                        td.appendChild(nodoTextoAux)
+                    }
+                    trDatos.appendChild(td)
+                }
+            }
+
+            // Termina añadiendo todo al body y dando estilos
+            document.body.appendChild(table)
+
+            var nodeListImg = document.querySelectorAll('table img')
+            var nodeTable = document.querySelector('table')
+            var nodeListTd = document.querySelectorAll('table td')
+            var nodeListTh = document.querySelectorAll('table th')
+
+            nodeTable.style.border = '3px solid black'
+            nodeTable.style.fontFamily = 'Arial'
+            nodeTable.style.borderCollapse = 'collapse'
+            nodeTable.style.border = '5px solid black'
+            nodeTable.border = 1
+
+            for (const nodo of nodeListImg) {
+                nodo.style.width = '100px'
+                nodo.style.borderRadius = '10px'
+            }
+
+            for (const nodo of nodeListTd) {
+                nodo.style.padding = '10px'
+                nodo.style.backgroundColor = 'lightblue'
+                nodo.style.color = 'black'
+                nodo.style.fontWeight = 'bold'
+            }
+
+            for (const nodo of nodeListTh) {
+                nodo.style.backgroundColor = 'darkcyan'
+                nodo.style.color = 'white'
+                nodo.style.padding = '10px'
+            }
+
+
+            // console.log('Mostrando articulos..')
+            // arrArticulos.forEach((articulo) => {
+            //     console.log(articulo);
+            // });
+        }
+
+
+        formateaArtículos();
+    </script>
+</body>
+
+</html>
