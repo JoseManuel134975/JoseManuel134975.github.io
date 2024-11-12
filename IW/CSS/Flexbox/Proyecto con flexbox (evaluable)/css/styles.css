@@ -300,5 +300,8 @@ aside .aside__container-navLinks .aside__navLinks-item--secondary:hover{
 }
 
 .mainSection .mainSection__container .mainSection__img:hover{
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
     background: linear-gradient(to top, darkslategrey 1%, var(--color-primary) 66%);
 }
