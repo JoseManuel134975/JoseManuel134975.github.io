@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="file" name="" id="">
+    </form>
+
+    <button onclick="addInput()">Adjuntar otro fichero</button>
+    <p></p>
+    <button>Enviar</button>
+
+    <script>
+        var inputFile = document.querySelector('form')
+        
+        const addInput = (() => {
+            var anotherInput = document.createElement('input') // Creo la variable cada vez que se ejecuta la función***
+            anotherInput.setAttribute('type', "file")
+            inputFile.appendChild(anotherInput)
+        }) 
+    </script>
+</body>
+</html>

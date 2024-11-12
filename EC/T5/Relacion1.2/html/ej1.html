@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p">Confía en el proceso y sigue adelante, incluso cuando los resultados no sean inmediatos. Cada paso cuenta,
+        y... </p>
+    <!-- Muestra el artículo completo -->
+    <a onclick="mostrarArticulo()" href="#">Ver artículo completo</a>
+    <div></div>
+    <!-- Muestra oculta lo ya mostrado -->
+    <a onclick="ocultarArticulo()" href="#">Ocultar artículo</a>
+    <script>
+        var parrafo = document.getElementById('p')
+        var nodoTextoAux = document.createTextNode('el esfuerzo siempre rinde frutos en el momento adecuado.')
+
+        const mostrarArticulo = (() => {
+            parrafo.appendChild(nodoTextoAux)
+        })
+
+        const ocultarArticulo = (() => {
+            parrafo.removeChild(nodoTextoAux)
+        })
+    </script>
+</body>
+
+</html>

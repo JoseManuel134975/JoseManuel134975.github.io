@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="mainImg" src="../assets/img/mimikyu-4679509_1280.jpg" alt="" width="25%" height="720px">
+    <button onclick="">Siguiente</button>
+    <button onclick="">Anterior</button>
+
+    <script>
+        var main = document.getElementById('mainImg')
+
+        var img1 = document.createElement('img')
+        img1.src = "../assets/img/pixel-3316924_1280.png"
+        var img2 = document.createElement('img')
+        img2.src = "../assets/img/pokemon-1591427_1280.jpg"
+        var img3 = document.createElement('img')
+        img3.src = "../assets/img/pokemon-5151118_1280.jpg"
+
+        const imagenes = [
+            {
+                main
+            },
+            {
+                img1
+            },
+            {
+                img2
+            },
+            {
+                img3
+            }
+        ]
+        console.log(imagenes.length)
+
+        const next = (() => {
+            switch () {
+
+            }
+        })
+
+        const previous = (() => {
+
+        })
+
+    </script>
+</body>
+
+</html>

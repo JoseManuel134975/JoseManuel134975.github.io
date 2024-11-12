@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista">
+        <li>Fútbol</li>
+        <li>Baloncesto</li>
+        <li>Tenis</li>
+    </ul>
+    <button onclick="addEntry()">Añadir entrada</button>
+
+    <script>
+        var ulDesordenada = document.getElementById('lista')
+        var usuario, objUsuario, nodoTextoAux
+
+        const addEntry = (() => {
+            usuario = prompt('Introduce la nueva entrada: ')
+            nodoTextoAux = document.createTextNode(usuario) // Añade el texto introducido por el usuario
+            usuario = document.createElement('li') // La convierto para recortar código (no creo otra variable)
+            usuario.appendChild(nodoTextoAux) 
+            ulDesordenada.appendChild(usuario)
+        })
+    </script>
+</body>
+</html>
