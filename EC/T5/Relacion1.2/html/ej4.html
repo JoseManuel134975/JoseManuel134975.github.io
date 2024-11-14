@@ -9,43 +9,56 @@
 
 <body>
     <img id="mainImg" src="../assets/img/mimikyu-4679509_1280.jpg" alt="" width="25%" height="720px">
-    <button onclick="">Siguiente</button>
-    <button onclick="">Anterior</button>
+    <button onclick="next()">Siguiente</button>
+    <button onclick="previous()">Anterior</button>
 
     <script>
+        // Irá cambiando su atributo src según lo que pulsemos
         var main = document.getElementById('mainImg')
 
+        // Nodos creados
         var img1 = document.createElement('img')
         img1.src = "../assets/img/pixel-3316924_1280.png"
         var img2 = document.createElement('img')
         img2.src = "../assets/img/pokemon-1591427_1280.jpg"
         var img3 = document.createElement('img')
         img3.src = "../assets/img/pokemon-5151118_1280.jpg"
+        var img4 = document.createElement('img')
+        img4.src = "../assets/img/mimikyu-4679509_1280.jpg"
 
-        const imagenes = [
-            {
-                main
-            },
-            {
-                img1
-            },
-            {
-                img2
-            },
-            {
-                img3
-            }
-        ]
-        console.log(imagenes.length)
+        // Estructura de datos elegida: Array
+        const imagenes = [img1, img2, img3, img4]
 
         const next = (() => {
-            switch () {
+            for (let i = 0; i < imagenes.length; i++) {
+                if (imagenes[i].src === main.src) {
+                    // Compruebo si existe una siguiente imagen
+                    if (i < imagenes.length - 1) {
+                        main.src = imagenes[i + 1].src
+                    } else {
+                        // Si estamos en la última imagen, vuelve a la primera
+                        main.src = imagenes[0].src
+                    }
 
+                    break
+                }
             }
         })
 
         const previous = (() => {
+            for (let i = 0; i < imagenes.length; i++) {
+                if (imagenes[i].src === main.src) {
+                    // Conmpruebo si existe una imagen anterior
+                    if (i > 0) {
+                        main.src = imagenes[i - 1].src
+                    } else {
+                        // Si estamos en la primera imagen, vuelve a la última
+                        main.src = imagenes[imagenes.length - 1].src
+                    }
 
+                    break
+                }
+            }
         })
 
     </script>
