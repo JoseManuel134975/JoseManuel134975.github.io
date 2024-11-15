@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont">1</div>
+    <button onclick="increment()">Aumentar</button>
+
+    <script>
+        var contAux = 1 // No he podido convertirlo a int, por eso uso esto***
+        var div = document.getElementById('cont')
+
+        const increment = () => {
+            contAux++
+            div.innerHTML = contAux // Contenido cambia cada vez que se pulsa el botón
+        }
+    </script>
+</body>
+</html>

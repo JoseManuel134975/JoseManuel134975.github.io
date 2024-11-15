@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <button onclick="fillBoard()">Llenar</button>
+
+    <div class="container">
+        <div class="container__board">
+            <div class="board__box"></div>
+            <div class="board__box"></div>
+            <div class="board__box"></div>
+            <div class="board__box"></div>
+        </div>
+    </div>
+
+    <script>
+        var board = []
+
+        // Llena el tablero
+        const fillBoard = () => {
+            // let emptyBox = Math.floor(Math.random() * 2)
+
+            for (let row = 0; row < 2; row++) {
+                board[row] = []
+                for (let column = 0; column < 2; column++) {
+                    board[row][column]
+                    board[row][column] = Math.floor(Math.random() * 15) + 1
+                }
+            }
+            board[0][0] = ''
+            console.table(board)
+            convertToDOM()
+            return true
+        }
+
+        var nodeList = document.querySelectorAll('.board__box')
+        const convertToDOM = () => {
+            let row = 0
+            let column = 0
+            let contAux = 0
+
+            for (node of nodeList) {
+                if (node.hasChildNodes()) {
+                    node.removeChild(node.firstChild)
+                }
+
+                if (contAux === 2) {
+                    contAux = 0
+                    row++
+                    column = 0
+                }
+                textNodeAux = document.createTextNode(board[row][column])
+                node.appendChild(textNodeAux)
+                column++
+                contAux++
+            }
+        }
+
+        const changePosition = () => {
+            nodeList.forEach((node, index) => {
+                switch (index) {
+                    case 1: // Segundo nodo (índice 1)
+                        node.onclick = () => {
+                            board[0][0] = board[0][1]
+                            board[0][1] = ''
+                            convertToDOM()
+                        }
+                        break
+                    case 2:
+                        node.onclick = () => {
+                            board[0][0] = board[1][0]
+                            board[1][0] = ''
+                            convertToDOM()
+                        }
+                        break
+                    case 3:
+                        node.onclick = () => {
+                            board[0][0] = board[1][0]
+                            board[1][0] = ''
+                            convertToDOM()
+                        }
+                        break
+                }
+            })
+            // Pruebas
+            // nodeList[1].onclick = () => {
+            //     console.log('Holaaaaa')
+            // board[0][0] = board[0][1]
+            // board[0][1] = ''
+            // convertToDOM()
+            // }
+
+            // nodeArray.forEach((node) => {
+            //     console.log(node.firstChild.nodeValue)
+            //     switch(node.firstChild.nodeValue){
+            //         case board[][]:
+            //     }
+            // })
+        }
+
+        if (fillBoard()) {
+            changePosition()
+        }
+    </script>
+</body>
+
+</html>
