@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="my" onsubmit="return false">
+        Nombre:<input type="text" name="name">
+        Contraseña:<input type="text" name="pass">
+        <input onclick="validate()" type="submit" value="Enviar">
+    </form>
+
+    <script>
+        const user = {
+            name: 'pepe',
+            pass: 'pepe'
+        }
+
+        let form = document.forms.my
+
+        const validate = () => {
+            if(form.name.value == user.name && form.pass.value == user.pass){
+                alert('Usuario correcto')
+            } else {
+                alert('Usuario incorrecto')
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return false" name="my">
+        Codigo: <input type="number" name="code">
+        <br>
+        Nombre: <input type="text" name="name">
+        <br>
+        Telefono: <input type="number" name="tlf">
+        <br>
+        <input type="submit" value="Enviar" onclick="addObjToArray()">
+    </form>
+
+    <script>
+        class Empleado {
+            constructor(cod, nombre, tlf) {
+                this.cod = cod
+                this.nombre = nombre
+                this.tlf = tlf
+            }
+            muestraEmpleado() {
+                console.log(`Empleado: ${this.cod} -- ${this.nombre}`);
+            }
+        }
+
+        const arrEmpleados = [
+            new Empleado(1, 'Adolfo', 958160674),
+            new Empleado(2, 'Begoña', 666666666)
+        ]
+
+
+        const addObjToArray = () => {
+            let form = document.forms.my
+
+            const empleado = new Empleado(form.elements.code.value, form.elements.name.value, form.elements.tlf.value)
+            arrEmpleados.push(empleado)
+            console.log(arrEmpleados)
+
+        }
+
+    </script>
+</body>
+
+</html>
