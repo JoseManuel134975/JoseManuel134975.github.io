@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <button onclick="fillBoard()">Llenar</button>
 
     <div class="container">
         <div class="container__board">
@@ -17,97 +16,89 @@
             <div class="board__box"></div>
             <div class="board__box"></div>
             <div class="board__box"></div>
+            <div class="board__box board__box--buttons">
+                <button class="buttons__button--fillBoard" onclick="fillBoard()">Llenar</button>
+            </div>
         </div>
     </div>
 
     <script>
-        var board = []
+        const nodeList = document.querySelectorAll('.container > .container__board > :not(:last-child)');
+        let emptyCellIndex = 0; // Índice de la casilla vacía (empezamos con la primera)
 
-        // Llena el tablero
+        // Función para llenar el tablero con números aleatorios y dejar la primera casilla vacía
         const fillBoard = () => {
-            // let emptyBox = Math.floor(Math.random() * 2)
+            let nodeText;
 
-            for (let row = 0; row < 2; row++) {
-                board[row] = []
-                for (let column = 0; column < 2; column++) {
-                    board[row][column]
-                    board[row][column] = Math.floor(Math.random() * 15) + 1
-                }
-            }
-            board[0][0] = ''
-            console.table(board)
-            convertToDOM()
-            return true
-        }
-
-        var nodeList = document.querySelectorAll('.board__box')
-        const convertToDOM = () => {
-            let row = 0
-            let column = 0
-            let contAux = 0
-
-            for (node of nodeList) {
-                if (node.hasChildNodes()) {
-                    node.removeChild(node.firstChild)
-                }
-
-                if (contAux === 2) {
-                    contAux = 0
-                    row++
-                    column = 0
-                }
-                textNodeAux = document.createTextNode(board[row][column])
-                node.appendChild(textNodeAux)
-                column++
-                contAux++
-            }
-        }
-
-        const changePosition = () => {
             nodeList.forEach((node, index) => {
-                switch (index) {
-                    case 1: // Segundo nodo (índice 1)
-                        node.onclick = () => {
-                            board[0][0] = board[0][1]
-                            board[0][1] = ''
-                            convertToDOM()
-                        }
-                        break
-                    case 2:
-                        node.onclick = () => {
-                            board[0][0] = board[1][0]
-                            board[1][0] = ''
-                            convertToDOM()
-                        }
-                        break
-                    case 3:
-                        node.onclick = () => {
-                            board[0][0] = board[1][0]
-                            board[1][0] = ''
-                            convertToDOM()
-                        }
-                        break
+                // Asignamos un número aleatorio entre 1 y 15 a cada casilla
+                if (index !== emptyCellIndex) { // La casilla vacía no tiene número
+                    nodeText = document.createTextNode(Math.floor(Math.random() * 15) + 1);
+                    node.textContent = ''; // Limpiamos el contenido previo
+                    node.appendChild(nodeText);
+                } else {
+                    node.textContent = ''; // La casilla vacía
                 }
-            })
-            // Pruebas
-            // nodeList[1].onclick = () => {
-            //     console.log('Holaaaaa')
-            // board[0][0] = board[0][1]
-            // board[0][1] = ''
-            // convertToDOM()
-            // }
+            });
+        };
 
-            // nodeArray.forEach((node) => {
-            //     console.log(node.firstChild.nodeValue)
-            //     switch(node.firstChild.nodeValue){
-            //         case board[][]:
-            //     }
-            // })
-        }
+        // Función para obtener los movimientos válidos para la casilla vacía
+        const getValidMoves = () => {
+            const validMoves = [];
+            const rowCount = 2; // Número de filas en el tablero 2x2
+            const colCount = 2; // Número de columnas en el tablero 2x2
 
-        if (fillBoard()) {
-            changePosition()
-        }
+            // Calcular fila y columna de la casilla vacía
+            const row = Math.floor(emptyCellIndex / colCount);
+            const col = emptyCellIndex % colCount;
+
+            // Movimiento hacia la izquierda (si no estamos en la primera columna)
+            if (col > 0) {
+                validMoves.push(emptyCellIndex - 1); // Movimiento a la izquierda
+            }
+
+            // Movimiento hacia la derecha (si no estamos en la última columna)
+            if (col < colCount - 1) {
+                validMoves.push(emptyCellIndex + 1); // Movimiento a la derecha
+            }
+
+            // Movimiento hacia arriba (si no estamos en la primera fila)
+            if (row > 0) {
+                validMoves.push(emptyCellIndex - colCount); // Movimiento hacia arriba
+            }
+
+            // Movimiento hacia abajo (si no estamos en la última fila)
+            if (row < rowCount - 1) {
+                validMoves.push(emptyCellIndex + colCount); // Movimiento hacia abajo
+            }
+
+            return validMoves;
+        };
+
+        // Función para intercambiar las casillas (vacía con la casilla seleccionada)
+        const moveEmptyCell = (newIndex) => {
+            const tempContent = nodeList[newIndex].textContent;
+            nodeList[newIndex].textContent = nodeList[emptyCellIndex].textContent;
+            nodeList[emptyCellIndex].textContent = tempContent;
+
+            // Actualizar la posición de la casilla vacía
+            emptyCellIndex = newIndex;
+        };
+
+        // Función que maneja el clic en una casilla
+        const handleClick = (index) => {
+            const validMoves = getValidMoves(); // Obtener los movimientos válidos para la casilla vacía
+
+            // Si la casilla clicada está entre los movimientos válidos
+            if (validMoves.includes(index)) {
+                moveEmptyCell(index); // Mover la casilla vacía
+            }
+        };
+
+        // Añadir evento de clic a cada casilla
+        nodeList.forEach((node, index) => {
+            node.addEventListener('click', () => handleClick(index));
+        });
     </script>
 </body>
 

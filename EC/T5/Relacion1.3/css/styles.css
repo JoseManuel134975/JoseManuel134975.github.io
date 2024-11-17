@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: lightblue;
+    background-color: lightyellow;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -21,7 +21,7 @@ body{
 .container .container__board{
     width: 20%;
     height: 360px;
-    background-color: limegreen;
+    background-color: burlywood;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -29,6 +29,7 @@ body{
     justify-content: space-around;
     padding: 10px;
     gap: 10px;
+    border: 7px solid brown;
 }
 
 .container .container__board .board__box{
@@ -41,14 +42,24 @@ body{
     font-size: 5em;
     font-weight: bold;
     cursor: pointer;
+    border: 7px solid blanchedalmond;
 }
 
-button{
+.container .container__board .board__box--buttons{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    background-color: transparent;
+    border: none;
+}
+
+.container .container__board .board__box--buttons .buttons__button--fillBoard{
     padding: 10px;
-    border-radius: 10px;
     border: 3px solid black;
     font-weight: bold;
-    display: block;
-    margin: 0 auto;
     cursor: pointer;
+    font-size: 20px;
 }
