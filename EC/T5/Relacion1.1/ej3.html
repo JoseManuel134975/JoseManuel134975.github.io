@@ -8,13 +8,19 @@
 </head>
 
 <body>
+    <table class="table">
+
+    </table>
 
     <!-- <script type="module" src="main.js">  </script> -->
     <script type="module">
         import { arrArticulos } from "./modulos/articulos.mjs";
 
         function formateaArtículos() {
-            var table = document.createElement('table')
+            var fragment = document.createDocumentFragment()
+            var table = document.querySelector('table')
+
+            // var table = document.createElement('table')
             var tbody = document.createElement('tbody')
             var tr = document.createElement('tr')
             var trDatos

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="ul">
+
+    </ul>
+
+    <script>
+        var fragment = document.createDocumentFragment()
+        var browsers = ["Firefox", "Chrome", "Opera", "Safari", "Internet Explorer"];
+        var ul = document.querySelector('ul')
+
+        browsers.forEach((browser) => {
+            var li = document.createElement("li");
+            li.textContent = browser;
+            fragment.appendChild(li);
+        })
+
+        ul.appendChild(fragment)
+    </script>
+</body>
+
+</html>
