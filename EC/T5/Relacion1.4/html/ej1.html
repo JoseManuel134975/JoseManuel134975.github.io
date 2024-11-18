@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <h3 class="title">Clock</h3>
+    <div class="container">
+        <div class="container__item container__item--text">
+            <h2>STOPWATCH</h2>
+            <h2>VANILLA JAVASCRIPT STOPWATCH</h2>
+            <p id="clock"></p>
+        </div>
+        <div class="container__item container__item--buttons">
+            <button onclick="startCount()">Start</button>
+            <button onclick="stopCount()">Stop</button>
+            <button onclick="resetCount()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let counter = 0; // Segundos
+        let timeout;
+        let timer_on = 0; // Flag
+        let min = 0
+
+        function timedCount() {
+            document.getElementById("clock").innerHTML = `${min}:${counter}`;
+            counter++;
+            if(counter >= 60){
+                min++
+                counter = 0
+            }
+            timeout = setTimeout(timedCount, 1000);
+        }
+
+        function startCount() {
+            if (!timer_on) {
+                timer_on = 1;
+                timedCount();
+            }
+        }
+
+        function stopCount() {
+            clearTimeout(timeout);
+            timer_on = 0;
+        }
+
+        function resetCount() {
+            min = 0
+            counter = 0
+        }
+    </script>
+</body>
+
+</html>

@@ -21,7 +21,7 @@
         const uniques = []
         let victory = []
         let validMoves = [emptyIndex - 1, emptyIndex + 1, emptyIndex - 4, emptyIndex + 4]
-        let contAux = 0
+        let contAux = 1
 
         // Forma tradicional para crear una array sin duplicados
         for (let i = 1; i < 16; i++) {
@@ -38,13 +38,13 @@
 
         // Mueve la ficha de posición y comprueba si se ha ganado
         const move = (index) => {
-            [uniques[emptyIndex], uniques[index]] = [uniques[index], uniques[emptyIndex]];
+            [nodeList[emptyIndex], nodeList[index]] = [nodeList[index], nodeList[emptyIndex]];
             emptyIndex = index
             validMoves = calculateValidMoves(emptyIndex);
             updateBoard()
-            if (youWin(uniques, victory)) {
-                alert(`¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡HAS GANADO DESPUÉS DE UN SIGLO Y MEDIOOOOOOOOO!!!!!!!!!!!`)
-            }
+            // if (youWin(uniques, victory)) {
+            //     alert(`¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡HAS GANADO DESPUÉS DE UN SIGLO Y MEDIOOOOOOOOO!!!!!!!!!!!`)
+            // }
         }
 
         // Calcular movimientos válidos
@@ -74,15 +74,20 @@
                 tr = document.createElement('tr')
                 board.appendChild(tr)
                 for (let col = 0; col < 4; col++) {
-                    nodeText = document.createTextNode(uniques[contAux])
                     td = document.createElement('td')
-                    td.appendChild(nodeText)
+                    td.style.backgroundImage = 'url(../assets/img/background-8341068_1280.jpg)';
+                    td.style.backgroundPosition = `${(contAux - 1) % 4 * -320}px ${Math.floor((contAux - 1) / 4) * -320}px`;
                     tr.appendChild(td)
                     contAux++
                 }
             }
         }
-        renderBoard()
+        window.onload = () => {
+            renderBoard()
+            let emptyCell = document.querySelector('table > tr:first-child > td:first-child')
+            emptyCell.style.backgroundImage = 'none';  // No asignar imagen de fondo
+            emptyCell.innerHTML = ''
+        }
 
         // Comprueba si se ha ganado comparando las dos arrays 
         const youWin = (userArray, victoryArray) => userArray.every((value, index) => value === victoryArray[index]); // Comparar cada elemento
@@ -104,8 +109,6 @@
                 }
             }
         })
-
-        
     </script>
 </body>
 
