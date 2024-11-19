@@ -23,27 +23,23 @@ function guardarPregunta($pregunta){
 
 function verRespuestas(){
     $ruta = "." . DIRECTORY_SEPARATOR . "examenes" . DIRECTORY_SEPARATOR . $_SESSION["cuestionario"];
-    $respuestas = [];
-    $titulos = [];
-    $texto = "";
     $ok = false;
 
     foreach(scandir($ruta) as $pregunta){
         if($pregunta != "." && $pregunta != ".." && !is_dir($pregunta)){
-            array_push($titulos, $pregunta);
-            $texto = file_get_contents($ruta . DIRECTORY_SEPARATOR . $pregunta);
-            if($texto != ""){
-                array_push($respuestas, $texto);
+            $f = fopen($ruta . DIRECTORY_SEPARATOR . $pregunta, 'r');
+            echo '<h2>' . $pregunta . '</h2>';
+            if($f){
+                while(!feof($f)){
+                    $linea = fgets($f);
+                    echo '<p>' . $linea . '</p>';
+                }
             }
         }
     }
 
-    if(count($respuestas) > 0){
-        $_SESSION["respuestas"] = $respuestas;
-        $_SESSION["titulos"] = $titulos;
+    if(fclose($f)){
         $ok = true;
-    }else{
-        $ok = false;
     }
 
     return $ok;
