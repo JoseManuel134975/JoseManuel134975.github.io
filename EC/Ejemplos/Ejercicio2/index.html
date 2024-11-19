@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Galería</title>
+</head>
+
+<body>
+    <main>
+        <h1>Galería de imágenes</h1>
+        <section class="galeria">
+            <img src="./img/uno.jpg" alt="uno">
+            <img src="./img/dos.jpg" alt="dos">
+            <img src="./img/tres.jpg" alt="tres">
+            <img src="./img/cuatro.jpg" alt="cuatro">
+            <img src="./img/cinco.jpg" alt="cinco">
+            <img src="./img/seis.jpg" alt="seis">
+        </section>
+        <section>
+            <article>
+                <div>
+                    <h2>Galería 2</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus ipsum expedita magni quos est.
+                        Expedita aspernatur, facere ut id porro voluptatibus quos quisquam illum maxime repellendus.
+                        Laudantium ipsum culpa quam!
+                    </p>
+                </div>
+                <img src="https://picsum.photos/id/21/300/300" alt="Zapato Blanco">
+            </article>
+            <article>
+                <img src="https://picsum.photos/id/20/300/300" alt="Zapato Blanco">
+                <div>
+                    <h2>Galería 3</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic consequatur cupiditate sunt
+                        accusamus
+                        rem nobis necessitatibus ad. Non enim dolorum, perspiciatis sequi culpa dolore illo. Quibusdam
+                        vero
+                        facere atque quam.
+                    </p>
+                </div>
+            </article>
+            <article>
+                <div>
+                    <h2>Galería 4</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam quasi natus voluptate
+                        praesentium quae fugiat, asperiores soluta eius eum quod aut excepturi autem pariatur nesciunt
+                        laborum itaque? Beatae, ad enim.
+                    </p>
+                </div>
+                <img src="https://picsum.photos/id/24/300/300" alt="Zapato Blanco">
+            </article>
+        </section>
+    </main>
+
+    <script>
+        var pList = document.querySelectorAll('p')
+        var firstArticle = document.querySelector('section:last-of-type > article:first-child')
+
+        const mostrarParrafos = () => {
+            for (node of pList) {
+                console.log(node.textContent)
+            }
+        }
+        // mostrarParrafos()
+
+        const desglosaArticulo = (filtro) => {
+            let article = document.getElementsByTagName('article')[0]
+
+            if (filtro == 0) {
+                for (const element of article.childNodes) {
+                    if (element.nodeName == "#text") {
+                        console.log(element)
+                    }
+                }
+            }
+        }
+        // desglosaArticulo(0)
+        // desglosaArticulo(1)
+
+        function muestraElementosDelDOM(element) {
+            console.log(element.tagName);
+            for (const ele of element.childNodes) {
+                if (ele.tagName !== undefined) {
+                    muestraElementosDelDOM(ele) // Recurisividad para mostrar los hijos
+                }
+            }
+        }
+
+        muestraElementosDelDOM(firstArticle)
+
+        let articuloPadre = document.querySelector('section:nth-of-type(2)')
+        const crearArticuloIgual = (nodoPadre) => {
+            let div = document.createElement('div')
+            let article = document.createElement('article')
+            let img = document.createElement('img')
+            let h2 = document.createElement('h2')
+            arrayArticulos.forEach((object) => {
+                
+            })
+            //     h2.textContent = `Galería `
+            //     let p = document.createElement('p')
+            //     p.textContent = "Lorem ipsum"
+            //     img.src = url
+            //     nodoPadre.appendChild(article)
+            //     article.appendChild(img)
+            //     div.appendChild(h2)
+            //     div.appendChild(p)
+            //     article.appendChild(div)
+
+
+
+            return nodoPadre
+        }
+        console.log(crearArticuloIgual(articuloPadre, "https://picsum.photos/id/24/300/300"))
+
+        // Meter en un array el artículo (objeto) con sus propiedades
+        const arrayArticulos = [
+            {
+                titulo: 'Articulo 1',
+                texto: 'Lorem ipsum',
+                imagen: 'https://picsum.photos/id/24/300/300'
+            },
+            {
+                titulo: 'Articulo 2',
+                texto: 'Lorem ipsum',
+                imagen: 'https://picsum.photos/id/20/300/300'
+            },
+            {
+                titulo: 'Articulo 3',
+                texto: 'Lorem ipsum',
+                imagen: 'https://picsum.photos/id/21/300/300'
+            }
+        ]
+
+
+    </script>
+</body>
+
+</html>
