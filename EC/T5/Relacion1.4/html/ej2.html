@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <h3 class="title">Hangman Game</h3>
     <div class="container">
@@ -15,17 +17,140 @@
             <p>Use the alphabet below to guess the word, or click hint to get a clue.</p>
         </div>
         <div class="container__item container__item--letters">
-            
+            <div class="letters__letter">a</div>
+            <div class="letters__letter">b</div>
+            <div class="letters__letter">c</div>
+            <div class="letters__letter">d</div>
+            <div class="letters__letter">e</div>
+            <div class="letters__letter">f</div>
+            <div class="letters__letter">g</div>
+            <div class="letters__letter">h</div>
+            <div class="letters__letter">i</div>
+            <div class="letters__letter">j</div>
+            <div class="letters__letter">k</div>
+            <div class="letters__letter">l</div>
+            <div class="letters__letter">m</div>
+            <div class="letters__letter">n</div>
+            <div class="letters__letter">o</div>
+            <div class="letters__letter">p</div>
+            <div class="letters__letter">q</div>
+            <div class="letters__letter">r</div>
+            <div class="letters__letter">s</div>
+            <div class="letters__letter">t</div>
+            <div class="letters__letter">u</div>
+            <div class="letters__letter">v</div>
+            <div class="letters__letter">w</div>
+            <div class="letters__letter">x</div>
+            <div class="letters__letter">y</div>
+            <div class="letters__letter">z</div>
         </div>
         <div class="container__item container__item--info">
-            <p class="info"></p>
-            <p>- - - - - - - - - - - -</p>
-            <p class="lives"></p>
+            <p class="info">The category is </p>
+            <p class="word"></p>
+            <p class="lives">You have 10 lives</p>
         </div>
     </div>
 
     <script>
+        const letters = [] // Letras en array
+        const nodeList = document.querySelectorAll('.letters__letter') // Letras en nodeList
+        const scripts = [] // Guiones
+
+        // Categoría usada en el juego
+        const getCategory = (string) => {
+            let parra = document.querySelector('.info').innerHTML
+            let newParra = parra.concat(string)
+            document.querySelector('.info').innerHTML = newParra
+        }
+        getCategory('Cities')
+
+        // Actualizar las vidas restantes
+        const getLives = (num) => {
+            let parra = document.querySelector('.lives').innerHTML
+            document.querySelector('.lives').innerHTML = `You have ${num} lives`
+        }
+
+        // Función principal
+        const isLetter = () => {
+            let lives = 10
+            let choseWord = Math.floor(Math.random() * 3) // Escoge un índice random de la array de palabras
+            let emptyWord = document.querySelector('.word').innerHTML // Guiones con DOM
+            const possibleWords = ['Granada', 'Valencia', 'Barcelona']
+            let word
+            let wordWithScripts = '' // Guiones con JS
+            let long // Longitud de la palabra
+            let flag = false // Comprueba si la letra clicada es cierta o no
+
+            // Obtiene la palabra y su longitud
+            possibleWords.forEach((element, index) => {
+                if (index == choseWord) {
+                    long = element.length
+                    word = element
+                }
+            })
+
+            // Minúsculas
+            let transformWord = word.toLowerCase()
+            // Descomenta si quieres saber la palabra elegida********
+            // console.log(transformWord) 
+
+            // Añade los guiones con DOM
+            for (let i = 0; i < long; i++) {
+                scripts.push('- ')
+                document.querySelector('.word').innerHTML += scripts[i]
+            }
+
+            // Comprueba si la letra clicada es correcta o no y actualiza tanto los guiones como las vidas
+            nodeList.forEach((node, letterIndex) => {
+                node.onclick = () => {
+                    for (let i = 0; i < long; i++) {
+                        if (letters[letterIndex] === transformWord[i]) {
+                            scripts[i] = letters[letterIndex]
+                            flag = true
+                        }
+                    }
+                    updateWord(long)
+                    isVictory(scripts)
+                    // Comprueba si se restan vidas o se ha perdido
+                    if (!flag) {
+                        if (lives === 1) {
+                            alert('HAS PERDIDOOOOOOOO')
+                            window.location.reload()
+                        } else {
+                            lives--
+                            getLives(lives)
+                        }
+                    }
+                }
+            })
+        }
+
+        // Llena la array JS de letras provenientes de DOM
+        const fillLetters = () => {
+            nodeList.forEach((node, index) => {
+                letters.push(node.textContent)
+            })
+        }
+
+        // Actualiza los guiones
+        const updateWord = (long) => {
+            for (let i = 0; i < long; i++) {
+                document.querySelector('.word').innerHTML = scripts.join(' ')
+            }
+        }
+
+        // Comprueba si se ha ganado
+        const isVictory = (array) => {
+            if(!array.includes('- ')){
+                alert(`ENHORABUENA POR PERDER EL TIEMPOOOOOOOO`)
+                return true
+            }
+        }
+
+        fillLetters()
+        isLetter()
 
     </script>
 </body>
+
 </html>
