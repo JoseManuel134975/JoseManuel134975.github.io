@@ -1,0 +1,62 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 75%;
+}
+
+li{
+    background-color: black;
+    padding: 60px;
+    width: 5%;
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+span{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    height: 10px;
+    transition: height 1s ease;
+}
+
+ul > li:first-child > span{
+    background-color: yellow;
+}
+
+ul > li:nth-child(2) > span{
+    background-color: red;
+}
+
+ul > li:nth-child(3) > span{
+    background-color: green;
+}
+
+ul > li:last-child > span{
+    background-color: purple;
+}
+
+ul > li:hover > span{
+    height: 100%;
+}
