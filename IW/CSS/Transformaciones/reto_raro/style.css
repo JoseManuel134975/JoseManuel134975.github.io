@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contenedor__foto{
+    width: 300px;
+    margin: 40px auto;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor__foto img{
+    width: 100%;
+    height: 100%;
+}
+
+.hover{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(31, 78, 165, 0.7);
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 20px 0;
+    transform: translate(100%, 100%) rotate(180deg);
+    transition: transform 1s linear;
+}
+
+h1{
+    margin-bottom: 40px ;
+}
+
+.contenedor__foto:hover .hover{
+    transform: translate(0) rotate(0);
+}
