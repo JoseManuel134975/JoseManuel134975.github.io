@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <form action="" name="form">
+        <input type="text" name="name" id="" placeholder="">
+        <br>
+        <input type="email" name="email" id="" placeholder="">
+        <br>
+        <textarea name="comment" cols="75" rows="10" id=""></textarea>
+        <br>
+        <input type="submit" name="submit" value="Enviar">
+        <input type="reset" name="reset" value="Resetear">
+    </form>
+    <p id="button"></p>
+
+    <script>
+        const form = document.forms['form']
+        const inputName = form.elements['name']
+        const inputEmail = form.elements['email']
+        const inputComment = form.elements['comment']
+        const inputSubmit = form.elements['submit']
+        const inputReset = form.elements['reset']
+        inputName.addEventListener("focus", () => {
+            inputName.placeholder = 'Introduce tu nombre'
+        })
+        inputEmail.addEventListener("focus", () => {
+            inputEmail.placeholder = 'Introduce un correo'
+        })
+        inputComment.addEventListener("focus", () => {
+            inputComment.placeholder = 'Introduce un comentario'
+        })
+        inputSubmit.addEventListener("focus", () => {
+            document.getElementById('button').innerHTML = '¡Envianos el formulario!'
+        })
+        inputReset.addEventListener("focus", () => {
+            document.getElementById('button').innerHTML = 'Borra todo lo escrito hasta ahora.'
+        })
+
+        inputName.addEventListener("blur", () => {
+            inputName.placeholder = ''
+        })
+        inputEmail.addEventListener("blur", () => {
+            inputEmail.placeholder = ''
+        })
+        inputComment.addEventListener("blur", () => {
+            inputComment.placeholder = ''
+        })
+        inputSubmit.addEventListener("blur", () => {
+            document.getElementById('button').innerHTML = ''
+        })
+        inputReset.addEventListener("blur", () => {
+            document.getElementById('button').innerHTML = ''
+        })
+    </script>
+</body>
+
+</html>
