@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, ipsum ex voluptatem eligendi vero cum facere
+        adipisci ducimus placeat alias dicta corrupti optio rem laborum reiciendis, rerum repellendus quisquam
+        blanditiis!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, ipsum ex voluptatem eligendi vero cum facere
+        adipisci ducimus placeat alias dicta corrupti optio rem laborum reiciendis, rerum repellendus quisquam
+        blanditiis!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, ipsum ex voluptatem eligendi vero cum facere
+        adipisci ducimus placeat alias dicta corrupti optio rem laborum reiciendis, rerum repellendus quisquam
+        blanditiis!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, ipsum ex voluptatem eligendi vero cum facere
+        adipisci ducimus placeat alias dicta corrupti optio rem laborum reiciendis, rerum repellendus quisquam
+        blanditiis!</p>
+
+    <form action="" name="form">
+        <label for="">Incrementa</label>
+        <input type="text" name="increment">
+        <br>
+        <label for="">Decrementa</label>
+        <input type="text" name="decrement">
+        <br>
+        <input type="submit" value="Enviar" name="submit">
+    </form>
+
+    <script>
+
+
+        const fontSize = (function () {
+            const form = document.forms['form']
+            const submit = form.elements['submit']
+            const increment = form.elements['increment']
+            const decrement = form.elements['decrement']
+            let size
+
+            increment.addEventListener("blur", function(){
+                const p = document.querySelectorAll('p')
+                let value = parseInt(increment.value)
+                let newValue = addPx(increment)
+                if(value > 16) {
+                    p.forEach((node) => {
+                        node.style.fontSize = newValue
+                    })
+                }
+                size = value
+            })
+
+            decrement.addEventListener("blur", function(){
+                const p = document.querySelectorAll('p')
+                let value = parseInt(increment.value)
+                let newValue = addPx(increment)
+                if(value < 16) {
+                    p.forEach((node) => {
+                        node.style.fontSize = newValue
+                    })
+                }
+                size = value
+            })
+
+            // form.addEventListener("submit", (event) => {
+            //     event.preventDefault()
+            // })
+        })()
+
+        function addPx(input) {
+            let newValue
+            return newValue = input.value + 'px'
+        }
+    </script>
+</body>
+
+</html>

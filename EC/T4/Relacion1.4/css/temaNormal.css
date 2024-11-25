@@ -13,6 +13,27 @@ a{
     font-weight: bold;
 }
 
+.hidden{
+    display: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.containerText{
+    width: 80%;
+    order: 2;
+}
+
+.containerAside{
+    width: 17.5%;
+    display: none;
+}
+
 .containerThemes{
     padding: 10px;
     border: 1px solid black;
@@ -31,6 +52,10 @@ a{
 
 .hidden{
     display: block;
+}
+
+.hiddenBold{
+    font-weight: bold;
 }
 
 .aside{

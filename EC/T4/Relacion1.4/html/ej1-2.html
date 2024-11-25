@@ -12,7 +12,7 @@
     <div class="container">
         <section class="containerText">
             <div class="containerThemes">
-                <a class="themes normalTheme" href="#">Tema normal </a><a class="themes otherTheme" href="">Tema
+                <a class="themes normalTheme" href="#">Tema normal </a><a class="themes otherTheme" href="#">Tema
                     minimalista</a>
             </div>
             <h1 class="title">Página de ejemplo</h1>
@@ -36,8 +36,14 @@
         const themes = document.querySelectorAll('.container > .containerText > .containerThemes > .themes')
         const normalTheme = themes[0]
         const otherTheme = themes[1]
-        normalTheme.addEventListener("load", () => {
+        const link = document.querySelector('link')
 
+        normalTheme.addEventListener("click", () => {
+            link.href = '../css/temaNormal.css'
+        })
+        
+        otherTheme.addEventListener("click", () => {
+            link.href = '../css/temaMinimalista.css'
         })
 
     </script>
