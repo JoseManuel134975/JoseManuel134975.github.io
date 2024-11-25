@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <div class="container">
+        <section class="containerText">
+            <div class="containerThemes">
+                <a class="themes normalTheme" href="#">Tema normal </a><a class="themes otherTheme" href="">Tema minimalista</a>
+            </div>
+            <h1 class="title">Página de ejemplo</h1>
+            <p>En esta página vamos a comprobar lo fácil que es aplicar estilos mediante CSS a un documento seleccionado.</p>
+            <p>Lo ideal es que al seleccionar un estilo   permanezca siempre igual para el usuario. Hasta ahora no hemos visto como hacerlo, ¿se te ocurre como podremos hacerlo?</p>
+            <p class="hidden">Utilizando CSS podemos incluso ocultar partes del sitio.</p>
+            <p class="hidden hiddenBold">Este párrafo debe ser solo visible en el tema normal</p>
+            <div class="frame">
+                <p>Esto está dentro de un marco.</p>
+            </div>
+        </section>
+
+        <section class="containerAside">
+            <aside class="aside"></aside>
+        </section>
+    </div>
+
+    <script>   
+        const themes = document.querySelectorAll('.container > .containerText > .containerThemes > .themes')
+        const normalTheme = themes[0]
+        const otherTheme = themes[1]
+
+        const hidden = document.querySelectorAll('.container > .containerText > .hidden')
+        const hidden1 = hidden[0]
+        const hidden2 = hidden[1]
+        hidden1.style.display = 'none'
+        hidden2.style.display = 'none'
+
+        const container = document.querySelector('.container')
+        container.style.display = 'flex'
+        container.style.flexDirection = 'row'
+        container.style.flexWrap = 'wrap'
+        container.style.justifyContent = 'space-between'
+
+        const containerText = document.querySelector('.container > .containerText')
+        containerText.style.width = '80%'
+        containerText.style.order = '2'
+
+        const containerAside = document.querySelector('.container > .containerAside')
+        containerAside.style.width = '17.5%'
+
+        const aside = containerAside[0]
+        containerAside.style.display = 'none'
+        
+        const changeTheme = () => {
+            const body = document.querySelector('body')
+            body.style.fontFamily = 'Arial'
+            body.style.backgroundColor = 'lightyellow'
+
+            const containerThemes = document.querySelector('.container > .containerText > .containerThemes')
+            containerThemes.style.padding = '10px'
+            containerThemes.style.border = '1px solid black'
+            containerThemes.style.backgroundColor = 'lightblue'
+            normalTheme.style.color = 'blue'
+            otherTheme.style.color = 'blue'
+            normalTheme.style.textDecoration = 'none'
+            otherTheme.style.textDecoration = 'none'
+            normalTheme.style.fontWeight = 'bold'
+            otherTheme.style.fontWeight = 'bold'
+
+            const title = document.querySelector('.container > .containerText > .title')
+            title.style.fontWeight = 'bold'
+
+            const frame = document.querySelector('.container > .containerText > .frame')
+            frame.style.backgroundColor = 'yellow'
+            frame.style.border = '1px solid black'
+            frame.style.padding = '5px'
+
+            hidden1.style.display = 'block'
+            hidden2.style.display = 'block'
+            hidden2.style.fontWeight = 'bold'
+
+            const aside = document.querySelector('.container > .containerAside > .aside')
+            aside.style.height = '100vh'
+            aside.style.backgroundColor = 'royalblue'
+
+            containerAside.style.display = 'block'
+        }
+
+        normalTheme.addEventListener("click", changeTheme)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div class="container">
+        <section class="containerText">
+            <div class="containerThemes">
+                <a class="themes normalTheme" href="#">Tema normal </a><a class="themes otherTheme" href="">Tema
+                    minimalista</a>
+            </div>
+            <h1 class="title">Página de ejemplo</h1>
+            <p>En esta página vamos a comprobar lo fácil que es aplicar estilos mediante CSS a un documento
+                seleccionado.</p>
+            <p>Lo ideal es que al seleccionar un estilo permanezca siempre igual para el usuario. Hasta ahora no hemos
+                visto como hacerlo, ¿se te ocurre como podremos hacerlo?</p>
+            <p class="hidden">Utilizando CSS podemos incluso ocultar partes del sitio.</p>
+            <p class="hidden hiddenBold">Este párrafo debe ser solo visible en el tema normal</p>
+            <div class="frame">
+                <p>Esto está dentro de un marco.</p>
+            </div>
+        </section>
+
+        <section class="containerAside">
+            <aside class="aside"></aside>
+        </section>
+    </div>
+
+    <script>
+        const themes = document.querySelectorAll('.container > .containerText > .containerThemes > .themes')
+        const normalTheme = themes[0]
+        const otherTheme = themes[1]
+        normalTheme.addEventListener("load", () => {
+
+        })
+
+    </script>
+</body>

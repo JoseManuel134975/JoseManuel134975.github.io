@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+.hidden{
+    display: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.containerText{
+    width: 80%;
+    order: 2;
+}
+
+.containerAside{
+    width: 17.5%;
+    display: none;
+}
