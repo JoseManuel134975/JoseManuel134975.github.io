@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 2</title>
+    <style>
+        p{
+            text-align: center;
+            width: 20%;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,51 +34,67 @@
         <label for="">Decrementa</label>
         <input type="text" name="decrement">
         <br>
-        <input type="submit" value="Enviar" name="submit">
     </form>
 
-    <script>
+    <button class="justified">Justificado</button>
+    <button class="left">Izquierda</button>
 
+    <script>
+        const p = document.querySelectorAll('p')
+        const justified = document.querySelector('.justified')
+        const left = document.querySelector('.left')
 
         const fontSize = (function () {
             const form = document.forms['form']
-            const submit = form.elements['submit']
             const increment = form.elements['increment']
             const decrement = form.elements['decrement']
-            let size
 
-            increment.addEventListener("blur", function(){
-                const p = document.querySelectorAll('p')
+            increment.addEventListener("blur", function () {
                 let value = parseInt(increment.value)
                 let newValue = addPx(increment)
-                if(value > 16) {
+                if (value > 16) {
                     p.forEach((node) => {
                         node.style.fontSize = newValue
                     })
                 }
-                size = value
             })
 
-            decrement.addEventListener("blur", function(){
-                const p = document.querySelectorAll('p')
-                let value = parseInt(increment.value)
-                let newValue = addPx(increment)
-                if(value < 16) {
+            decrement.addEventListener("blur", function () {
+                let value = parseInt(decrement.value)
+                let newValue = addPx(decrement)
+                if (value < 16) {
                     p.forEach((node) => {
                         node.style.fontSize = newValue
                     })
                 }
-                size = value
+            })
+        })()
+
+        const textAlign = (function () {
+            left.addEventListener("click", function() {
+                textAlignLeft(p)
             })
 
-            // form.addEventListener("submit", (event) => {
-            //     event.preventDefault()
-            // })
+            justified.addEventListener("click", function() {
+                textAlignJustified(p)
+            })
         })()
 
         function addPx(input) {
             let newValue
             return newValue = input.value + 'px'
+        }
+
+        function textAlignLeft(nodeList) {
+            nodeList.forEach((node) => {
+                node.style.textAlign = 'left'
+            })
+        }
+
+        function textAlignJustified(nodeList) {
+            nodeList.forEach((node) => {
+                node.style.textAlign = 'justify'
+            })
         }
     </script>
 </body>
