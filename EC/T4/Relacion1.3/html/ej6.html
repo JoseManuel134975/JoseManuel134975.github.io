@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <img id="title" src="../assets/img/Titulo.png" alt="Título">
+    <p>En esta web jugarás a un juego súper divertido (notese la ironía). Las reglas son muy sencillas:</p>
+    <ol>
+        <li>Tendrás una tabla con 12 codificaciones en hexadecimal de colores principales</li>
+        <li>Al colocar el puntero sobre el título este cambiará de color</li>
+        <li>Si colocas el puntero sobre los valores hexadecimales se cambiará el color del código a ese mismo, y al
+            dejar de
+            estar encima se cambia al nombre común (azul, por ejemplo)</li>
+    </ol>
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>Azules</th>
+                <td>#87CEEB</td>
+                <td>#A7C7E7</td>
+                <td>#89CFF0</td>
+                <td>#E6E6FA</td>
+            </tr>
+            <tr>
+                <th>Rojos</th>
+                <td>#FF7F7F</td>
+                <td>#FF4040</td>
+                <td>#F08080</td>
+                <td>#FFA07A</td>
+            </tr>
+            <tr>
+                <th>Verdes</th>
+                <td>#90EE90</td>
+                <td>#77DD77</td>
+                <td>#98FF98</td>
+                <td>#00FF7F</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const table = document.querySelector('table')
+        table.style.width = "500px"
+        table.style.height = "250px"
+        table.style.textAlign = "center"
+        const title = document.getElementById('title')
+        title.addEventListener("mouseover", () => {
+            title.src = '../assets/img/Titulo-pocho.png'
+        })
+        title.addEventListener("mouseout", () => {
+            title.src = '../assets/img/Titulo.png'
+        })
+
+
+
+        const cells = document.querySelectorAll('td')
+        const colors = {}
+        // const nameColors = ['azul claro', '']
+
+
+        cells.forEach((node, index) => {
+            node.addEventListener("mouseover", () => {
+                node.style.color = node.textContent
+            })
+            node.addEventListener("mouseout", () => {
+                node.textContent = hexToRgb(node.textContent)
+            })
+
+
+            for(let i = index; i < 12; i++){
+                colors[i] = node.textContent
+            }
+        })
+        console.log(colors)
+
+
+
+        function hexToRgb(hex) {
+            // Eliminar el '#' si está presente
+            hex = hex.replace(/^#/, '');
+
+            // Extraer los valores de los componentes
+            const r = parseInt(hex.substring(0, 2), 16); // Rojo
+            const g = parseInt(hex.substring(2, 4), 16); // Verde
+            const b = parseInt(hex.substring(4, 6), 16); // Azul
+
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+
+    </script>
+</body>
+
+</html>

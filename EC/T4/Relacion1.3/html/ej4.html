@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 4</title>
+    <title>eventrcicio 4</title>
 </head>
-<body>
-    
 
+<body>
     <script>
         window.onload = () => {
             const table = document.createElement('table')
+            const button = document.createElement('button')
+            button.textContent = 'Borrar'
             table.border = 1
             table.style.width = '500px'
             table.style.height = '500px'
-            for(let row = 0; row < 5; row++){
+            for (let row = 0; row < 5; row++) {
                 let tr = document.createElement('tr')
                 table.appendChild(tr)
-                for(let col = 0; col < 5; col++){
-                    let td = document.createElement('td')
+                for (let col = 0; col < 5; col++) {
+                    let td = document.createElement('td')                    
                     tr.appendChild(td)
+
+                    td.addEventListener("mousemove", (event) => {
+                        if(event.ctrlKey){
+                            td.style.backgroundColor = "red"
+                        } else if(event.shiftKey){
+                            td.style.backgroundColor = "blue"
+                        } 
+                    })
                 }
             }
             document.body.appendChild(table)
+            document.body.appendChild(button)
+            button.addEventListener("click", () => {
+                document.body.removeChild(table)
+            })
         }
 
-        const cells = document.querySelectorAll('td')
-        cells.forEach((node, index) => {
-            node.addEventListener("mousemove", () => {
-                
-            })
-        })
     </script>
 </body>
+
 </html>
