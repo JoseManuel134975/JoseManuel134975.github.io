@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>El Gran Juego
+    <br>    
+    <span id="colorDisplay"></span>
+    <br>
+    De adivinar colores
+    </h1>
+
+    <div id="franja">
+        <button id="reset">Colores Nuevos</button>
+        <span id="mensaje"></span>
+        <button class="modo">Fácil</button>
+        <button class="modo seleccionado">Difícil</button>
+    </div>
+
+    <div id="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+    
+
+    <script>
+        const colorDisplay = document.getElementById('colorDisplay')
+
+        const franja = document.getElementById('franja')
+        const reset = document.getElementById('reset')
+        const mensaje = document.getElementById('mensaje')
+        const modo = document.querySelectorAll('.modo')
+        const seleccionado = document.querySelector('.seleccionado')
+
+        const container = document.getElementById('container')
+        const square = document.querySelectorAll('.square')
+
+        const colors = []
+
+
+        const randomAnswer = (colorDisplay, colors) => {
+            let answer
+            for(let i = 0; i < colors.length; i++){
+                colors.push(randomColors())
+                console.log(colors[i])
+            }
+            answer = colors[1]
+        }
+
+        const randomColor = () => Math.floor(Math.random() * 256)
+
+        const randomColors = () => {
+            let r, g, b
+            
+            r = Math.floor(Math.random() * 256)
+            g = Math.floor(Math.random() * 256)
+            b = Math.floor(Math.random() * 256)
+
+            return `rgb(${r}, ${g}, ${b})` 
+        }
+
+
+
+        randomAnswer(colorDisplay, colors)
+        // console.log(randomColors())
+    </script>
+</body>
+</html>
