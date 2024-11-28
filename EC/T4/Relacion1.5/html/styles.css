@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+header{
+    background-color: royalblue;
+    color: white;
+}
+
+header h1{
+    text-align: center;
+    padding: 10px;
+}
+
+#mensaje{
+    color: royalblue;
+    font-weight: bold;
+}
+
+#franja{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+}
+
+#franja button{
+    border: none;
+    outline: none;
+    color: royalblue;
+    background-color: transparent;
+    font-weight: bold;
+    transition: all 0.3s;
+    padding: 3px;
+}
+
+#franja button:hover{
+    background-color: rgb(45, 89, 223);
+    color: white;
+}
+
+#container{
+    margin: 0 auto;
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#container > .square{
+    width: 30%;
+    height: 100px;
+    border-radius: 10px;
+}

@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>El Gran Juego
-    <br>    
-    <span id="colorDisplay"></span>
-    <br>
-    De adivinar colores
-    </h1>
+    <header>
+        <h1>El Gran Juego
+            <br>
+            <span id="colorDisplay"></span>
+            <br>
+            De adivinar colores
+        </h1>
+    </header>
 
     <div id="franja">
         <button id="reset">Colores Nuevos</button>
@@ -28,7 +33,7 @@
         <div class="square"></div>
         <div class="square"></div>
     </div>
-    
+
 
     <script>
         const colorDisplay = document.getElementById('colorDisplay')
@@ -44,32 +49,94 @@
 
         const colors = []
 
-
-        const randomAnswer = (colorDisplay, colors) => {
-            let answer
-            for(let i = 0; i < colors.length; i++){
+        const randomAnswer = (colorDisplay, colors, num) => {
+            for (let i = 0; i < num; i++) {
                 colors.push(randomColors())
-                console.log(colors[i])
             }
-            answer = colors[1]
+            return colors
         }
-
-        const randomColor = () => Math.floor(Math.random() * 256)
 
         const randomColors = () => {
             let r, g, b
-            
+
             r = Math.floor(Math.random() * 256)
             g = Math.floor(Math.random() * 256)
             b = Math.floor(Math.random() * 256)
 
-            return `rgb(${r}, ${g}, ${b})` 
+            return `rgb(${r}, ${g}, ${b})`
         }
 
+        const randomChoice = (colors, colorDisplay) => colorDisplay.innerHTML = colors[Math.floor(Math.random() * colors.length)]
 
+        const putColors = (square, theColor, difficulty, mensaje) => {
+            let num = difficulty
+            let rand = Math.floor(Math.random() * num)
+            mensaje.innerHTML = ''
 
-        randomAnswer(colorDisplay, colors)
-        // console.log(randomColors())
+            for (let node = 0; node < num; node++) {
+                if (node == num) {
+                    break
+                }
+                if (node == rand) {
+                    square[node].style.backgroundColor = theColor
+                } else {
+                    square[node].style.backgroundColor = randomColors()
+                }
+            }
+
+            square.forEach((node, index) => {
+                if (index >= num) {
+                    if (node.style.backgroundColor !== '') {
+                        node.style.backgroundColor = ''
+                    }
+                }
+            })
+        }
+
+        const whichDifficulty = (seleccionado) => {
+            if (seleccionado.toLowerCase() === 'difícil') {
+                return 6
+            } else {
+                return 3
+            }
+        }
+
+        const chooseDifficulty = (index, selectedMode) => {
+            if (index == 0) {
+                return 'Fácil'
+            } else {
+                return 'Difícil'
+            }
+        }
+
+        const isWin = (square, colorDisplay, mensaje) => {
+            square.forEach((node, index) => {
+                node.addEventListener("click", function() {
+                    if (node.style.backgroundColor == colorDisplay.innerHTML) {
+                        mensaje.innerHTML = '¡HAS GANADO!'
+                    } else {
+                        mensaje.innerHTML = 'Vuelve a intentarlo...'
+                        node.style.transition = 'all 1s'
+                        node.style.backgroundColor = ''
+                    }
+                })
+            })
+        }
+
+        let selectedMode = seleccionado.textContent
+        let numMode = whichDifficulty(selectedMode)
+
+        reset.addEventListener("click", () => putColors(square, randomChoice(randomAnswer(colorDisplay, colors, numMode), colorDisplay), numMode, mensaje))
+
+        modo.forEach((node, index) => {
+            node.addEventListener("click", () => {
+                selectedMode = chooseDifficulty(index, selectedMode)
+                putColors(square, randomChoice(randomAnswer(colorDisplay, colors, whichDifficulty(selectedMode)), colorDisplay), whichDifficulty(selectedMode), mensaje)
+            })
+        })
+
+        isWin(square, colorDisplay, mensaje)
     </script>
 </body>
+
 </html>
