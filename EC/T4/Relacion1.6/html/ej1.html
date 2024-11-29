@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>IMG</h1>
+        <h1>The Reading List</h1>
+    </header>
+
+    <main>
+        <section class="container">
+            <article class="container__item book">
+                <form action="">
+                    <div class="title">
+                        <h3>Book</h3>
+                        <label for="Title">Title</label>
+                        <br>
+                        <input type="text" name="" id="Title">
+                    </div>
+                    <br>
+                    <div class="author-genre">
+                        <div class="author-genre__item author">
+                            <label for="Author">Author</label>
+                            <br>
+                            <input type="text" name="" id="Author">
+                        </div>
+                        <div class="author-genre__item genre">
+                            <label for="Genre">Genre</label>
+                            <br>
+                            <input type="text" name="" id="Genre">
+                        </div>
+                    </div>
+                    <hr>
+                    <input class="submit" type="submit" value="Add book">
+                </form>
+            </article>
+            <article class="container__item reading-list">
+
+            </article>
+        </section>
+    </main>
+
+    <script>
+        class BookList {
+            constructor(readBooks, notReadBooks, nextBook, currentBook, lastBook, allBooks) {
+                this.readBooks = readBooks
+                this.notReadBooks = notReadBooks
+                this.nextBook = new Book()
+                this.currentBook = new Book()
+                this.lastBook = new Book()
+                this.allBooks = []
+            }
+
+            add(book) {
+                this.allBooks.push(book)
+            }
+
+            finishCurrentBook() {
+                this.currentBook.read = true
+                this.currentBook.readDate = Date.now() // Cambiar!
+                this.lastBook = this.currentBook
+                this.currentBook = this.nextBook
+                this.nextBook.read = false // Cambiar!
+            }
+
+            getReadBooks() {
+                return this.readBooks
+            }
+
+            setReadBooks(readBooks) {
+                this.readBooks = readBooks
+            }
+
+            getNotReadBooks() {
+                return this.notReadBooks
+            }
+
+            setNotReadBooks(notReadBooks) {
+                this.notReadBooks = notReadBooks
+            }
+
+            getNextBook() {
+                return this.nextBook
+            }
+
+            setNextBook(nextBook) {
+                this.nextBook = nextBook
+            }
+
+            getCurrentBook() {
+                return this.currentBook
+            }
+
+            setCurrentBook(currentBook) {
+                this.currentBook = currentBook
+            }
+
+            getLastBook() {
+                return this.lastBook
+            }
+
+            setLastBook(lastBook) {
+                this.lastBook = lastBook
+            }
+
+            getAllBooks() {
+                return this.allBooks
+            }
+
+            setAllBooks(allBooks) {
+                this.allBooks = allBooks
+            }
+        }
+
+        class Book {
+            constructor(title, genre, author, read, readDate) {
+                this.title = title
+                this.genre = genre
+                this.author = author
+                this.read = false
+                this.readDate = null
+            }
+
+            getTitle() {
+                return this.title;
+            }
+
+            getGenre() {
+                return this.genre;
+            }
+
+            getAuthor() {
+                return this.author;
+            }
+
+            getRead() {
+                return this.read;
+            }
+
+            getReadDate() {
+                return this.readDate;
+            }
+
+            setTitle(newTitle) {
+                this.title = newTitle;
+            }
+
+            setGenre(newGenre) {
+                this.genre = newGenre;
+            }
+
+            setAuthor(newAuthor) {
+                this.author = newAuthor;
+            }
+
+            setRead(newRead) {
+                this.read = newRead;
+            }
+
+            setReadDate(newReadDate) {
+                this.readDate = newReadDate;
+            }
+        }
+    </script>
+</body>
+
+</html>
