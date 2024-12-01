@@ -18,9 +18,11 @@ body{
 
 header{
     background-color: royalblue;
+    height: 75px;
+    padding: 30px;
 }
 
-nav{
+#nav{
     background-color: purple;
     display: grid;
     grid-template-columns: 1;
@@ -29,12 +31,23 @@ nav{
     height: 100vh;
     float: right;
     text-align: center;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
 }
 
-nav a{
+#nav a{
     color: white;
 }
 
-nav ul .nav-item{
+#checkbox{
+    float: right;
+}
 
+#checkbox:checked + #nav{
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
 }

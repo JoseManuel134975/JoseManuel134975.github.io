@@ -14,47 +14,70 @@
         <h1>The Reading List</h1>
     </header>
 
-    <main>
-        <section class="container">
-            <article class="container__item book">
-                <form action="">
-                    <div class="title">
-                        <h3>Book</h3>
+    <main class="container">
+        <section class="container__item main-section">
+            <article class="main-section__item form">
+                <div class="form__title1">
+                    <h3>Book</h3>
+                </div>
+                <form action="" name="form">
+                    <div class="form__title">
                         <label for="Title">Title</label>
                         <br>
-                        <input type="text" name="" id="Title">
+                        <input type="text" name="title" id="title">
                     </div>
-                    <br>
-                    <div class="author-genre">
-                        <div class="author-genre__item author">
+                    <div class="form__author-genre">
+                        <div class="author-genre__item author-genre--author">
                             <label for="Author">Author</label>
                             <br>
-                            <input type="text" name="" id="Author">
+                            <input type="text" name="author" id="author">
                         </div>
-                        <div class="author-genre__item genre">
+                        <div class="author-genre__item author-genre--genre">
                             <label for="Genre">Genre</label>
                             <br>
-                            <input type="text" name="" id="Genre">
+                            <input type="text" name="genre" id="genre">
                         </div>
                     </div>
                     <hr>
-                    <input class="submit" type="submit" value="Add book">
+                    <input type="submit" value="Add book" name="submit" class="submit">
                 </form>
             </article>
-            <article class="container__item reading-list">
+            <article class="main-section__item bookList">
+                <div class="bookList__title">
+                    <h3>My Reading List</h3>
+                </div>
+                <!-- <div class="bookList__book">
+                    <div class="book--title">
+                        <h3>Título del libro</h3>
+                        <p>autor1</p>
+                    </div>
+                    <div class="book--date">
+                        <p>Read on Friday, November 10, 2023</p>
+                    </div>
+                </div>
+                <div class="bookList__book">
+                    <div class="book--title">
+                        <h3>Título del libro</h3>
+                        <p>autor1</p>
+                    </div>
+                    <div class="book--date">
+                        <p>Read on Friday, November 10, 2023</p>
+                    </div>
+                </div> -->
 
+                <!-- <p>Books Read: 0 of 6</p> -->
             </article>
         </section>
     </main>
 
     <script>
         class BookList {
-            constructor(readBooks, notReadBooks, nextBook, currentBook, lastBook, allBooks) {
-                this.readBooks = readBooks
-                this.notReadBooks = notReadBooks
-                this.nextBook = new Book()
-                this.currentBook = new Book()
-                this.lastBook = new Book()
+            constructor() {
+                this.readBooks = 0
+                this.notReadBooks = 0
+                this.nextBook = null
+                this.currentBook = null
+                this.lastBook = null
                 this.allBooks = []
             }
 
@@ -64,58 +87,9 @@
 
             finishCurrentBook() {
                 this.currentBook.read = true
-                this.currentBook.readDate = Date.now() // Cambiar!
+
                 this.lastBook = this.currentBook
                 this.currentBook = this.nextBook
-                this.nextBook.read = false // Cambiar!
-            }
-
-            getReadBooks() {
-                return this.readBooks
-            }
-
-            setReadBooks(readBooks) {
-                this.readBooks = readBooks
-            }
-
-            getNotReadBooks() {
-                return this.notReadBooks
-            }
-
-            setNotReadBooks(notReadBooks) {
-                this.notReadBooks = notReadBooks
-            }
-
-            getNextBook() {
-                return this.nextBook
-            }
-
-            setNextBook(nextBook) {
-                this.nextBook = nextBook
-            }
-
-            getCurrentBook() {
-                return this.currentBook
-            }
-
-            setCurrentBook(currentBook) {
-                this.currentBook = currentBook
-            }
-
-            getLastBook() {
-                return this.lastBook
-            }
-
-            setLastBook(lastBook) {
-                this.lastBook = lastBook
-            }
-
-            getAllBooks() {
-                return this.allBooks
-            }
-
-            setAllBooks(allBooks) {
-                this.allBooks = allBooks
             }
         }
 
@@ -124,49 +98,73 @@
                 this.title = title
                 this.genre = genre
                 this.author = author
-                this.read = false
-                this.readDate = null
+                this.read = read
+                this.readDate = readDate
             }
+        }
 
-            getTitle() {
-                return this.title;
-            }
+        let bookList = new BookList()
+        const submit = document.querySelector('.submit')
 
-            getGenre() {
-                return this.genre;
-            }
+        submit.addEventListener("click", (event) => {
+            event.preventDefault()
 
-            getAuthor() {
-                return this.author;
-            }
+            const form = document.forms['form']
+            let book = new Book(form.elements['title'].value, form.elements['author'].value, form.elements['genre'].value, false, null)
+            bookList.add(book)
+            addBook(form)
 
-            getRead() {
-                return this.read;
-            }
+            const books = document.querySelectorAll('.bookList__book')
+            const dateBooks = document.querySelectorAll('.book--date')
 
-            getReadDate() {
-                return this.readDate;
-            }
+            books.forEach((nodeBook, bookIndex) => {
+                nodeBook.addEventListener("click", () => {
+                    dateBooks.forEach((node, index) => {
+                        if (bookIndex == index) {
+                            let notDate = Date.now()
+                            let date = new Date(notDate).toLocaleString()
+                            node.textContent = date
+                            book.read = true
+                            book.readDate = date
+                        }
+                    })
+                })
+            })
+        })
 
-            setTitle(newTitle) {
-                this.title = newTitle;
-            }
+        const addBook = (form) => {
+            const formTitle = form.elements['title']
+            const formAuthor = form.elements['author']
+            const formGenre = form.elements['genre']
 
-            setGenre(newGenre) {
-                this.genre = newGenre;
-            }
+            const bookList = document.querySelector('.bookList')
+            const book = document.createElement('div')
+            const bookMainInfo = document.createElement('div')
+            const bookDate = document.createElement('div')
+            const title = document.createElement('h3')
+            const author = document.createElement('p')
+            const date = document.createElement('p')
 
-            setAuthor(newAuthor) {
-                this.author = newAuthor;
-            }
+            book.classList.add('bookList__book')
+            bookMainInfo.classList.add('book--title')
+            bookDate.classList.add('book--date')
 
-            setRead(newRead) {
-                this.read = newRead;
-            }
+            const nodeTextTitle = document.createTextNode(formTitle.value)
+            const nodeTextAuthor = document.createTextNode(formAuthor.value)
+            const nodeTextDate = document.createTextNode('Not read')
 
-            setReadDate(newReadDate) {
-                this.readDate = newReadDate;
-            }
+            title.appendChild(nodeTextTitle)
+            author.appendChild(nodeTextAuthor)
+            date.appendChild(nodeTextDate)
+
+            bookMainInfo.appendChild(title)
+            bookMainInfo.appendChild(author)
+            bookDate.appendChild(date)
+
+            book.appendChild(bookMainInfo)
+            book.appendChild(bookDate)
+
+            bookList.appendChild(book)
         }
     </script>
 </body>
