@@ -65,7 +65,7 @@
                     </div>
                 </div> -->
 
-                <!-- <p>Books Read: 0 of 6</p> -->
+                <p id="readBooks"></p>
             </article>
         </section>
     </main>
@@ -88,8 +88,12 @@
             finishCurrentBook() {
                 this.currentBook.read = true
 
-                this.lastBook = this.currentBook
-                this.currentBook = this.nextBook
+                let notDate = Date.now()
+                let date = new Date(notDate).toDateString()
+                this.currentBook.readDate = date
+
+                // this.lastBook = this.currentBook
+                // this.currentBook = this.nextBook
             }
         }
 
@@ -104,67 +108,67 @@
         }
 
         let bookList = new BookList()
-        const submit = document.querySelector('.submit')
+        const form = document.forms.form
+        const bookListDOM = document.querySelector('.bookList')
+        const submit = form.submit
+        const container = document.querySelector('.container')
+        const contBooksRead = document.getElementById('readBooks')
 
         submit.addEventListener("click", (event) => {
             event.preventDefault()
 
-            const form = document.forms['form']
-            let book = new Book(form.elements['title'].value, form.elements['author'].value, form.elements['genre'].value, false, null)
+            let book = new Book(form.title.value, form.genre.value, form.author.value, false, null)
             bookList.add(book)
-            addBook(form)
+            addBookToDOM(book, bookListDOM)
+            bookList.notReadBooks++
+            bookList.currentBook = book
 
-            const books = document.querySelectorAll('.bookList__book')
-            const dateBooks = document.querySelectorAll('.book--date')
-
-            books.forEach((nodeBook, bookIndex) => {
-                nodeBook.addEventListener("click", () => {
-                    dateBooks.forEach((node, index) => {
-                        if (bookIndex == index) {
-                            let notDate = Date.now()
-                            let date = new Date(notDate).toLocaleString()
-                            node.textContent = date
-                            book.read = true
-                            book.readDate = date
-                        }
+            bookListDOM.childNodes.forEach((node, index) => {
+                if(node.classList == 'bookList__book') {
+                    node.addEventListener("click", () => {
+                        bookList.finishCurrentBook()
+                        document.querySelector('.book--date').textContent = book.readDate
+                        bookList.readBooks++
+                        bookList.notReadBooks--
+                        updateReadBooks(contBooksRead)
                     })
-                })
+                }                
             })
         })
 
-        const addBook = (form) => {
-            const formTitle = form.elements['title']
-            const formAuthor = form.elements['author']
-            const formGenre = form.elements['genre']
 
-            const bookList = document.querySelector('.bookList')
-            const book = document.createElement('div')
+        const addBookToDOM = (book, bookListDOM) => {
+            let fragment = document.createDocumentFragment()
+
+            const bookListBook = document.createElement('div')
+            bookListBook.classList.add('bookList__book')
+
             const bookMainInfo = document.createElement('div')
-            const bookDate = document.createElement('div')
-            const title = document.createElement('h3')
-            const author = document.createElement('p')
-            const date = document.createElement('p')
-
-            book.classList.add('bookList__book')
             bookMainInfo.classList.add('book--title')
+
+            const titleText = document.createElement('h3')
+            titleText.textContent = book.title
+            const authorText = document.createElement('p')
+            authorText.textContent = book.author
+            bookMainInfo.appendChild(titleText)
+            bookMainInfo.appendChild(authorText)
+
+
+            const bookDate = document.createElement('div')
             bookDate.classList.add('book--date')
+            const dateText = document.createElement('p')
+            dateText.textContent = 'Not read'
+            bookDate.appendChild(dateText)
 
-            const nodeTextTitle = document.createTextNode(formTitle.value)
-            const nodeTextAuthor = document.createTextNode(formAuthor.value)
-            const nodeTextDate = document.createTextNode('Not read')
+            bookListBook.appendChild(bookMainInfo)
+            bookListBook.appendChild(bookDate)
 
-            title.appendChild(nodeTextTitle)
-            author.appendChild(nodeTextAuthor)
-            date.appendChild(nodeTextDate)
+            fragment.appendChild(bookListBook)
+            bookListDOM.appendChild(fragment)
+        }
 
-            bookMainInfo.appendChild(title)
-            bookMainInfo.appendChild(author)
-            bookDate.appendChild(date)
-
-            book.appendChild(bookMainInfo)
-            book.appendChild(bookDate)
-
-            bookList.appendChild(book)
+        const updateReadBooks = (contBooksRead) => {
+            contBooksRead.textContent = `Books Read: ${bookList.readBooks} of ${bookList.allBooks.length}`
         }
     </script>
 </body>
