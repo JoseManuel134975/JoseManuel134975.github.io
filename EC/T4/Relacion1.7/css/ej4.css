@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to bottom right, #c97df1, #344ad4);
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.container{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0;
+    box-shadow: 0px 8px 30px black;
+}
+
+.container__section{
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+}
+
+.img{
+    background-image: url('../assets/img/Crowdrise.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* ¡Arreglar! */
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.form{
+    background-color: white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.welcome{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+.form__formulary{
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.all-a{
+    color: darkcyan;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.inputs{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+.inputs label, .inputs input{
+    width: 45%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.inputs input{
+    padding: 10px;
+    font-size: 17px;
+}
+
+.inputs label{
+    font-weight: bold;
+}
+
+input[type="checkbox"]{
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.submit{
+    margin-top: 20px;
+    padding: 10px;
+    width: 15%;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    background-color: royalblue;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
