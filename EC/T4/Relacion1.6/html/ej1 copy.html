@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles copy.css">
 </head>
 
 <body>
@@ -18,9 +18,11 @@
         <section class="container__section form">
             <h3>Book</h3>
             <form action="" name="form" class="form-container">
-                <label for="">Title</label>
-                <br>
-                <input type="text" name="title">
+                <div class="form-container__title">
+                    <label for="">Title</label>
+                    <br>
+                    <input type="text" name="title">
+                </div>
 
                 <div class="form-container__info">
                     <label for="">Author</label>
@@ -37,6 +39,10 @@
         </section>
         <section class="container__section booklist">
             <h3>My Reading List</h3>
+            <ul id="list">
+
+            </ul>
+            <p>Books Read: <span id="read-books"></span> of <span id="num-books"></span></p>
         </section>
     </main>
 
@@ -55,17 +61,19 @@
                 this.allBooks.push(book)
 
                 const listSection = document.querySelector('.booklist')
-                const list = document.createElement('ul')
                 const listItem = document.createElement('li')
 
                 const listItemInfo = document.createElement('article')
                 const listItemDate = document.createElement('article')
 
+                // listItem.classList.add('bookList__book')
+                listItemInfo.classList.add('book--title')
+
                 const title = document.createElement('h3')
                 const author = document.createElement('p')
                 const date = document.createElement('p')
 
-                date.id = '#date'
+                date.classList.add('read-false')
 
                 title.textContent = book.title
                 author.textContent = book.author
@@ -79,9 +87,18 @@
                 listItem.appendChild(listItemInfo)
                 listItem.appendChild(listItemDate)
 
+                const list = document.getElementById('list')
                 list.appendChild(listItem)
 
                 listSection.appendChild(list)
+
+                listItem.addEventListener("click", () => {
+                    bookList.finishCurrentBook() 
+                    bookList.notReadBooks-- 
+                    bookList.readBooks++
+                    const readBooks = document.getElementById('read-books')
+                    readBooks.textContent = bookList.readBooks
+                })
             }
 
             finishCurrentBook() {
@@ -91,11 +108,10 @@
                 let date = new Date(notDate).toDateString()
                 this.currentBook.readDate = date
 
-                const dateDOM = document.getElementById('#date')
+                const dateDOM = document.querySelector('.read-false')
                 dateDOM.textContent = this.currentBook.readDate
+                dateDOM.className = 'read-true'
 
-                this.lastBook = this.currentBook
-                this.currentBook = this.nextBook
             }
         }
 
@@ -126,16 +142,18 @@
             bookList.add(book)
             bookList.currentBook = book
             bookList.notReadBooks++
+            const numBooks = document.getElementById('num-books')
+            numBooks.textContent = bookList.allBooks.length
         })
-
-        const bookListDOM = document.querySelectorAll('.booklist')
-        bookListDOM.forEach((node, index) => {
-            node.addEventListener("click", () => {
-                bookList.finishCurrentBook() 
-                bookList.notReadBooks-- 
-                bookList.readBooks++
-            })
-        });
+        
+        // const bookListDOM = document.querySelectorAll('.booklist')
+        // bookListDOM.forEach((node, index) => {
+        //     node.addEventListener("click", () => {
+        //         bookList.finishCurrentBook() 
+        //         bookList.notReadBooks-- 
+        //         bookList.readBooks++
+        //     })
+        // });
     </script>
 </body>
 
