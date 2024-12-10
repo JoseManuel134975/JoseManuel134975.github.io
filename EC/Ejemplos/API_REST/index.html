@@ -33,11 +33,11 @@
         }
 
         function getFetchV1() {
-            fetch('https://fakestoreapi.com/products')
+            fetch('http://localhost:3000/posts')
                 .then(res => res.json())
                 .then(json => {
                     json.forEach((element) => {
-                        console.log(element.title)
+                        console.log(element.username)
                     })
                 })
         }
