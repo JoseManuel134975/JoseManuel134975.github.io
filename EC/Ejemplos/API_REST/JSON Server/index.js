@@ -1,35 +1,47 @@
-function getFetchV1() {
-    fetch('http://localhost:3000/posts')
-        .then(res => res.json())
-        .then(json => {
-            json.forEach((element) => {
+// function getFetchV1() {
+//     fetch('http://localhost:3000/posts')
+//         .then(res => res.json())
+//         .then(json => {
+//             json.forEach((element) => {
                 // console.log(`Usuario: ${element.username} --- Contraseña: ${element.password}`)
-            })
-            return json
-        })
+//             })
+//             return json
+//         })
+// }
+
+async function getFetchV1() {
+    try {
+        let response = fetch('http://localhost:3000/posts')
+        let json = (await response).json()
+    
+        return json        
+    }catch(err) {
+        alert(err)
+    }
 }
 
-const arrUsers = getFetchV1()
+const arrUsers = await getFetchV1()
 console.log(arrUsers);
 
-document.addEventListener("DOMContentLoaded", () => getFetchV1())
+// document.addEventListener("DOMContentLoaded", () => getFetchV1())
 
 
 const form = document.forms['form']
-const user = form.elements['username']
-const pass = form.elements['password']
-
 const submit = form.elements['submit']
 
 const validUser = (user, pass, array) => {
-    if(array.find((element) => element.username == user.value && element.password == pass.value)) {
-        return true
-    } else {
-        return false
-    }
+    return array.find((element) => element.username === user && element.password === pass)
 }
 
 submit.addEventListener("click", (event) => {
     event.preventDefault()
-    validUser(user.value, pass.value, arrUsers)
+
+    const user = form.elements['username'].value
+    const pass = form.elements['password'].value
+
+    if(validUser(user, pass, arrUsers) !== undefined) {
+        alert('¡Correcto!')
+    }else {
+        alert('Incorrecto...')
+    }
 })
