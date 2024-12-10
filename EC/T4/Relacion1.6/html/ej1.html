@@ -4,70 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading List</title>
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <h1>IMG</h1>
+        <h3>IMG</h3>
         <h1>The Reading List</h1>
     </header>
 
     <main class="container">
-        <section class="container__item main-section">
-            <article class="main-section__item form">
-                <div class="form__title1">
-                    <h3>Book</h3>
+        <section class="container__section form">
+            <h3>Book</h3>
+            <form action="" name="form" class="form-container">
+                <div class="form-container__title">
+                    <label for="">Title</label>
+                    <br>
+                    <input type="text" name="title">
                 </div>
-                <form action="" name="form">
-                    <div class="form__title">
-                        <label for="Title">Title</label>
-                        <br>
-                        <input type="text" name="title" id="title">
-                    </div>
-                    <div class="form__author-genre">
-                        <div class="author-genre__item author-genre--author">
-                            <label for="Author">Author</label>
-                            <br>
-                            <input type="text" name="author" id="author">
-                        </div>
-                        <div class="author-genre__item author-genre--genre">
-                            <label for="Genre">Genre</label>
-                            <br>
-                            <input type="text" name="genre" id="genre">
-                        </div>
-                    </div>
-                    <hr>
-                    <input type="submit" value="Add book" name="submit" class="submit">
-                </form>
-            </article>
-            <article class="main-section__item bookList">
-                <div class="bookList__title">
-                    <h3>My Reading List</h3>
-                </div>
-                <!-- <div class="bookList__book">
-                    <div class="book--title">
-                        <h3>Título del libro</h3>
-                        <p>autor1</p>
-                    </div>
-                    <div class="book--date">
-                        <p>Read on Friday, November 10, 2023</p>
-                    </div>
-                </div>
-                <div class="bookList__book">
-                    <div class="book--title">
-                        <h3>Título del libro</h3>
-                        <p>autor1</p>
-                    </div>
-                    <div class="book--date">
-                        <p>Read on Friday, November 10, 2023</p>
-                    </div>
-                </div> -->
 
-                <p id="readBooks"></p>
-            </article>
+                <div class="form-container__info">
+                    <label for="">Author</label>
+                    <label for="">Genre</label>
+                    <br>
+                    <input type="text" name="author">
+                    <input type="text" name="genre">
+                </div>
+
+                <hr>
+
+                <input type="submit" value="Add book" name="submit" class="submit">
+            </form>
         </section>
+        <section class="container__section booklist">
+            <h3>My Reading List</h3>
+            <ul id="list">
+
+            </ul>
+        </section>
+        <p>Books Read: <span id="read-books"></span> of <span id="num-books"></span></p>
     </main>
 
     <script>
@@ -83,6 +59,46 @@
 
             add(book) {
                 this.allBooks.push(book)
+
+                const listSection = document.querySelector('.booklist')
+                const listItem = document.createElement('li')
+
+                const listItemInfo = document.createElement('article')
+                const listItemDate = document.createElement('article')
+
+                // listItem.classList.add('bookList__book')
+                listItemInfo.classList.add('book--title')
+
+                const title = document.createElement('h3')
+                const author = document.createElement('p')
+                const date = document.createElement('p')
+
+                date.classList.add('read-false')
+
+                title.textContent = book.title
+                author.textContent = book.author
+                date.textContent = 'Not read'
+
+                listItemInfo.appendChild(title)
+                listItemInfo.appendChild(author)
+
+                listItemDate.appendChild(date)
+
+                listItem.appendChild(listItemInfo)
+                listItem.appendChild(listItemDate)
+
+                const list = document.getElementById('list')
+                list.appendChild(listItem)
+
+                listSection.appendChild(list)
+
+                listItem.addEventListener("click", () => {
+                    bookList.finishCurrentBook() 
+                    bookList.notReadBooks-- 
+                    bookList.readBooks++
+                    const readBooks = document.getElementById('read-books')
+                    readBooks.textContent = bookList.readBooks
+                })
             }
 
             finishCurrentBook() {
@@ -92,8 +108,10 @@
                 let date = new Date(notDate).toDateString()
                 this.currentBook.readDate = date
 
-                // this.lastBook = this.currentBook
-                // this.currentBook = this.nextBook
+                const dateDOM = document.querySelector('.read-false')
+                dateDOM.textContent = this.currentBook.readDate
+                dateDOM.className = 'read-true'
+
             }
         }
 
@@ -107,69 +125,35 @@
             }
         }
 
-        let bookList = new BookList()
-        const form = document.forms.form
-        const bookListDOM = document.querySelector('.bookList')
-        const submit = form.submit
-        const container = document.querySelector('.container')
-        const contBooksRead = document.getElementById('readBooks')
+        const bookList = new BookList()
+
+        const form = document.forms['form']
+
+        const title = form.elements['title']
+        const author = form.elements['author']
+        const genre = form.elements['genre']
+
+        const submit = form.elements['submit']
 
         submit.addEventListener("click", (event) => {
             event.preventDefault()
 
-            let book = new Book(form.title.value, form.genre.value, form.author.value, false, null)
+            const book = new Book(title.value, genre.value, author.value, false, null)
             bookList.add(book)
-            addBookToDOM(book, bookListDOM)
-            bookList.notReadBooks++
             bookList.currentBook = book
-
-            bookListDOM.childNodes.forEach((node, index) => {
-                if(node.classList == 'bookList__book') {
-                    node.addEventListener("click", () => {
-                        bookList.finishCurrentBook()
-                        document.querySelector('.book--date').textContent = book.readDate
-                        bookList.readBooks++
-                        bookList.notReadBooks--
-                        updateReadBooks(contBooksRead)
-                    })
-                }                
-            })
+            bookList.notReadBooks++
+            const numBooks = document.getElementById('num-books')
+            numBooks.textContent = bookList.allBooks.length
         })
-
-
-        const addBookToDOM = (book, bookListDOM) => {
-            let fragment = document.createDocumentFragment()
-
-            const bookListBook = document.createElement('div')
-            bookListBook.classList.add('bookList__book')
-
-            const bookMainInfo = document.createElement('div')
-            bookMainInfo.classList.add('book--title')
-
-            const titleText = document.createElement('h3')
-            titleText.textContent = book.title
-            const authorText = document.createElement('p')
-            authorText.textContent = book.author
-            bookMainInfo.appendChild(titleText)
-            bookMainInfo.appendChild(authorText)
-
-
-            const bookDate = document.createElement('div')
-            bookDate.classList.add('book--date')
-            const dateText = document.createElement('p')
-            dateText.textContent = 'Not read'
-            bookDate.appendChild(dateText)
-
-            bookListBook.appendChild(bookMainInfo)
-            bookListBook.appendChild(bookDate)
-
-            fragment.appendChild(bookListBook)
-            bookListDOM.appendChild(fragment)
-        }
-
-        const updateReadBooks = (contBooksRead) => {
-            contBooksRead.textContent = `Books Read: ${bookList.readBooks} of ${bookList.allBooks.length}`
-        }
+        
+        // const bookListDOM = document.querySelectorAll('.booklist')
+        // bookListDOM.forEach((node, index) => {
+        //     node.addEventListener("click", () => {
+        //         bookList.finishCurrentBook() 
+        //         bookList.notReadBooks-- 
+        //         bookList.readBooks++
+        //     })
+        // });
     </script>
 </body>
 

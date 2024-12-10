@@ -1,6 +1,6 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -12,105 +12,76 @@ body{
 header{
     display: flex;
     flex-flow: column wrap;
-    align-content: center;
     align-items: center;
-    gap: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 50px;
+    gap: 25px;
 }
 
 .container{
-    height: 100vh;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.form{
-    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
-.main-section__item{
-    width: 45%;
+.container__section{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 25px;
+}
+
+.form-container{
     display: flex;
     flex-flow: column wrap;
     gap: 20px;
 }
 
-.form{
-    display: flex;
-    flex-flow: column wrap;
-    gap: 30px;
-    align-content: center;
-}
-
-.form__title{
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.form__author-genre{
-    display: flex;
-    flex-flow: row wrap;
-    gap: 30px;
-}
-
-.author-genre__item{
-    width: 45%;
-}
-
-hr{
-    margin: 50px;
-    margin-left: 0;
-    margin-right: 0;
+.form-container__info label{
+    margin-right: 35%;
 }
 
 input{
     margin-top: 10px;
-    height: 30px;
     padding: 5px;
 }
 
-.form__title > input{
-    width: 100%;
-}
-
 .submit{
-    height: auto;
-    padding: 15px;
-    text-align: center;
+    padding: 25px;
     background-color: darkgray;
     outline: none;
     border: none;
-    width: 100%;
+    font-size: 1.25em;
+    font-weight: bold;
+    border-radius: 3px;
     cursor: pointer;
 }
-.bookList{
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    gap: 0;
+
+ul, li{
+    list-style-type: none;
 }
 
-/* .bookList__title{
-    margin-bottom: 30px;
-} */
-
-.bookList__book{
+li{
+    background-color: white;
+    margin-top: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    width: 100%;
     padding: 20px;
-    background-color: white;
     border-bottom: 1px solid black;
+    margin: 0;
 }
 
 .book--title{
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     gap: 10px;
+}
+
+.booklist{
+    padding: 20px;
+    width: 50%;
 }
