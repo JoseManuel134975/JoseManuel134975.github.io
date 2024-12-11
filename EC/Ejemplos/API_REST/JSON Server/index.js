@@ -1,35 +1,46 @@
-function getFetchV1() {
-    fetch('http://localhost:3000/posts')
-        .then(res => res.json())
-        .then(json => {
-            json.forEach((element) => {
-                // console.log(`Usuario: ${element.username} --- Contraseña: ${element.password}`)
-            })
-            return json
-        })
-}
+// function getFetchV1() {
+//     fetch('http://localhost:3000/posts')
+//         .then(res => res.json())
+//         .then(json => {
+//             json.forEach((element) => {
+// console.log(`Usuario: ${element.username} --- Contraseña: ${element.password}`)
+//             })
+//             return json
+//         })
+// }
 
-const arrUsers = getFetchV1()
-console.log(arrUsers);
+async function getFetchV1() {
+    try {
+        let response = fetch('http://localhost:3000/posts') // Localhost
+        let json = (await response).json() // Convierte la respuesta a JSON
 
-document.addEventListener("DOMContentLoaded", () => getFetchV1())
-
-
-const form = document.forms['form']
-const user = form.elements['username']
-const pass = form.elements['password']
-
-const submit = form.elements['submit']
-
-const validUser = (user, pass, array) => {
-    if(array.find((element) => element.username == user.value && element.password == pass.value)) {
-        return true
-    } else {
-        return false
+        return json
+    } catch (err) {
+        alert(err)
     }
 }
 
+const arrUsers = await getFetchV1() // Devuelve el resultado de la promesa (array)
+console.log(arrUsers);
+
+// document.addEventListener("DOMContentLoaded", () => getFetchV1())
+
+
+const form = document.forms['form']
+const submit = form.elements['submit']
+
+const validUser = (user, pass, array) => array.find((element) => element.username === user && element.password === pass)
+
+
 submit.addEventListener("click", (event) => {
     event.preventDefault()
-    validUser(user.value, pass.value, arrUsers)
+
+    const user = form.elements['username'].value
+    const pass = form.elements['password'].value
+
+    if (validUser(user, pass, arrUsers) !== undefined) {
+        alert('¡Correcto!')
+    } else {
+        alert('Incorrecto...')
+    }
 })
