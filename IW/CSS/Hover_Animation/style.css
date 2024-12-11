@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-container{
+    width: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+div{
+    background-color: royalblue;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 10px;
+    position: relative;
+}
+
+.div-container div::before{
+    display: none;
+    content: "";
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.div-container:hover{
+    transition: all 300ms;
+}
+
+.div-container div:nth-of-type(odd)::before{
+    animation: hoverUp 1s linear;
+}
+
+.div-container div:nth-of-type(even)::before{
+    animation: hoverDown 1s linear;
+}
+
+.div-container div:first-child:hover::before{
+    content: "W";
+    display: block;
+}
+
+.div-container > div:nth-child(2):hover::before{
+    content: "O";
+    display: block;
+}
+
+.div-container div:nth-child(3):hover:before{
+    content: "R";
+    display: block;
+}
+
+.div-container div:nth-child(4):hover::before{
+    content: "L";
+    display: block;
+}
+
+.div-container div:last-child:hover::before{
+    content: "D";
+    display: block;
+}
+
+@keyframes hoverUp {
+    from{
+        transform: translateY(100%);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes hoverDown {
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(100%);
+    }
+}
