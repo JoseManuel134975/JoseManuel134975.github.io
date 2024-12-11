@@ -18,6 +18,16 @@ body{
     margin-top: 25px;
 }
 
+.div-container:hover div:nth-of-type(odd)::before{
+    transform: translateY(-100%);
+    visibility: visible;
+}
+
+.div-container:hover div:nth-of-type(even)::before{
+    transform: translateY(100%);
+    visibility: visible;
+}
+
 div{
     background-color: royalblue;
     color: white;
@@ -25,72 +35,67 @@ div{
     font-size: 2em;
     padding: 10px;
     position: relative;
+    overflow: hidden;
 }
 
-.div-container div::before{
-    display: none;
+div::before{
     content: "";
     background-color: black;
     color: white;
     position: absolute;
-    top: 0;
-    left: 0;
     padding: 10px;
+    right: 0;
+    left: 0;
+    transition: transform 1s ease, visibility 1s;   
+    visibility: hidden;
 }
 
-.div-container:hover{
-    transition: all 300ms;
+div:nth-of-type(odd)::before{
+    top: 100%;
 }
 
-.div-container div:nth-of-type(odd)::before{
-    animation: hoverUp 1s linear;
+div:nth-of-type(even)::before{
+    bottom: 100%;
 }
 
-.div-container div:nth-of-type(even)::before{
-    animation: hoverDown 1s linear;
-}
-
-.div-container div:first-child:hover::before{
+div:first-of-type::before{
     content: "W";
-    display: block;
 }
 
-.div-container > div:nth-child(2):hover::before{
+div:nth-of-type(2):before{
     content: "O";
-    display: block;
 }
 
-.div-container div:nth-child(3):hover:before{
+div:nth-of-type(3)::before{
     content: "R";
-    display: block;
 }
 
-.div-container div:nth-child(4):hover::before{
+div:nth-of-type(4)::before{
     content: "L";
-    display: block;
 }
 
-.div-container div:last-child:hover::before{
+div:last-of-type::before{
     content: "D";
-    display: block;
 }
 
-@keyframes hoverUp {
+
+
+/* @keyframes hoverUp {
     from{
-        transform: translateY(100%);
+        transform: translateY(0);
     }
 
     to{
-        transform: translateY(0);
+        transform: translateY(100%);
     }
 }
 
 @keyframes hoverDown {
     from{
-        transform: translateY(0);
+        transform: translateY(100%);
     }
 
     to{
-        transform: translateY(100%);
+        transform: translateY(0);
     }
-}
+} */
