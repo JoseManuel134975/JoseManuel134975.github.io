@@ -6,6 +6,7 @@ if(isset($_REQUEST["accion"])){
         case "acceder":
             $nombre = $_REQUEST["nombre"];
             $_SESSION["nombre"] = $nombre;
+            $cuestionarios = leerCuestionarios('examenes'); // Al igual que en Symfony, se le pasa al .php (.html.twig) la variable
             $vista = "cuestionarios.php";
             break;
         case "respondercuestionario":

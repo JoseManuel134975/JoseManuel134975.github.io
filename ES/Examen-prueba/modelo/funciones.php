@@ -44,4 +44,16 @@ function verRespuestas(){
 
     return $ok;
 }
+
+function leerCuestionarios($ruta) {
+    $cuestionarios = [];
+    $ficheros = scandir($ruta);
+
+    foreach($ficheros as $f) {
+        if($f != "." && $f != "..") {
+            array_push($cuestionarios ,$f);
+        }
+    }
+    return $cuestionarios;
+}
 ?>
