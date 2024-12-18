@@ -7,6 +7,8 @@
             <textarea cols="60" rows="10" name="respuesta" id=""></textarea>
             <div></div>
             <input type="submit" name="accion" value="Guardar respuesta">
+            <input type="hidden" name="pregunta" value="<?php echo $pregunta ?>">
+            <!-- Se puede pasar por un campo oculto o guardarlo en la sesión (depende de la situación) -->
         </form>
     </body>
 </html>

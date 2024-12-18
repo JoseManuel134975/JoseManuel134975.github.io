@@ -1,10 +1,14 @@
 <?php
-function guardarRespuesta($pregunta, $respuesta){
-    $ruta = "." . DIRECTORY_SEPARATOR . "examenes" . DIRECTORY_SEPARATOR . $_SESSION["cuestionario"] . DIRECTORY_SEPARATOR . $pregunta;
-    $ok = false;
-    $ok = file_put_contents($ruta, $_SESSION["nombre"] . ": " . $respuesta);
+function guardarRespuesta($p, $r, $c){
+    $f = fopen("examenes/$c/$p", "a+");
 
-    return $ok;
+    if($f) {
+        $usuario = $_SESSION['nombre'];
+        fwrite($f, "$usuario:");
+        fwrite($f, $r.PHP_EOL);
+        fclose($f);
+    }
+
 }
 
 function guardarCuestionario($cuestionario){
@@ -55,5 +59,18 @@ function leerCuestionarios($ruta) {
         }
     }
     return $cuestionarios;
+}
+
+function leerPreguntas($cuestionario) {
+    $preguntas = [];
+    $ficheros = scandir('examenes/' . $cuestionario );
+
+    foreach($ficheros as $f) {
+        if($f != "." && $f != "..") {
+            array_push($preguntas, $f);
+        }
+    }    
+
+    return $preguntas; // Retorna la array para poder recorrerla desde FUERA!
 }
 ?>

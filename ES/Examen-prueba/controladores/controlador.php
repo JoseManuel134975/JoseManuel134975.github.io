@@ -12,6 +12,7 @@ if(isset($_REQUEST["accion"])){
         case "respondercuestionario":
             $cuestionario = $_REQUEST["cuestionario"];
             $_SESSION["cuestionario"] = $cuestionario;
+            $preguntas = leerPreguntas($cuestionario);
             $vista = "preguntas.php";
             break;
         case "contestarpregunta":
@@ -20,10 +21,11 @@ if(isset($_REQUEST["accion"])){
             $vista = "responder.php";
             break;
         case "guardarrespuesta":
+            $cuestionario = $_SESSION['cuestionario'];
             $respuesta = $_REQUEST["respuesta"];
             $_SESSION["respuesta"] = $respuesta;
             $pregunta = $_SESSION["pregunta"];
-            $guardar = guardarRespuesta($pregunta, $respuesta);
+            $guardar = guardarRespuesta($pregunta, $respuesta, $cuestionario);
             if($guardar = true){
                 $mensaje = "Respuesta guardada";
             }

@@ -4,7 +4,8 @@
             <td><?php echo $cuestion ?></td>
             <td>
                 <form>
-                    <input type="submit" name="accion" value="Responder">
+                    <input type="submit" name="accion" value="Responder cuestionario">
+                    <input type="hidden" name="cuestionario" value="<?php echo $cuestion ?>">
                 </form>
             </td>
         </tr>
