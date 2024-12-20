@@ -90,6 +90,12 @@ nav a {
     padding-left: 20px;
 }
 
+nav a:hover{
+    transition: all 0.25s linear;
+    transform: scale(1.25);
+    color: deepskyblue;
+}
+
 nav {
     display: flex;
     flex-flow: row wrap;
@@ -103,8 +109,7 @@ nav {
     width: 30px;
     right: 70%;
     top: 20%;
-    transition: all 1s ease;
-    animation: turn 2s infinite;
+    animation: turn 2s infinite linear, turnAround 3s infinite linear;
 }
 
 
@@ -122,7 +127,7 @@ nav {
     width: 100%;
 }
 
-.section-title{
+.section-title {
     width: 100%;
     color: black;
     background-color: lightgray;
@@ -147,6 +152,33 @@ nav {
     padding: 25px;
     display: grid;
     gap: 25px;
+    white-space-collapse: preserve;
+    transition: all 0.25s linear;
+    overflow: hidden;
+}
+
+.card:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+.card:hover .icon-symbol{
+    color: deepskyblue;
+    transition: all 1s linear;
+}
+
+.card:hover .icon-symbol, .card:hover h3{
+    transition: all 0.25s linear;
+    animation: fromNegativeY 0.25s linear;
+}
+
+.card:hover p{
+    transition: all 0.25s linear;
+    animation: fromNegativeX 0.25s linear;
+}
+
+.card:hover h3, .card:hover p{
+    color: white;
 }
 
 .royalblue {
@@ -157,16 +189,12 @@ nav {
     font-weight: bold;
 }
 
-.icon-symbol{
+.icon-symbol {
     font-family: "Websymbols";
-    font-size:3em;
+    font-size: 3em;
 }
 
-.ff-trebuchetMS{
-    font-family: "TrebuchetMS";
-}
-
-.date-categories{
+.date-categories {
     background-color: darkslategray;
     color: white;
     padding: 10px;
@@ -179,7 +207,7 @@ nav {
     right: 0;
 }
 
-.lastArticles{
+.lastArticles {
     display: flex;
     flex-flow: column wrap;
     align-content: space-around;
@@ -187,7 +215,7 @@ nav {
     width: 65%;
 }
 
-.lastArticles__item{
+.lastArticles__item {
     width: 100%;
     background-color: white;
     box-shadow: 0 0 2px black;
@@ -198,11 +226,15 @@ nav {
     gap: 10px;
 }
 
-.fs-grant{
+.fs-grant {
     font-size: 1.75em;
 }
 
-aside{
+.card__title {
+    white-space: nowrap;
+}
+
+aside {
     display: flex;
     flex-flow: column wrap;
     width: 30%;
@@ -210,7 +242,7 @@ aside{
 
 }
 
-.social{
+.social {
     background-color: white;
     box-shadow: 0 0 4px black;
     display: flex;
@@ -219,29 +251,29 @@ aside{
     gap: 10px;
 }
 
-.social a{
+.social a {
     color: black;
 }
 
-aside .section-title{
+aside .section-title {
     text-align: start;
 }
 
-.form-container{
+.form-container {
     display: flex;
     flex-flow: column wrap;
     gap: 5px;
     align-content: space-around;
 }
 
-.form-container label{
+.form-container label {
     padding: 10px;
     text-align: start;
     font-size: 1.75em;
     margin-bottom: 10px;
 }
 
-aside h2{
+aside h2 {
     padding: 10px;
     text-align: start;
     font-size: 1.75em;
@@ -249,7 +281,7 @@ aside h2{
 
 }
 
-input{
+input {
     outline: none;
     border: none;
     box-shadow: 0 0 3px inset black;
@@ -258,17 +290,20 @@ input{
     width: 100%;
 }
 
-input[type="submit"], input[type="reset"]{
-    background-color: dodgerblue;
+input[type="submit"],
+input[type="reset"] {
+    background: linear-gradient(deepskyblue, dodgerblue);
+    font-size: 1em;
     color: white;
     font-family: "TrebuchetMS";
     padding: 10px;
     border: 1px solid black;
     cursor: pointer;
     width: 35%;
+    border-radius: 0;
 }
 
-.login{
+.login {
     background-color: white;
     box-shadow: 0 0 4px black;
     display: flex;
@@ -279,7 +314,23 @@ input[type="submit"], input[type="reset"]{
     gap: 10px;
 }
 
-.login__buttons{
+.login__links {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0;
+    align-self: flex-start;
+}
+
+.login__links a {
+    color: black;
+}
+
+.login__links a:hover{
+    color: dodgerblue;
+    text-decoration: underline;
+}
+
+.login__buttons {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -287,25 +338,95 @@ input[type="submit"], input[type="reset"]{
     justify-content: center;
 }
 
-input:focus{
+.login__buttons input:hover{
+    box-shadow: 0 0 4px black;
+}
+
+input:focus {
     border: 3px solid transparent;
     border-color: dodgerblue;
 }
 
-/* #user::before{
-    content: "U";
-    font-family: "Websymbols";
-    font-size: 1.5em;
-} */
+.social a{
+    padding-bottom: 15px;
+    font-size: 30px;
+    width: 10%;
+    position: relative;
+}
 
-#user::placeholder, #pass::placeholder, #search::placeholder{
+.social > a:first-child::after{
+    content: "Twitter";
+    position: absolute;
+    color: black;
+    left: 0;
+    top: 0;
+    font-family: "TrebuchetMS";
+    font-weight: bold;
+    font-size: 22px;
+    padding: 5px;
+    background-color: lightgrey;
+    opacity: 0;
+    transition: 0.25s all linear;
+    transform: translateX(0);
+}
+
+.social > a:first-child:hover::after{
+    opacity: 1;
+    transform: translateX(50%);
+}
+
+.social > a:nth-child(2)::after{
+    content: "Facebook";
+    position: absolute;
+    color: black;
+    left: 0;
+    top: 0;
+    font-family: "TrebuchetMS";
+    font-weight: bold;
+    font-size: 22px;
+    padding: 5px;
+    background-color: lightgrey;
+    opacity: 0;
+    transition: 0.25s all linear;
+    transform: translateX(0);
+}
+
+.social > a:nth-child(2):hover::after{
+    opacity: 1;
+    transform: translateX(50%);
+}
+
+.social > a:last-child::after{
+    content: "Youtube";
+    position: absolute;
+    color: black;
+    left: 0;
+    top: 0;
+    font-family: "TrebuchetMS";
+    font-weight: bold;
+    font-size: 22px;
+    padding: 5px;
+    background-color: lightgrey;
+    opacity: 0;
+    transition: 0.25s all linear;
+    transform: translateX(0);
+}
+
+.social > a:last-child:hover::after{
+    opacity: 1;
+    transform: translateX(50%);
+}
+
+#user::placeholder,
+#pass::placeholder,
+#search::placeholder {
     font-family: "Websymbols";
     font-size: 1.5em;
     color: black;
 }
 
 /* FOOTER */
-#goToBlog{
+#goToBlog {
     padding: 25px;
     background-color: white;
     box-shadow: 0 0 3px black;
@@ -314,37 +435,148 @@ input:focus{
     text-align: center;
 }
 
-footer{
+footer {
     width: 100%;
+    background-color: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+
+.footer__article {
+    width: 27.25%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 25px;
+}
+
+.footer__title {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lightgrey;
+    text-align: center;
+    font-size: 2.75em;
+    white-space: nowrap;
+}
+
+::marker {
+    color: white;
+}
+
+.footer__article ul li,
+.footer__article ul {
+    list-style-type: disc;
+    font-family: "TrebuchetMS";
+    color: deepskyblue;
+    font-size: 1.5em;
+}
+
+.footer__article ul>li:nth-child(odd) {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.footer__article ul>li {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.footer__article ul>li:nth-child(even) {
+    border-bottom: 1px solid darkgray;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+iframe {
+    border-radius: 5px;
+}
+
+.development-with {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+#html5 {
+    height: 25%;
+}
+
+.optimized-for {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.optimized__imgs {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.optimized__imgs img {
+    width: 50px;
+}
+
+.ff-trebuchetMS {
+    font-family: "TrebuchetMS";
+}
+
+.copy {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.copy p {
+    color: white;
 }
 
 
-/* @keyframes turn {
-    from{
+
+@keyframes turn {
+    from {
         transform: rotate(0);
     }
 
-    20%{
-        transform: rotate(60deg);
+    to {
+        transform: rotate(360deg);
     }
+}
 
-    
-    40%{
-        transform: rotate(120deg);
-    }
-
-    60%{
-        transform: rotate(180deg);
-    }
-
-    80%{
-        transform: rotate(210deg);
+@keyframes turnAround {
+    from{
+        transform: rotate(0deg) translate(25%);
     }
 
     to{
-        transform: rotate(360deg);
+        transform: rotate(360deg) translate(25%);
     }
-} */
+}
+
+@keyframes fromNegativeY {
+    from{
+        transform: translateY(-100%);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromNegativeX {
+    from{
+        transform: translateX(-100%);
+    }
+
+    to{
+        transform: translateX(0);
+    }
+}
 
 /* @media screen {
     

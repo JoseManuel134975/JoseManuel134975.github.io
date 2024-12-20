@@ -31,29 +31,29 @@
         <h1 id="title">CURSOS DE DESARROLLO WEB CON VÍCTOR ROBLES WEB</h1>
 
         <section class="cards">
-            <articles class="card">
+            <articles class="card ff-trebuchetMS">
                 <div class="icon-symbol">H</div>
-                <h3 class="royalblue bold">Desarrollo web</h3>
+                <h3 class="royalblue bold card__title">Desarrollo web</h3>
                 <p class="royalblue">Aprende los principales lenguajes para desarrollar web. ¡Conviertet en un webmaster!</p>
             </articles>
-            <articles class="card">
+            <articles class="card ff-trebuchetMS">
                 <div class="icon-symbol">_</div>
-                <h3 class="royalblue bold">Sistemas operativos</h3>
+                <h3 class="royalblue bold card__title">Sistemas operativos</h3>
                 <p class="royalblue">Administrar sistemas Linux y Windows.</p>
             </articles>
-            <articles class="card">
+            <articles class="card ff-trebuchetMS">
                 <div class="icon-symbol">S</div>
-                <h3 class="royalblue bold">Hardware</h3>
+                <h3 class="royalblue bold card__title">Hardware</h3>
                 <p class="royalblue">Conoce los entresijos del hardware.</p>
             </articles>
-            <articles class="card">
+            <articles class="card ff-trebuchetMS">
                 <div class="icon-symbol">u</div>
-                <h3 class="royalblue bold">Redes e internet</h3>
+                <h3 class="royalblue bold card__title">Redes e internet</h3>
                 <p class="royalblue">Aprende a configurar y administrar redes informáticas y servidores.</p>
             </articles>
-            <articles class="card">
+            <articles class="card ff-trebuchetMS">
                 <div class="icon-symbol">a</div>
-                <h3 class="royalblue bold">Bases de datos</h3>
+                <h3 class="royalblue bold card__title">Bases de datos</h3>
                 <p class="royalblue">Aprende a montar y administrar bases de datos.</p>
             </articles>
         </section>
@@ -140,8 +140,10 @@
                         <input type="reset" value="Limpiar"><br>
                     </div>
 
-                    <a href="#" class="ff-trebuchetMS">Regístrate aquí</a><br>
-                    <a href="#" class="ff-trebuchetMS">¿Has olvidado tu contraseña?</a>
+                    <div class="login__links">
+                        <a href="#" class="ff-trebuchetMS">Regístrate aquí</a><br>
+                        <a href="#" class="ff-trebuchetMS">¿Has olvidado tu contraseña?</a>
+                    </div>
                 </div>
             </form>
 
@@ -163,7 +165,7 @@
     <!-- FOOTER -->
     <footer>
         <article class="footer__article">
-            <h2>MENU</h2>
+            <h2 class="footer__title">MENU</h2>
 
             <ul>
                 <li>INICIO</li>
@@ -173,7 +175,7 @@
             </ul>
         </article>
         <article class="footer__article">
-            <h2>¿DÓNDE ESTAMOS?</h2>
+            <h2 class="footer__title">¿DÓNDE ESTAMOS?</h2>
 
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3177.0116173260785!2d-3.6837254246299236!3d37.22369914371344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fe15f8e85a4f%3A0x5f81f326a03686f1!2sInstituto%20de%20Educaci%C3%B3n%20Secundaria%20Il%C3%ADberis!5e0!3m2!1ses!2ses!4v1734336280553!5m2!1ses!2ses"
@@ -182,12 +184,12 @@
         </article>
         <article class="footer__article">
             <div class="development-with">
-                <h2>DESARROLLADO CON</h2>
-                <img src="./assets/img/html5-badge-h-css3-graphics-multimedia-performance-semantics.png" alt="HTML5">
+                <h2 class="footer__title">DESARROLLADO CON</h2>
+                <img src="./assets/img/html5-badge-h-css3-graphics-multimedia-performance-semantics.png" alt="HTML5" id="html5">
             </div>
 
             <div class="optimized-for">
-                <h2>OPTIMIZADO PARA</h2>
+                <h2 class="footer__title">OPTIMIZADO PARA</h2>
 
                 <div class="optimized__imgs">
                     <img src="./assets/img/firefox-icon.png" alt="FIREFOX">
@@ -199,9 +201,9 @@
             </div>
 
             <div class="copy">
-                <h2>AUTOR</h2>
+                <h2 class="footer__title">AUTOR</h2>
 
-                <p class="ff-trebuchetMS">&copy;José Manuel Martínez WEB - josemanuelweb.es</p>
+                <p class="ff-trebuchetMS">&copy; José Manuel Martínez WEB - josemanuelweb.es</p>
             </div>            
         </article>
     </footer>
