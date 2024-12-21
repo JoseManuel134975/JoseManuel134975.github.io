@@ -88,10 +88,10 @@ header {
 
 nav a {
     padding-left: 20px;
+    transition: all 0.25s linear;
 }
 
 nav a:hover{
-    transition: all 0.25s linear;
     transform: scale(1.25);
     color: deepskyblue;
 }
@@ -164,7 +164,6 @@ nav {
 
 .card:hover .icon-symbol{
     color: deepskyblue;
-    transition: all 1s linear;
 }
 
 .card:hover .icon-symbol, .card:hover h3{
@@ -192,6 +191,7 @@ nav {
 .icon-symbol {
     font-family: "Websymbols";
     font-size: 3em;
+    transition: all 1s linear;
 }
 
 .date-categories {
@@ -433,6 +433,17 @@ input:focus {
     width: 100%;
     font-size: 2.5em;
     text-align: center;
+    color: royalblue;
+    border: 5px solid transparent;
+    transition: all 1s linear;
+}
+
+#goToBlog:hover{
+    border-radius: 30px;
+    background-color: rgb(37, 31, 31);
+    color: white;
+    text-shadow: 0 10px 4px black;
+    animation: changeBorder 10s infinite;
 }
 
 footer {
@@ -481,6 +492,17 @@ footer {
 .footer__article ul>li {
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.footer__article ul>li>a {
+    transition: 0.5s all linear;
+    color: dodgerblue;
+    display: block;
+}
+
+.footer__article ul > li:hover > a{
+    transform: translateX(10%);
+    color: white;
 }
 
 .footer__article ul>li:nth-child(even) {
@@ -575,6 +597,28 @@ iframe {
 
     to{
         transform: translateX(0);
+    }
+}
+
+@keyframes changeBorder {
+    from{
+        border-color: royalblue;
+    }
+
+    25%{
+        border-color: green;
+    }
+
+    50%{
+        border-color: yellow;
+    }
+
+    75%{
+        border-color: deepskyblue;
+    }
+
+    to{
+        border-color: green;
     }
 }
 
