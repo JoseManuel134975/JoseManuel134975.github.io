@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.card{
+    padding: 50px;
+    text-align: center;
+}
+
+.card img{
+    width: 100%;
+    box-shadow: 0 0 10px white;
+    border-radius: 10px;
+}
