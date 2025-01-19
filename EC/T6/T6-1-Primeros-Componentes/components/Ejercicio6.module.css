@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: lightgray;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.heading{
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.heading .empty{
+    width: 30%;
+    background-color: darkgray;
+}
+
+.heading .heading__presentation{
+    width: 70%;
+    background-color: black;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 30px;
+    padding: 40px;
+}
+
+.heading__presentation h1{
+    white-space: normal;
+    text-align: justify;
+}
+
+
+
+.main{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.main article{
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+    color: black;
+}

@@ -9,3 +9,75 @@
     width: 100vw;
     height: 100vh;
 }
+
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.nav a{
+    color: white;
+}
+
+.signBtns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.signBtns a{
+    color: white;
+}
+
+.signBtns__btnIn{
+    text-decoration: underline;
+    text-decoration-color: lightslategrey;
+}
+
+.signBtns__btnUp{
+    padding: 20px;
+    background-color: lightslategrey;
+    border-radius: 20px;
+}
+
+.h1{
+    font-size: 2em;
+}
+
+
+
+.mainSection{
+    margin-top: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mainSectionContent{
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.mainSectionContent h2{
+    font-size: 3.5em;
+}
+
+.mainSectionContent a{
+    padding: 15px;
+    background-color: lightslategrey;
+    border-radius: 20px;
+    color: white;
+    width: 200px;
+}
