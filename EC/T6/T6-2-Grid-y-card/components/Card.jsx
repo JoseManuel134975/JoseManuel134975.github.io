@@ -9,7 +9,7 @@ export default function Card({ obj }){
                 <h2>Title: {obj.title}</h2>
                 <p>Description: {obj.description}</p>
                 <p>Categoría: {obj.category}</p>
-                <b>Price: {obj.price}</b>
+                <b>Price: { obj.price > 200 ? `${obj.price} ✅` : obj.price }</b>
             </article>
         </>
     )

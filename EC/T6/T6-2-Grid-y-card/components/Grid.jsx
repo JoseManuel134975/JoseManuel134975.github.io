@@ -1,6 +1,8 @@
 import styles from './Grid.module.css';
 import Card from './Card.jsx';
+import Productos from '../data/productos.json';
 import { useState, useEffect } from 'react';
+import Filtrar from './Filtrar.jsx';
 
 
 
@@ -13,14 +15,14 @@ export default function Grid() {
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
                 setProducts(data);
             });
     }, []);
 
     return (
         <section className={styles.grid}>
-            {json.map((item) => (
+            <Filtrar></Filtrar>
+            {Productos.map((item) => (
                 <Card key={item.id} obj={item}></Card>
             ))}
         </section>
