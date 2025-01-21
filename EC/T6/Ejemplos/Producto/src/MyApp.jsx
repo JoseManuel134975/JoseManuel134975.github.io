@@ -1,5 +1,7 @@
 import './index.css'
 import "../data/products.json"
+import Cont from '../components/Cont'
+import Tasks from '../components/Tasks'
 
 // import Producto from "../components/Producto.jsx";
 // import Cabecera from "../components/Cabecera.jsx";
@@ -15,7 +17,8 @@ export default function MyApp() {
 
   return(
     <>
-      
+      <Cont></Cont>
+      <Tasks></Tasks>
     </>
   )
 }
