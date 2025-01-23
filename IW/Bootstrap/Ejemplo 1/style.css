@@ -1,0 +1,19 @@
+.row{
+    background-color: dodgerblue;
+    margin-top: 20px;
+    /* height: 150px; */
+}
+
+/* .col{
+    background-color: aquamarine;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid red;
+} */
+
+.contenido{
+    background-color: aquamarine;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid red;
+}
