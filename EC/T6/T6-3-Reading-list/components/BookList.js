@@ -27,3 +27,5 @@ class BookList{
         this.nextBook.read = false
     }
 }
+
+export const bookList = new BookList()

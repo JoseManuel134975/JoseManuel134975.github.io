@@ -1,6 +1,5 @@
-.header{
+.article{
     display: flex;
     flex-flow: column wrap;
-    text-align: center;
     gap: 20px;
 }

@@ -7,3 +7,5 @@ export class Book{
         this.readDate = readDate
     }
 }
+
+export const book = new Book()

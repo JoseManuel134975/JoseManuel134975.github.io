@@ -1,12 +1,9 @@
-import Body from "../components/Body";
-import Header from "../components/Header";
+import Main from "../components/Main.jsx";
 
 export default function MyApp(){
     return(
         <>
-            <Body>
-                <Header></Header>
-            </Body>
+            <Main></Main>
         </>
     )
 }
