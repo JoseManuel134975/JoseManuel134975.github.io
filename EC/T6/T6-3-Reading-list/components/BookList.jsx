@@ -1,5 +1,3 @@
-// import Book from './Book.js'
-
 class BookList{
     constructor(readBooks, notReadBooks, nextBook, currentBook, lastBook){
         this.readBooks = readBooks
@@ -10,14 +8,10 @@ class BookList{
         this.allBooks = []
     }
 
-    add(book){
-        this.allBooks.push(book)
-    }
-
     finishCurrentBook(){
         this.currentBook.read = true
 
-        const noFormatDate = new Date.now()
+        const noFormatDate = Date.now()
         const currentDate = new Date(noFormatDate)
         this.currentBook.readDate = currentDate.toDateString()
 
@@ -28,4 +22,4 @@ class BookList{
     }
 }
 
-export const bookList = new BookList()
+export const bookList = new BookList(0, 0, null, null, null)

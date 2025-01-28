@@ -8,4 +8,4 @@ export class Book{
     }
 }
 
-export const book = new Book()
+export const book = new Book('', '', '', false, null)

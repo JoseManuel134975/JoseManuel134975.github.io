@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './myIndex.css'
 import MyApp from './MyApp.jsx'
