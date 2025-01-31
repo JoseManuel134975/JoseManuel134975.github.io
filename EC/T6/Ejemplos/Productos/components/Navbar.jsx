@@ -1,10 +1,12 @@
+import { Link } from "react-router"
+
 export default function Navbar(){
     return (
         <>
             <nav>
-                <a href="#">Index</a>
-                <a href="#">Detalles</a>
-                <a href="#">Ofertas</a>
+                <Link to="/">Index</Link>
+                <Link to="/detalles">Detalles</Link>
+                <Link to="/ofertas">Ofertas</Link>
             </nav>
         </>
     )

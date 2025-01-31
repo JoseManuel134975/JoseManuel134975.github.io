@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
 import { getAPI } from "../utils/httpClient.js"
+import { Link } from "react-router"
 
 
 export default function Product(){
-    const [ product, setProduct ] = useState([])
+    const [ products, setProducts ] = useState([])
 
     useEffect(() => {
         async function fetchData(){
              const response = await getAPI('https://fakestoreapi.com/products')
-             setProduct(response)
+             setProducts(response)
         }
 
         fetchData()
@@ -16,9 +17,9 @@ export default function Product(){
 
     return (
         <>
-            { product.length > 0 && product.map((item) => (
+            { products.length > 0 && products.map((item) => (
                 <article key={ item.id }>
-                    <img src={ item.image } alt="Imagen" />
+                    <Link to={ `/detalles/${ item.id }` }><img src={ item.image } alt={ item.id } /></Link>
                     <h2>{ item.title }</h2>
                 </article>                
             )) }

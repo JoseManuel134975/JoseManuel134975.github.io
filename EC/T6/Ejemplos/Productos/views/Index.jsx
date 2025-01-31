@@ -6,7 +6,9 @@ import Grid from '../components/Grid.jsx'
 export default function Index(){
     return (
         <>
-            <Navbar></Navbar>
+            <header>
+                <Navbar></Navbar>
+            </header>
             <Search></Search>
             <Grid></Grid>
         </>
