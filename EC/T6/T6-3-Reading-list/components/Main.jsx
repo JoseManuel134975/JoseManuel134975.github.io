@@ -1,10 +1,12 @@
 import styles from "./Main.module.css";
-import { bookList as books } from "./BookList.jsx";
 import { useState } from "react";
-import { Book } from "./Book.jsx";
 
 export default function Main() {
-  const [bookList, setBookList] = useState(books.allBooks);
+  const [bookList, setBookList] = useState([]);
+  let [book, setBook] = useState({});
+  const [amountBooks, setAmountBooks] = useState(0);
+  const [readBooks, setReadBooks] = useState(0);
+
   let title = "",
     author = "",
     genre = "";
@@ -13,17 +15,18 @@ export default function Main() {
     event.preventDefault();
 
     const noFormatDate = Date.now();
-    const currentDate = new Date(noFormatDate);
-    setBookList([
-      ...bookList,
-      new Book(title, genre, author, false, currentDate.toDateString()),
-    ]);
+    const currentDate = new Date(noFormatDate).toDateString();
+    book = { title, author, genre, currentDate };
+    setBook(book);
+    setBookList([...bookList, book]);
+    setAmountBooks(amountBooks + 1);
   }
 
   function handleDelete(event) {
-    bookList.splice(event.target.key, 1);
-    setBookList([...bookList]);
-    books.readBooks++;
+    if (event.target.id !== "") {
+      setBookList(bookList.filter((item) => item.title !== event.target.id));
+      setReadBooks(readBooks + 1);
+    }
   }
 
   return (
@@ -80,21 +83,26 @@ export default function Main() {
             <h2>Reading List</h2>
             {bookList.length > 0 &&
               bookList.map((item, index) => (
-                <div key={index} className={styles.book} onClick={handleDelete}>
+                <div
+                  id={item.title}
+                  key={index}
+                  className={styles.book}
+                  onClick={handleDelete}
+                >
                   <div className={styles.titleAuthor}>
                     <h3>{item.title}</h3>
                     <h4>{item.author}</h4>
                   </div>
                   <div className={styles.readDate}>
-                    <p>{item.readDate}</p>
+                    <p>{item.currentDate}</p>
                   </div>
                 </div>
               ))}
           </article>
 
           <b>
-            Read books: <i id="readBooks">{books.readBooks}</i> of{" "}
-            <i id="allBooks">{bookList.length}</i>
+            Read books: <i id="readBooks">{readBooks.toString()}</i> of{" "}
+            <i id="allBooks">{amountBooks.toString()}</i>
           </b>
         </section>
       </main>
