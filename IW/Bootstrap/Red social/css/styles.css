@@ -1,0 +1,11 @@
+/* VARIABLES */
+:root{
+    --color-link: white;
+}
+
+
+
+/* index.html */
+a{
+    color: var(--color-link);
+}

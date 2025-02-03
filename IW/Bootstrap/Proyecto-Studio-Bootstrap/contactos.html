@@ -19,8 +19,9 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="./assets/img/bad-dog-studio-logo.png" alt="Perrete"></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -35,7 +36,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="sitios.html#ultimos-proyectos">Últimos Proyectos</a></li>
-                            <li><a class="dropdown-item" href="sitios.html#single-page">Sitio <i>Single Page</i></a></li>
+                            <li><a class="dropdown-item" href="sitios.html#single-page">Sitio <i>Single Page</i></a>
+                            </li>
                             <li><a class="dropdown-item" href="sitios.html#multi-page">Sitio <i>Multi Page</i></a></li>
                         </ul>
                     </li>
@@ -55,8 +57,82 @@
     <!-- FIN NAVBAR -->
 
 
-    <main>
-        <h1>Contactos</h1>
+    <main class="pt-5 bg-color">
+        <div class="container">
+            <section class="row">
+                <article class="col-12 text-center">
+                    <h1>¿Interesad@?</h1>
+                    <p class="fs-5">¡Envíame tus comentarios!</p>
+                    <p class="fs-5">Para más inforación, puedes contactarme en <a
+                            href="mailto:ana@iesiliberis.com">ana@iesiliberis</a></p>
+                </article>
+                <article class="col-12 col-lg-6 order-lg-1">
+                    <form action="">
+                        <div class="mb-4"><label class="form-label" for="name">Nombre:</label>
+                            <input class="form-control" type="text" name="name" id="name"
+                                placeholder="Inserta tu nombre" required>
+                        </div>
+                        <div class="mb-4"><label class="form-label" for="email">Dirección de correo:</label>
+                            <input class="form-control" type="text" name="email" id="email"
+                                placeholder="Inserta tu email" required>
+                        </div>
+                        <div class="mb-4"><label class="form-label" for="comments">Comentarios:</label>
+                            <textarea rows="5" class="form-control" name="comments" id="comments"
+                                placeholder="Déjanos tus comentarios"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <input class="btn btn-lg btn-success" type="submit" value="Enviar consulta">
+                        </div>
+                    </form>
+                </article>
+                <article class="col-12 col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6354.023234652157!2d-3.6837254246299236!3d37.22369914371344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fe15f8e85a4f%3A0x5f81f326a03686f1!2sInstituto%20de%20Educaci%C3%B3n%20Secundaria%20Il%C3%ADberis!5e0!3m2!1ses!2ses!4v1738568914598!5m2!1ses!2ses"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <!-- CARRUSEL -->
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/about-1.jpg" class="d-block w-100" alt="Acerca 1">
+                    <div class="carousel-caption bg-second-alpha-color">
+                        <article>
+                            <p class="fs-4">José Manuel</p>
+                            <p class="fs-5">Desarrollador web</p>
+                            <aside class="d-none d-md-block">
+                                <p>Comencé a crear sitios y aplicaciones web en <b>2023</b></p>
+                                <p>Valoro mucho el concepto de <em><b>"menos es más"</b></em></p>
+                                <p>Trabajo de formación remota o independiente.</p>
+                            </aside>
+                        </article>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/about-2.jpg" class="d-block w-100" alt="Acerca 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/about-3.jpg" class="d-block w-100" alt="Acerca 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/about-4.jpg" class="d-block w-100" alt="Acerca 4">
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
     </main>
 
     <footer class="bg-dark p-3">
@@ -70,7 +146,7 @@
                 <a href="https://m.me//user.com" target="_blank"><i class="bi bi-messenger fs-3"></i></a>
                 <a href="https://whatsapp.com/send?phone=numero" target="_blank"><i class="bi bi-whatsapp fs-3"></i></a>
             </nav>
-    
+
             <small class="text-white">
                 &copy; 2025 @José Manuel. Hecho con fines lucrativos y clasistas.
             </small>

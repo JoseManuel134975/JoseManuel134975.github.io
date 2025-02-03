@@ -137,3 +137,10 @@ a:hover {
 
 /* ESTILOS PÁGINA comencemos.html */
 
+
+
+/* ESTILOS PÁGINA contactos.html */
+
+.carousel-caption{
+    z-index: 1;
+}
