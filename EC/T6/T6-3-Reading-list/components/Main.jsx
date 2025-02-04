@@ -23,7 +23,7 @@ export default function Main() {
   }
 
   function handleDelete(event) {
-    if (event.target.id !== "") {
+    if (event.target.id !== "") { 
       setBookList(bookList.filter((item) => item.title !== event.target.id));
       setReadBooks(readBooks + 1);
     }
