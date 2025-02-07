@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar.jsx"
+import Forms from "./Forms.jsx";
 
 export default function Detail() {
   return (
@@ -7,6 +8,7 @@ export default function Detail() {
         <Navbar></Navbar>
       </header>
       <div>Detail</div>
+      <Forms></Forms>
     </>
   );
 }

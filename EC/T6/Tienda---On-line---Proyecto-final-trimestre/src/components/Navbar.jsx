@@ -5,7 +5,8 @@ export default function Navbar() {
     <>
         <header>
             <nav>
-                <Link to="/">Home</Link>
+                {/* <Link to="/">Login</Link> */}
+                <Link to="/Home">Home</Link>
                 <Link to="/Details">Details</Link>
                 <Link to="/Cart">Cart</Link>
             </nav>

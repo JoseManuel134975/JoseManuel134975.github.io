@@ -1,6 +1,8 @@
 import { getAPI } from "../utils/getAPI.jsx";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 export default function Product() {
   const [products, setProducts] = useState([]);
@@ -18,22 +20,16 @@ export default function Product() {
     <>
       {console.log(products)}
       {products.length > 0 &&
-        products.map(
-          (item) =>
-            item.hasOwnProperty("brItems") &&
-            item.brItems.map(
-              (item) => (
-                console.log(item.images.featured),
-                item.hasOwnProperty("images") && item.images.hasOwnProperty("featured") ? <img width="200px" src={ item.images.featured } alt="" /> : "",
-                <p>{item.description}</p>
-              )
-            )
-            // <article key={item.id}>
-            //   <Link to={`/Details/${item.id}`}>
-            //     <img src={item.image} alt={item.id} />
-            //   </Link>
-            // </article>
-        )}
+        products.map((item, index) => (
+          <Card key={index} style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="" />
+            <Card.Body>
+              <Card.Title></Card.Title>
+              <Card.Text>{item.regularPrice}</Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        ))}
       <div>Product</div>
     </>
   );
