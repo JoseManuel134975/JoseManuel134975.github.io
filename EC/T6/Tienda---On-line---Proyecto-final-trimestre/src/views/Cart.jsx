@@ -1,9 +1,9 @@
-import Navbar from '../components/Navbar.jsx'
+import NavbarHeader from '../components/NavbarHeader.jsx'
 
 export default function Cart() {
   return (
     <>
-      <Navbar></Navbar>
+      <NavbarHeader></NavbarHeader>
       <div>Cart</div>
     </>
   )

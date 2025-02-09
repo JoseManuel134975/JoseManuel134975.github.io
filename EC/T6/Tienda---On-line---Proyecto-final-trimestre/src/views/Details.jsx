@@ -1,9 +1,11 @@
-import Navbar from '../components/Navbar.jsx'
+import NavbarHeader from '../components/NavbarHeader.jsx'
+import ProductDetails from '../components/ProductDetails.jsx'
 
 export default function Details() {
   return (
     <>
-      <Navbar></Navbar>
+      <NavbarHeader></NavbarHeader>
+      {/* <ProductDetails></ProductDetails> */}
       <div>Details</div>
     </>
   )

@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Perez",
+      "email": "john.perez@example.com",
+      "age": 30,
+      "country": "Mexico",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "name": "Maria Lopez",
+      "email": "maria.lopez@example.com",
+      "age": 25,
+      "country": "Argentina",
+      "password": "maria2024"
+    },
+    {
+      "id": 3,
+      "name": "Charles Sanchez",
+      "email": "charles.sanchez@example.com",
+      "age": 35,
+      "country": "Spain",
+      "password": "charlesPass!"
+    },
+    {
+      "id": 4,
+      "name": "Anna Gomez",
+      "email": "anna.gomez@example.com",
+      "age": 28,
+      "country": "Colombia",
+      "password": "annaSecure98"
+    },
+    {
+      "id": 5,
+      "name": "Luis Fernandez",
+      "email": "luis.fernandez@example.com",
+      "age": 40,
+      "country": "Chile",
+      "password": "luisStrongPass"
+    }
+  ]
+}

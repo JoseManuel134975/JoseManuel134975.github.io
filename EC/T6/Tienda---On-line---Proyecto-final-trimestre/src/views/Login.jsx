@@ -1,41 +1,54 @@
-import { useForm } from "react-hook-form"
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import users from "../data/db.json";
 
-
-// The following component is an example of your existing Input Component
-const Input = ({ label, register, required }) => (
-  <>
-    <label>{label}</label>
-    <input {...register(label, { required })} />
-  </>
-)
-
-
-// you can use React.forwardRef to pass the ref too
-// const Select = React.forwardRef(({ onChange, onBlur, name, label }, ref) => (
-//   <>
-//     <label>{label}</label>
-//     <select name={name} ref={ref} onChange={onChange} onBlur={onBlur}>
-//       <option value="20">20</option>
-//       <option value="30">30</option>
-//     </select>
-//   </>
-// ))
-
-
-export default function Login(){
-  const { register, handleSubmit } = useForm()
-
-
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data))
-  }
-
+export default function Login() {
+  const navigate = useNavigate();
+  const [login, setLogin] = useState({
+    name: "",
+    pass: "",
+  });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Input label="First Name" register={register} required />
-      {/* <Select label="Age" {...register("Age")} /> */}
-      <input type="submit" />
-    </form>
-  )
+    <>
+      <form
+        action=""
+        onSubmit={(e) => {
+          e.preventDefault();
+          loginUser(login) && navigate("/Home");
+        }}
+      >
+        <input
+          type="text"
+          name="user"
+          id=""
+          value={login.name}
+          onChange={(e) => setLogin({ ...login, name: e.target.value })}
+        />
+        <input
+          type="password"
+          name="pass"
+          id=""
+          value={login.pass}
+          onChange={(e) => setLogin({ ...login, pass: e.target.value })}
+        />
+
+        <input type="submit" value="Enviar" />
+      </form>
+    </>
+  );
 }
+
+// const validForm = (user, pass) => {
+//   if (user == pass && user != "") {
+//     return "El usuario no puede ser igual a la contraseña";
+//   }
+// };
+
+const loginUser = (login) => {
+  const find = users.users.find(
+    (u) => u.name === login.name && u.password === login.pass
+  );
+  if (find !== undefined) return true;
+  alert("No existe ese usuario.");
+};

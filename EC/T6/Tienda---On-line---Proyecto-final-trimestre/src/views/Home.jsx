@@ -1,10 +1,10 @@
-import Navbar from '../components/Navbar.jsx'
+import NavbarHeader from '../components/NavbarHeader.jsx'
 import Grid from '../components/Grid.jsx'
 
 export default function Home() {
   return (
     <>
-      <Navbar></Navbar>
+      <NavbarHeader></NavbarHeader>
       <Grid></Grid>
       <div>Home</div>
     </>
