@@ -1,11 +1,22 @@
 /* VARIABLES */
 :root{
-    --color-link: white;
+    --bg-lightdark: rgba(60, 60, 60, 0.9);
 }
 
 
 
 /* index.html */
-a{
-    color: var(--color-link);
+.bg-lightdark{
+    background-color: var(--bg-lightdark);
 }
+
+.bg-lightdark-border{
+    background-color: var(--bg-lightdark);
+}
+
+@media (max-width: 768px) {
+    #form-search{
+        width: 90%;
+    }
+}
+
