@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme{
+    --color-pasion: #a73b3c;
+}
