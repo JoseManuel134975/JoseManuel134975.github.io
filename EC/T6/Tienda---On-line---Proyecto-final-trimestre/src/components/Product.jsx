@@ -2,18 +2,27 @@ import { getAPI } from "../utils/getAPI.jsx";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import useQuery from "../hooks/useQuery.jsx";
 
 export default function Product() {
   const [products, setProducts] = useState([]);
+  const query = useQuery()
+  const search = query.get('search')
+  console.log(search);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await getAPI("https://fortnite-api.com/v2/shop");
-      setProducts([...response.data.entries]);
+      let response = [];
+      if(!search){
+        response = await getAPI("https://fakestoreapi.com/products")
+      } else {
+        response = await getAPI("https://fakestoreapi.com/products/category/" + search)
+      }
+      setProducts([...response]);
     }
 
     fetchData();
-  }, []);
+  }, [search]);
 
   return (
     <>
@@ -24,10 +33,9 @@ export default function Product() {
             console.log(item),
             (
               <Card key={index} style={{ width: "18rem" }}>
-                {item.newDisplayAsset && 
-                <Card.Img variant="top" src={item.newDisplayAsset.renderImages[0]} />}
+                <Card.Img variant="top" src="" />
                 <Card.Body>
-                  <Card.Title>{item.layout.name}</Card.Title>
+                  <Card.Title>Id: {item.id}</Card.Title>
                   <Card.Text>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
