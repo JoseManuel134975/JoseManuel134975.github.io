@@ -1,0 +1,19 @@
+/* VARIABLES */
+:root{
+    --bg-lightdark: rgba(60, 60, 60, 0.9);
+}
+
+
+
+/* index.html */
+#profile{
+    width: 60px;
+}
+
+.bg-lightdark{
+    background-color: var(--bg-lightdark);
+}
+
+#active-link{
+    color: dodgerblue;
+}
