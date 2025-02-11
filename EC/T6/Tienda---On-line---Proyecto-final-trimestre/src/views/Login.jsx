@@ -9,15 +9,22 @@ export default function Login() {
     pass: "",
   });
 
+  const loginUser = (login) => {
+    const find = users.users.find(
+      (u) => u.name === login.name && u.password === login.pass
+    );
+    if (find !== undefined) return true;
+    alert("No existe ese usuario.");
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    loginUser(login) && navigate("/Home");
+  };
+
   return (
     <>
-      <form
-        action=""
-        onSubmit={(e) => {
-          e.preventDefault();
-          loginUser(login) && navigate("/Home");
-        }}
-      >
+      <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
           name="user"
@@ -39,16 +46,3 @@ export default function Login() {
   );
 }
 
-// const validForm = (user, pass) => {
-//   if (user == pass && user != "") {
-//     return "El usuario no puede ser igual a la contraseña";
-//   }
-// };
-
-const loginUser = (login) => {
-  const find = users.users.find(
-    (u) => u.name === login.name && u.password === login.pass
-  );
-  if (find !== undefined) return true;
-  alert("No existe ese usuario.");
-};
