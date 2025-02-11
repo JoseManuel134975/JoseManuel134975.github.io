@@ -13,19 +13,40 @@
   </head>
   <body>
     <header class="header">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
-        <div class="container-fluid row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 gy-3">
-          <div class="col col-12 col-lg-4 col-md-7 col-sm-6 d-flex order-lg-0 order-md-0 order-sm-0 align-items-center">
-            <a class="navbar-brand" href="#"><i class="bi bi-bootstrap-fill fs-2"></i></a>
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+        data-bs-theme="dark"
+      >
+        <div
+          class="container-fluid row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 gy-3"
+        >
+          <div
+            class="col col-12 col-lg-4 col-md-7 col-sm-6 d-flex order-lg-0 order-md-0 order-sm-0 align-items-center"
+          >
+            <a class="navbar-brand" href="#"
+              ><i class="bi bi-bootstrap-fill fs-2"></i
+            ></a>
             <form id="search" class="d-none d-md-block" role="search">
-              <input class="form-control me-2 rounded-5 p-lg-3" type="search" placeholder="Buscar" aria-label="Search">
+              <input
+                class="form-control me-2 rounded-5 p-lg-3"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
             </form>
           </div>
 
-          <div class="collapse navbar-collapse col col-12 col-lg-4 col-md-12 col-sm-12 d-flex flex-wrap flex-row align-items-center justify-content-center order-lg-1 order-md-2 order-sm-2" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap flex-row justify-content-lg-between justify-content-md-evenly justify-content-sm-evenly w-100">
+          <div
+            class="collapse navbar-collapse col col-12 col-lg-4 col-md-12 col-sm-12 d-flex flex-wrap flex-row align-items-center justify-content-center order-lg-1 order-md-2 order-sm-2"
+            id="navbarSupportedContent"
+          >
+            <ul
+              class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap flex-row justify-content-lg-between justify-content-md-evenly justify-content-sm-evenly w-100"
+            >
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"><i id="active-link" class="bi bi-house-door-fill fs-2"></i></a>
+                <a class="nav-link active" aria-current="page" href="#"
+                  ><i id="active-link" class="bi bi-house-door-fill fs-2"></i
+                ></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="bi bi-flag fs-2"></i></a>
@@ -42,10 +63,16 @@
             </ul>
           </div>
 
-          <div class="col col-12 col-lg-4 col-md-5 col-sm-6 d-flex flex-wrap flex-row align-items-center justify-content-end gap-4 order-lg-2 order-md-1 order-sm-1">
+          <div
+            class="col col-12 col-lg-4 col-md-5 col-sm-6 d-flex flex-wrap flex-row align-items-center justify-content-end gap-4 order-lg-2 order-md-1 order-sm-1"
+          >
             <div class="d-flex flex-wrap flex-row align-items-center gap-2">
               <a href="#" class="nav-link">
-                <img id="profile" src="./assets/img/persona2.jpg" class="img-fluid rounded-circle" alt="">
+                <img
+                  src="./assets/img/persona2.jpg"
+                  class="img-fluid rounded-circle profile"
+                  alt=""
+                />
               </a>
               <small class="text-white fs-5">Steven</small>
             </div>
@@ -65,18 +92,342 @@
       </nav>
     </header>
 
-    <main class="p-lg-3 container-fluid bg-black row row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
-      <aside class="col col-12 col-lg-4 d-flex flex-wrap flex-column gap-3">
+    <main
+      class="p-3 container-fluid bg-black row row-cols-lg-3 row-cols-md-1 row-cols-sm-1 d-flex flex-wrap flex-row justify-content-between"
+    >
+      <aside
+        class="col col-12 col-lg-4 d-none d-lg-flex flex-wrap flex-column gap-3"
+      >
         <div class="d-flex flex-wrap flex-row align-items-center gap-3">
           <a href="#" class="nav-link">
-            <img id="profile" src="./assets/img/persona2.jpg" class="img-fluid rounded-circle" alt="">
+            <img
+              src="./assets/img/persona2.jpg"
+              class="img-fluid rounded-circle profile"
+              alt=""
+            />
           </a>
           <small class="text-white fs-5">Steven</small>
         </div>
+
         <div>
-          <ul class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap flex-column">
+          <ul
+            class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap flex-column"
+          >
             <li class="nav-item">
-              <a class="nav-link d-flex flex-row align-items-center text-white" aria-current="page" href="#"><i class="bi bi-people-fill fs-2 text-white me-3"></i>Amigos</a>
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><i class="bi bi-people-fill fs-2 text-white me-3"></i>Amigos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><i class="bi bi-flag-fill fs-2 text-white me-3"></i>Páginas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><i class="bi bi-collection-fill fs-2 text-white me-3"></i
+                >Grupos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><i class="bi bi-bag-fill fs-2 text-white me-3"></i
+                >Marketplace</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><i class="bi bi-tv-fill fs-2 text-white me-3"></i>Watch</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><i class="bi bi-calendar-event-fill fs-2 text-white me-3"></i
+                >Eventos</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-7">
+          <ul
+            class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap flex-row"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                >Privacidad</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                >Condiciones</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                >Publicidad</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                >Opciones de anuncios</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                >Cookies</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                >Más</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <section
+        class="col col-12 col-lg-4 d-flex flex-wrap flex-column gap-3 align-items-center"
+      >
+        <article
+          class="bg-lightdark p-3 rounded-3 d-flex flex-wrap flex-column col-md-10 col-lg-12 col-sm-12"
+        >
+          <div class="d-flex flex-row gap-3 align-items-center">
+            <a href="#" class="nav-link">
+              <img
+                src="./assets/img/persona2.jpg"
+                class="img-fluid rounded-circle profile"
+                alt=""
+              />
+            </a>
+            <form id="search" class="w-100" role="search">
+              <input
+                class="form-control me-2 rounded-5 p-lg-2"
+                type="search"
+                placeholder="¿Qué estás pensando, Steven?"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+
+          <hr />
+
+          <div>
+            <ul
+              class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap flex-row justify-content-around"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row align-items-center text-white"
+                  aria-current="page"
+                  href="#"
+                  ><i class="bi bi-camera-video-fill fs-2 text-white me-3"></i
+                  >Vídeo</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row align-items-center text-white"
+                  aria-current="page"
+                  href="#"
+                  ><i class="bi bi-images fs-2 text-white me-3"></i>Foto</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex flex-row align-items-center text-white"
+                  aria-current="page"
+                  href="#"
+                  ><i class="bi bi-emoji-smile-fill fs-2 text-white me-3"></i
+                  >Sentimiento</a
+                >
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article
+          class="bg-lightdark p-3 rounded-3 d-flex flex-wrap flex-column col-md-10 col-lg-12 col-sm-12"
+        >
+          <div class="d-flex flex-wrap flex-row gap-3 align-items-center">
+            <a href="#" class="nav-link">
+              <img
+                src="./assets/img/persona3.jpg"
+                class="img-fluid rounded-circle profile"
+                alt=""
+              />
+            </a>
+            <div>
+              <h3 class="text-white">Stephanie Doe</h3>
+              <h4 class="text-white">1hr</h4>
+            </div>
+            <p class="text-white w-100">Lorem ipsum dolor sit amet</p>
+          </div>
+
+          <div class="d-flex flex-wrap flex-column gap-3">
+            <img src="./assets/img/paisaje1.jpg" class="img-fluid" alt="" />
+            <div class="d-flex flex-wrap flex-row justify-content-between">
+              <a href="#" class="text-white text-decoration-none">
+                <i class="bi bi-heart-fill text-danger"></i>
+                60
+              </a>
+              <p class="text-white">7 comentarios</p>
+            </div>
+            <div
+              class="d-flex flex-wrap flex-row justify-content-around align-items-center"
+            >
+              <a href="#" class="text-white text-decoration-none">
+                <i class="bi bi-hand-thumbs-up text-white me-2"></i>
+                Me gusta
+              </a>
+              <a href="#" class="text-white text-decoration-none">
+                <i class="bi bi-chat-left text-white me-2"></i>
+                Comentar
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="bg-lightdark p-3 rounded-3 d-flex flex-wrap flex-column col-md-10 col-lg-12 col-sm-12"
+        >
+          <div class="d-flex flex-wrap flex-row gap-3 align-items-center">
+            <a href="#" class="nav-link">
+              <img
+                src="./assets/img/persona4.jpg"
+                class="img-fluid rounded-circle profile"
+                alt=""
+              />
+            </a>
+            <div>
+              <h3 class="text-white">Cesar Doe</h3>
+              <h4 class="text-white">2hr</h4>
+            </div>
+            <p class="text-white w-100">Lorem ipsum dolor sit amet</p>
+          </div>
+
+          <div class="d-flex flex-wrap flex-column gap-3">
+            <img src="./assets/img/paisaje1.jpg" class="img-fluid" alt="" />
+            <div class="d-flex flex-wrap flex-row justify-content-between">
+              <a href="#" class="text-white text-decoration-none">
+                <i class="bi bi-heart-fill text-danger"></i>
+                60
+              </a>
+              <p class="text-white">7 comentarios</p>
+            </div>
+            <div
+              class="d-flex flex-wrap flex-row justify-content-around align-items-center"
+            >
+              <a href="#" class="text-white text-decoration-none">
+                <i class="bi bi-hand-thumbs-up text-white me-2"></i>
+                Me gusta
+              </a>
+              <a href="#" class="text-white text-decoration-none">
+                <i class="bi bi-chat-left text-white me-2"></i>
+                Comentar
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside
+        class="col col-12 col-lg-4 d-none d-lg-flex flex-wrap flex-column gap-3 align-items-end"
+      >
+        <div class="d-flex flex-wrap flex-column col-6 gap-3">
+          <h2 class="text-white">Publicidad</h2>
+          <img src="./assets/img/ad1.jpg" class="img-fluid rounded-3" alt="" />
+          <img src="./assets/img/ad2.jpg" class="img-fluid rounded-3" alt="" />
+        </div>
+        <div class="d-flex flex-wrap flex-column col-6 gap-3">
+          <h2 class="text-white">Contactos</h2>
+          <ul
+            class="navbar-nav nav-underline mb-2 mb-lg-0 ms-3 d-flex flex-wrap flex-column"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><img
+                  src="./assets/img/persona2.jpg"
+                  class="img-fluid rounded-circle profile me-3"
+                  alt=""
+                />Alejandro Doe</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><img
+                  src="./assets/img/persona3.jpg"
+                  class="img-fluid rounded-circle profile me-3"
+                  alt=""
+                />Stephanie Doe</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><img
+                  src="./assets/img/persona4.jpg"
+                  class="img-fluid rounded-circle profile me-3"
+                  alt=""
+                />Cesar Doe</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex flex-row align-items-center text-white"
+                aria-current="page"
+                href="#"
+                ><img
+                  src="./assets/img/persona5.jpg"
+                  class="img-fluid rounded-circle profile me-3"
+                  alt=""
+                />Manuel Doe</a
+              >
             </li>
           </ul>
         </div>
