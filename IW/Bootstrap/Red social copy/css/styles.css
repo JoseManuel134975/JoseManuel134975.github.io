@@ -17,3 +17,9 @@
 #active-link{
     color: dodgerblue;
 }
+
+@media (max-width: 992px) {
+    #search{
+        width: 100%;
+    }
+}

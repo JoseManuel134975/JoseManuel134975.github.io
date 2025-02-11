@@ -14,16 +14,16 @@
   <body>
     <header class="header">
       <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
-        <div class="container-fluid row row-cols-lg-3">
-          <div class="col col-12 col-lg-4 d-flex">
+        <div class="container-fluid row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 gy-3">
+          <div class="col col-12 col-lg-4 col-md-7 col-sm-6 d-flex order-lg-0 order-md-0 order-sm-0 align-items-center">
             <a class="navbar-brand" href="#"><i class="bi bi-bootstrap-fill fs-2"></i></a>
-            <form class="d-flex" role="search">
+            <form id="search" class="d-none d-md-block" role="search">
               <input class="form-control me-2 rounded-5 p-lg-3" type="search" placeholder="Buscar" aria-label="Search">
             </form>
           </div>
 
-          <div class="collapse navbar-collapse col col-12 col-lg-4 d-flex flex-wrap flex-row align-items-center justify-content-center" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap- flex-row justify-content-between w-100">
+          <div class="collapse navbar-collapse col col-12 col-lg-4 col-md-12 col-sm-12 d-flex flex-wrap flex-row align-items-center justify-content-center order-lg-1 order-md-2 order-sm-2" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap flex-row justify-content-lg-between justify-content-md-evenly justify-content-sm-evenly w-100">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#"><i id="active-link" class="bi bi-house-door-fill fs-2"></i></a>
               </li>
@@ -42,7 +42,7 @@
             </ul>
           </div>
 
-          <div class="col col-12 col-lg-4 d-flex flex-wrap flex-row align-items-center justify-content-end gap-4">
+          <div class="col col-12 col-lg-4 col-md-5 col-sm-6 d-flex flex-wrap flex-row align-items-center justify-content-end gap-4 order-lg-2 order-md-1 order-sm-1">
             <div class="d-flex flex-wrap flex-row align-items-center gap-2">
               <a href="#" class="nav-link">
                 <img id="profile" src="./assets/img/persona2.jpg" class="img-fluid rounded-circle" alt="">
@@ -64,6 +64,24 @@
         </div>
       </nav>
     </header>
+
+    <main class="p-lg-3 container-fluid bg-black row row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
+      <aside class="col col-12 col-lg-4 d-flex flex-wrap flex-column gap-3">
+        <div class="d-flex flex-wrap flex-row align-items-center gap-3">
+          <a href="#" class="nav-link">
+            <img id="profile" src="./assets/img/persona2.jpg" class="img-fluid rounded-circle" alt="">
+          </a>
+          <small class="text-white fs-5">Steven</small>
+        </div>
+        <div>
+          <ul class="navbar-nav nav-underline mb-2 mb-lg-0 d-flex flex-wrap flex-column">
+            <li class="nav-item">
+              <a class="nav-link d-flex flex-row align-items-center text-white" aria-current="page" href="#"><i class="bi bi-people-fill fs-2 text-white me-3"></i>Amigos</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
   </body>
