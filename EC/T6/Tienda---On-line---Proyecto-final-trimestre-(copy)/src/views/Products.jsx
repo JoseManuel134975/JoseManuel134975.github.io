@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import AppTheme from "../shared-theme/AppTheme.jsx";
 import AppAppBar from "../components/AppAppBar.jsx";
 import MainContent from "../components/MainContent.jsx";
-// import Latest from "../components/Latest.jsx";
+import Latest from "../components/Latest.jsx";
 import Footer from "../components/Footer.jsx";
 
 export default function Products(props) {
@@ -26,7 +26,7 @@ export default function Products(props) {
           }}
         >
           <MainContent />
-          {/* <Latest /> */}
+          <Latest />
         </Container>
         <Footer />
       </AppTheme>
