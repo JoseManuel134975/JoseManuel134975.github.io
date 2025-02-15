@@ -20,6 +20,7 @@ import { useDebounce } from "../hooks/useDebounce.jsx";
 import { Link } from "react-router";
 import Search from "./Search.jsx";
 import Spinner from "./Spinner.jsx";
+import Latest from "../components/Latest.jsx";
 
 const SyledCard = styled(Card)(({ theme }) => ({
   display: "flex",
@@ -57,56 +58,9 @@ const StyledTypography = styled(Typography)({
   textOverflow: "ellipsis",
 });
 
-function Author({ authors }) {
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        gap: 2,
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "16px",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          gap: 1,
-          alignItems: "center",
-        }}
-      >
-        {/* <AvatarGroup max={3}>
-          {authors.map((author, index) => (
-            <Avatar
-              key={index}
-              alt={author.name}
-              src={author.avatar}
-              sx={{ width: 24, height: 24 }}
-            />
-          ))}
-        </AvatarGroup> */}
-        {/* <Typography variant="caption">
-          {authors.map((author) => author.name).join(", ")}
-        </Typography> */}
-      </Box>
-      <Typography variant="caption">July 14, 2021</Typography>
-    </Box>
-  );
-}
-
-Author.propTypes = {
-  authors: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
-
 export default function MainContent() {
   const [products, setProducts] = useState([]);
+  const [api, setAPI] = useState([]);
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -131,7 +85,11 @@ export default function MainContent() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const response = await getAPI("https://api.pokemontcg.io/v2/cards?page=1&pageSize=100");
+      const response = await getAPI(
+        "https://api.pokemontcg.io/v2/cards?page=1&pageSize=100"
+      );
+      const api = await getAPI("https://api.pokemontcg.io/v2/cards");
+      setAPI(api);
       let filter = [];
 
       if (category) {
@@ -246,49 +204,72 @@ export default function MainContent() {
 
       <Grid container spacing={2} columns={12}>
         {!isLoading ? (
-          products.map((element) => (
-            <Grid key={element.id} size={{ xs: 12, md: 3 }}>
-              <Link to={`/Details/${element.id}`}>
-                <SyledCard
-                  variant="outlined"
-                  onFocus={() => handleFocus(0)}
-                  onBlur={handleBlur}
-                  tabIndex={0}
-                  className={focusedCardIndex === 0 ? "Mui-focused" : ""}
-                >
-                  <CardMedia
-                    component="img"
-                    alt="green iguana"
-                    image={element.images.large}
-                    sx={{
-                      aspectRatio: "16 / 9",
-                      borderBottom: "1px solid",
-                      borderColor: "divider",
-                    }}
-                  />
-                  <SyledCardContent>
-                    <Typography gutterBottom variant="caption" component="div">
-                      {element.name}
-                    </Typography>
-                    <Typography gutterBottom variant="h6" component="div">
-                      {}
-                    </Typography>
-                    <StyledTypography
-                      variant="body2"
-                      color="text.secondary"
-                      gutterBottom
+          products.map(
+            (element) => (
+              console.log(api),
+              (
+                <Grid key={element.id} size={{ xs: 12, md: 3 }}>
+                  <Link to={`/Details/${element.id}`}>
+                    <SyledCard
+                      variant="outlined"
+                      onFocus={() => handleFocus(0)}
+                      onBlur={handleBlur}
+                      tabIndex={0}
+                      className={focusedCardIndex === 0 ? "Mui-focused" : ""}
                     >
-                      {}
-                    </StyledTypography>
-                  </SyledCardContent>
-                  <Author authors={""} />
-                </SyledCard>
-              </Link>
-            </Grid>
-          ))
+                      <CardMedia
+                        component="img"
+                        alt="green iguana"
+                        image={element.images.large}
+                        sx={{
+                          aspectRatio: "16 / 9",
+                          borderBottom: "1px solid",
+                          borderColor: "divider",
+                        }}
+                      />
+                      <SyledCardContent>
+                        <Typography
+                          gutterBottom
+                          variant="caption"
+                          component="div"
+                        >
+                          {element.name}
+                        </Typography>
+                        <Typography gutterBottom variant="h6" component="div">
+                          {element.flavorText
+                            ? element.flavorText
+                            : "La descripción de este producto no está disponible."}
+                        </Typography>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            marginTop: "auto",
+                            alignItems: "center",
+                          }}
+                        >
+                          <IconButton sx={{ padding: "30px" }}>+</IconButton>
+                          <StyledTypography
+                            variant="body2"
+                            color="text.secondary"
+                            gutterBottom
+                          >
+                            {element.cardmarket.prices.averageSellPrice + "€"}
+                          </StyledTypography>
+                          <IconButton sx={{ padding: "30px" }}>-</IconButton>
+                        </Box>
+                      </SyledCardContent>
+                    </SyledCard>
+                  </Link>
+                </Grid>
+              )
+            )
+          )
         ) : (
           <Spinner />
         )}
+        <Latest props={api}></Latest>
       </Grid>
     </Box>
   );
