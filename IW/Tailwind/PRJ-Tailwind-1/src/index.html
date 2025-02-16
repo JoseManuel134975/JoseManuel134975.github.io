@@ -1,21 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email subscribe</title>
-    <link rel="stylesheet" href="./output.css">
-</head>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
 
-<body class="bg-gray-600">
-    <main class="w-full h-full flex flex-wrap items-center justify-center">
-        <div class="bg-gray-800 w-7xl flex flex-row flex-wrap">
-            <div class="">
-                <img src="./assets/image.jpg" alt="">
-            </div>
-        </div>
-    </main>
-</body>
-
+  <body
+    class="flex h-screen w-screen flex-wrap items-center justify-center bg-gray-600"
+  >
+    <div
+      class="flex flex-wrap items-center gap-10 rounded-2xl border-0 bg-gray-800 p-3 md:h-4/5 md:w-4/5 md:flex-col md:justify-center lg:h-2/5 lg:w-4/5 lg:flex-row lg:justify-between"
+    >
+      <img
+        src="./assets/image.jpg"
+        class="lg:h-full lg:w-1/6 md:h-3/6 md:w-6/6 lg:rounded-tl-2xl lg:rounded-bl-2xl md:rounded-2xl border-0 object-cover"
+        alt="Dieta y fitness"
+      />
+      <div class="flex flex-col flex-wrap gap-10 lg:text-start md:text-center">
+        <h2 class="lg:text-3xl md:text-2xl text-white">
+          Recibe consejos de dieta y fitness en tu bandeja de entrada
+        </h2>
+        <p class="lg:text-2xl md:text-1xl text-white">
+          Come mejor y haz ejercicio mejor. Suscríbete al boletín Diet&Fitness
+        </p>
+        <form action="" class="flex lg:flex-row md:flex-col flex-wrap gap-4 md:items-center">
+          <input
+            class="border p-4 text-2xl text-white lg:w-4/7 md:w-6/7"
+            type="text"
+            name=""
+            placeholder="Inserta tu email"
+            id=""
+          />
+          <input
+            class="cursor-pointer rounded-2xl border-0 bg-lime-500 p-5 text-2xl font-bold text-black hover:bg-lime-700 hover:text-white lg:w-2/7 md:w-6/7"
+            type="submit"
+            value="Suscríbete"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
