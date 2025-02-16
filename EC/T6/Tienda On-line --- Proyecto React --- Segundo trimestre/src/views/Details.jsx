@@ -12,8 +12,8 @@ export default function Details() {
 
   useEffect(() => {
     async function fecthData() {
-      const response = await getAPI(`https://api.pokemontcg.io/v2/cards/${id}`);
-      setProduct(response.data);
+      const response = await getAPI(`https://fakestoreapi.com/products/${id}`);
+      setProduct({...response});
     }
 
     fecthData();
@@ -21,7 +21,6 @@ export default function Details() {
 
   return (
     <>
-      {console.log(product)}
       <Navbar />
       <ItemProduct props={product}></ItemProduct>
     </>

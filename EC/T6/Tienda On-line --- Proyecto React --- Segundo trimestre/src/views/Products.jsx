@@ -6,7 +6,7 @@ export default function Products() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className='d-flex flex-wrap flex-column justify-content-center'>
         <GridProducts></GridProducts>
       </main>
     </>
