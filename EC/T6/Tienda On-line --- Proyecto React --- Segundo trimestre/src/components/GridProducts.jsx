@@ -65,7 +65,6 @@ export default function GridProducts() {
     const newProducts = products
       .map((element) => {
         if (element.id === parseInt(event.target.id)) {
-          //si es menor o 0 a cero lo devolvemos null para luego filtrar y quedarnos sin nulos
           if (element.quantity <= 1) {
             return null;
           }
