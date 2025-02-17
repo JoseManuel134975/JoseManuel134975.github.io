@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Fylo</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body>
+    <header class="container mx-auto mt-10 px-6 text-center h-40 md:h-20">
+        <!-- logo -->
+
+        <div class="bg-logo-light-mode top-10 left-10 mx-auto h-20 w-48 bg-no-repeat md:absolute md:mx-0"></div>
+        <!-- Menu -->
+        <div class="flex items-center justify-center space-x-4 md:space-x-10 md:absolute top-12 right-10">
+            <a href="#funcionalidades" class="hover:text-cyan">Funcionalidades</a>
+            <a href="#testimonios" class="hover:text-cyan">Testimonios</a>
+
+            <!-- Button Dark/light -->
+            <button id="theme-toggle"
+                class="text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2">
+                <!-- Icono Dark SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 hidden" id="moon-icon"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
+                </svg>
+
+                <!-- Icono light SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 hidden" viewBox="0 0 16 16">
+                    <path
+                        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sección principal -->
+    <section class="section bg-curvy-light-mode bg-no-repeat bg-contain bg-bottom">
+        <!-- Contenedor Principal -->
+        <div class="container mx-auto px-6 text-center md:pt-20 pb-52">
+            <img src="./images/illustration-intro.png" alt="intro" class="mx-auto">
+            <h1 class="max-w-2xl mx-auto mb-10 text-3xl font-bold leading-normal mt-14 md:text-4xl">
+                Todos tus archivos en un lugar seguro, accesibles desde cualquier lugar.
+            </h1>
+            <p class="max-w-sm mx-auto mb-10 text-sm md:max-w-xl md:text-lg">
+                Fylo almacena todos tus archivos más importantes en un lugar seguro. Accede a ellos donde los necesites,
+                comparte y colabora con amigos, familiares y compañeros de trabajo.
+            </p>
+
+            <button class="p-3 rounded-full w-52 bg-cyan transform hover:scale-90 duration-200">Comenzar</button>
+        </div>
+    </section>
+
+    <!-- Sección Funcionalidades -->
+    <section id="funcionalidades" class="pt-12 bg-gray-50">
+        <!-- Contenedor Funcionalidades -->
+        <div class="container mx-auto px-6 pb-32">
+            <!-- Primera Row -->
+            <div class="flex flex-col space-y-24 text-center md:flex-row md:space-y-0">
+                <!-- Item 1 -->
+                <div class="flex flex-col items-center space-y-2 md:w-1/2">
+                    <div class="mb-6 flex h-24 items-center justify-center">
+                        <img src="./images/icon-access-anywhere.svg" alt="acceso">
+                    </div>
+                    <h3 class="text-xl font-bold">Accede a tu archivo desde cualquier lugar</h3>
+                    <p class="max-w-md">
+                        Elige cualquier archivo de tu computadora y mantenlo seguro con el almacenamiento de Fylo.
+                        Accede a tus archivos desde cualquier lugar, en cualquier lugar.
+                    </p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="flex flex-col items-center space-y-2 md:w-1/2">
+                    <div class="mb-6 flex h-24 items-center justify-center">
+                        <img src="./images/icon-security.svg" alt="seguridad">
+                    </div>
+                    <h3 class="text-xl font-bold">Seguridad en la que puedes confiar</h3>
+                    <p class="max-w-md">
+                        Elige cualquier archivo de tu computadora y mantenlo seguro con el almacenamiento de Fylo.
+                        Accede a tus archivos desde cualquier lugar, en cualquier lugar.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Segunda Row -->
+            <div class="flex flex-col space-y-24 text-center md:flex-row md:space-y-0">
+                <!-- Item 3 -->
+                <div class="flex flex-col items-center space-y-2 md:w-1/2">
+                    <div class="mb-6 flex h-24 items-center justify-center">
+                        <img src="./images/icon-collaboration.svg" alt="colaboración">
+                    </div>
+                    <h3 class="text-xl font-bold">Accede a tu archivo desde cualquier lugar</h3>
+                    <p class="max-w-md">
+                        Elige cualquier archivo de tu computadora y mantenlo seguro con el almacenamiento de Fylo.
+                        Accede a tus archivos desde cualquier lugar, en cualquier lugar.
+                    </p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="flex flex-col items-center space-y-2 md:w-1/2">
+                    <div class="mb-6 flex h-24 items-center justify-center">
+                        <img src="./images/icon-any-file.svg" alt="ficheros">
+                    </div>
+                    <h3 class="text-xl font-bold">Seguridad en la que puedes confiar</h3>
+                    <p class="max-w-md">
+                        Elige cualquier archivo de tu computadora y mantenlo seguro con el almacenamiento de Fylo.
+                        Accede a tus archivos desde cualquier lugar, en cualquier lugar.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Productividad -->
+    <section class="bg-white">
+        <!-- Contenedor Productivo -->
+        <div class="container flex flex-col items-center mx-auto px-6 pt-24 pb-32 md:flex-row">
+            <!-- Imagen -->
+            <div class="md:w-1/2">
+                <img src="./images/illustration-stay-productive.png" alt="" class="mb-10">
+            </div>
+
+            <!-- Contenido de la derecha -->
+            <div class="flex flex-col items-start md:w-1/2">
+                <div class="flex flex-col space-y-5">
+                    <h4 class="max-w-md text-xl font-bold md:text-4xl">
+                        Mantente productivo, estés donde estés
+                    </h4>
+                    <p class="text-md md:text-lg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident mollitia eum dolorum placeat
+                        sit repudiandae ab quos facere deserunt quod.
+                    </p>
+                    <p class="text-md md:text-lg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, dolorum. Ratione repudiandae
+                        iure quae quia.
+                    </p>
+                </div>
+                <!-- Link -->
+                 <div class="block mt-4">
+                    <a href="#" class="border-b border-cyan text-cyan">
+                        Descubre como funciona Fylo <img src="./images/icon-arrow.svg" alt="flecha" class="inline pb-2">
+                    </a>
+                 </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
