@@ -7,19 +7,18 @@ export default function Categories({ setProducts, allProducts }) {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await getAPI('https://fakestoreapi.com/products/categories')
-            setCategories([...response])
+            const response = await getAPI('http://localhost:3000/categories')
+            setCategories(response)
         }
 
         fetchData()
     }, [])
 
     const handleOnClick = (event) => {
-        console.log(event.target.value)
         if(event.target.value !== 'Todas las categorías') {
-            setProducts([...filterByCategory(allProducts, event.target.value)])           
+            setProducts(filterByCategory(allProducts, event.target.value))           
         } else {
-            setProducts([...allProducts])
+            setProducts(allProducts)
         }
     }
 

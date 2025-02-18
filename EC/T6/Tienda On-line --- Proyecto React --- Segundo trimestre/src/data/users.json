@@ -1,22 +1,20 @@
-{
-  "users": [
-    {
-      "name": "John Doe",
-      "password": "password123",
-      "gmail": "johndoe@gmail.com",
-      "id": "1"
-    },
-    {
-      "name": "Jane Smith",
-      "password": "securepass456",
-      "gmail": "janesmith@gmail.com",
-      "id": "2"
-    },
-    {
-      "name": "Michael Johnson",
-      "password": "mike7890",
-      "gmail": "mike.johnson@gmail.com",
-      "id": "3"
-    }
-  ]
-}
+[
+  {
+    "name": "John Doe",
+    "password": "password123",
+    "gmail": "johndoe@gmail.com",
+    "id": "1"
+  },
+  {
+    "name": "Jane Smith",
+    "password": "securepass456",
+    "gmail": "janesmith@gmail.com",
+    "id": "2"
+  },
+  {
+    "name": "Michael Johnson",
+    "password": "mike7890",
+    "gmail": "mike.johnson@gmail.com",
+    "id": "3"
+  }
+]

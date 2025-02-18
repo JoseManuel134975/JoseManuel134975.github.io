@@ -8,11 +8,13 @@ import Search from "./Search.jsx";
 import useQuery from "../hooks/useQuery.jsx";
 import { useDebounce } from "../hooks/useDebounce.jsx";
 import BasicExample from "./Spinner.jsx";
-import json from "../data/products.json";
+import AdvancedExample from "./Pagination.jsx";
+// import json from "../data/products.json";
 
 export default function GridProducts() {
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+  const [page, setPage] = useState(1)
   const [cart, setCart] = useState({
     numberProducts: 0,
     cartProducts: []
@@ -25,9 +27,9 @@ export default function GridProducts() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      // const response = await getAPI(json);
-      setProducts(json);
-      setAllProducts(json);
+      const response = await getAPI(`http://localhost:3000/products?_page=${page}&per_page=10`);
+      setProducts(response.data);
+      setAllProducts(response.data);
     }
     fetchData();
     setIsLoading(false);
@@ -36,8 +38,19 @@ export default function GridProducts() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      // const response = await getAPI(json);
-      const filter = filterByInput(json, search);
+      const response = await getAPI(`http://localhost:3000/products?_page=${page}&per_page=10`);
+      setProducts(response.data);
+      setAllProducts(response.data);
+    }
+    fetchData();
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      setIsLoading(true);
+      const response = await getAPI(`http://localhost:3000/products?_page=${page}&per_page=10`);
+      const filter = filterByInput(response.data, search);
       setProducts(filter);
     }
     fetchData();
@@ -96,6 +109,7 @@ export default function GridProducts() {
 
   return (
     <>
+    {console.log(allProducts)}
       <Categories setProducts={setProducts} allProducts={allProducts} />
       <Search />
       <Link to="/Cart" className="mt-5">
@@ -143,6 +157,7 @@ export default function GridProducts() {
           <BasicExample />
         )}
       </section>
+      <AdvancedExample products={products} setProducts={setProducts} page={page} setPage={setPage} setAllProducts={setAllProducts} />
     </>
   );
 }
