@@ -1,8 +1,9 @@
 import React from 'react'
-import users from '../data/users.json'
+// import users from '../data/users.json'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router'
+import { getAPI } from '../utils/getAPI.jsx'
 
 export default function Login() {
   const [login, setLogin] = useState({
@@ -11,8 +12,9 @@ export default function Login() {
   })
   const navigate = useNavigate()
 
-  const handleOnSubmit = (event) => {
+  const handleOnSubmit = async (event) => {
     event.preventDefault()
+    const users = await getAPI('http://localhost:3000/users')
     if(users.find(element => element.name === login.name && element.password === login.pass) !== undefined) {
       navigate('/Products')
     } else {

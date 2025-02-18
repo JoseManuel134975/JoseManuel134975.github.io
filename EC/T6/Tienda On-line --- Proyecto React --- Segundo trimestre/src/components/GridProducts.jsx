@@ -13,6 +13,10 @@ import json from "../data/products.json";
 export default function GridProducts() {
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+  const [cart, setCart] = useState({
+    numberProducts: 0,
+    cartProducts: []
+  })
   const query = useQuery();
   const search = query.get("search");
   const debounceSearch = useDebounce(search, 2000);
@@ -40,6 +44,13 @@ export default function GridProducts() {
     setIsLoading(false);
   }, [debounceSearch]);
 
+  useEffect(() => {
+    async function fetchData() {
+      localStorage.setItem("cart", JSON.stringify(cart))
+    }
+    fetchData();
+  }, [cart]);
+
   const filterByInput = (arr, value) => {
     if (value !== "") {
       value = value.toLowerCase().replace(/\s+/g, "");
@@ -52,13 +63,18 @@ export default function GridProducts() {
   };
 
   const addToCart = (event) => {
-    const newProducts = products.map((element) => {
+    products.map((element) => {
       if (element.id === parseInt(event.target.id)) {
-        return { ...element, quantity: element.quantity + 1 };
+        if(!cart.cartProducts.includes(element)) { 
+          setCart({...cart, cartProducts: cart.cartProducts.push(element)})
+          setCart({...cart, numberProducts: cart.numberProducts + 1})
+        } else {
+          const index = cart.cartProducts.findIndex(item => item === element)
+          cart.cartProducts[index].quantity++
+          setCart({...cart, cartProducts: [...cart.cartProducts]})
+        }
       }
-      return element;
     });
-    setProducts(newProducts);
   };
 
   const deleteFromCart = (event) => {
@@ -82,6 +98,13 @@ export default function GridProducts() {
     <>
       <Categories setProducts={setProducts} allProducts={allProducts} />
       <Search />
+      <Link to="/Cart" className="mt-5">
+        <i className="bi bi-cart fs-1 text-black position-relative">
+          <div className="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger text-white fs-6">
+            {cart.numberProducts}
+          </div>
+        </i>
+      </Link>
       <section className="row row-cols-lg-4 row-cols-sm-2 row-cols-md-2 gy-5 gx-5 m-auto">
         {products.length > 0 && !isLoading ? (
           products.map((element) => (
@@ -105,21 +128,13 @@ export default function GridProducts() {
                 </i>
               )}
               <b className="m-auto">{element.price + " €"}</b>
-              <h4>{element.quantity}</h4>
               <div className="d-flex flex-row flex-wrap gap-3 align-items-center justify-content-center">
                 <button
                   id={element.id}
                   onClick={addToCart}
                   className="btn btn-primary"
                 >
-                  +
-                </button>
-                <button
-                  id={element.id}
-                  onClick={deleteFromCart}
-                  className="btn btn-primary"
-                >
-                  -
+                  Añadir al carrito
                 </button>
               </div>
             </article>
