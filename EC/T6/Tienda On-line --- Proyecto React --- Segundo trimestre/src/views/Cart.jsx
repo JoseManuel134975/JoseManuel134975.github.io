@@ -6,7 +6,9 @@ export default function Cart() {
   return (
     <>
       <Navbar />  
-      <FlexCart />
+      <main className='d-flex flex-column flex-wrap gap-3 mt-5'>
+        <FlexCart />
+      </main>
     </>
   )
 }

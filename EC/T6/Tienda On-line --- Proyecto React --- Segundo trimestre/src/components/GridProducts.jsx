@@ -8,17 +8,19 @@ import Search from "./Search.jsx";
 import useQuery from "../hooks/useQuery.jsx";
 import { useDebounce } from "../hooks/useDebounce.jsx";
 import BasicExample from "./Spinner.jsx";
-import AdvancedExample from "./Pagination.jsx";
 // import json from "../data/products.json";
 
 export default function GridProducts() {
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
-  const [page, setPage] = useState(1)
+  const [pages, setPages] = useState({
+    page: 1,
+    totalPages: 1,
+  });
   const [cart, setCart] = useState({
     numberProducts: 0,
-    cartProducts: []
-  })
+    cartProducts: [],
+  });
   const query = useQuery();
   const search = query.get("search");
   const debounceSearch = useDebounce(search, 2000);
@@ -27,9 +29,12 @@ export default function GridProducts() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const response = await getAPI(`http://localhost:3000/products?_page=${page}&per_page=10`);
+      const response = await getAPI(
+        `http://localhost:3000/products?_page=${pages.page}&per_page=10`
+      );
       setProducts(response.data);
       setAllProducts(response.data);
+      setPages({ ...pages, totalPages: response.pages });
     }
     fetchData();
     setIsLoading(false);
@@ -38,18 +43,9 @@ export default function GridProducts() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const response = await getAPI(`http://localhost:3000/products?_page=${page}&per_page=10`);
-      setProducts(response.data);
-      setAllProducts(response.data);
-    }
-    fetchData();
-    setIsLoading(false);
-  }, []);
-
-  useEffect(() => {
-    async function fetchData() {
-      setIsLoading(true);
-      const response = await getAPI(`http://localhost:3000/products?_page=${page}&per_page=10`);
+      const response = await getAPI(
+        `http://localhost:3000/products?_page=${pages.page}&per_page=10`
+      );
       const filter = filterByInput(response.data, search);
       setProducts(filter);
     }
@@ -59,10 +55,21 @@ export default function GridProducts() {
 
   useEffect(() => {
     async function fetchData() {
-      localStorage.setItem("cart", JSON.stringify(cart))
+      localStorage.setItem("cart", JSON.stringify(cart));
     }
     fetchData();
   }, [cart]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await getAPI(
+        `http://localhost:3000/products?_page=${pages.page}&per_page=10`
+      );
+      setProducts(response.data);
+      setAllProducts(response.data);
+    }
+    fetchData();
+  }, [pages.page]);
 
   const filterByInput = (arr, value) => {
     if (value !== "") {
@@ -77,41 +84,36 @@ export default function GridProducts() {
 
   const addToCart = (event) => {
     products.map((element) => {
-      if (element.id === parseInt(event.target.id)) {
-        if(!cart.cartProducts.includes(element)) { 
-          setCart({...cart, cartProducts: cart.cartProducts.push(element)})
-          setCart({...cart, numberProducts: cart.numberProducts + 1})
+      if (element.id === event.target.id) {
+        if (!cart.cartProducts.includes(element)) {
+          setCart({ ...cart, cartProducts: cart.cartProducts.push(element) });
+          setCart({ ...cart, numberProducts: cart.numberProducts + 1 });
         } else {
-          const index = cart.cartProducts.findIndex(item => item === element)
-          cart.cartProducts[index].quantity++
-          setCart({...cart, cartProducts: [...cart.cartProducts]})
+          const index = cart.cartProducts.findIndex((item) => item === element);
+          const product = cart.cartProducts[index];
+          product.quantity++;
+          setCart({ ...cart, cartProducts: [...cart.cartProducts] });
         }
       }
     });
   };
 
-  const deleteFromCart = (event) => {
-    const newProducts = products
-      .map((element) => {
-        if (element.id === parseInt(event.target.id)) {
-          if (element.quantity <= 1) {
-            return null;
-          }
+  const handleOnClickNextPage = () => {
+    if (pages.page < pages.totalPages) {
+      setPages((pages) => ({ ...pages, page: pages.page + 1 }));
+    }
+  };
 
-          return { ...element, quantity: element.quantity - 1 };
-        }
-        return element;
-      })
-      .filter((element) => element !== null);
-
-    setProducts(newProducts);
+  const handleOnClickPreviousPage = () => {
+    if (pages.page > 1) {
+      setPages((pages) => ({ ...pages, page: pages.page - 1 }));
+    }
   };
 
   return (
     <>
-    {console.log(allProducts)}
       <Categories setProducts={setProducts} allProducts={allProducts} />
-      <Search />
+      <Search products={products} setProducts={setProducts} />
       <Link to="/Cart" className="mt-5">
         <i className="bi bi-cart fs-1 text-black position-relative">
           <div className="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger text-white fs-6">
@@ -157,7 +159,15 @@ export default function GridProducts() {
           <BasicExample />
         )}
       </section>
-      <AdvancedExample products={products} setProducts={setProducts} page={page} setPage={setPage} setAllProducts={setAllProducts} />
+      <div className="mt-5 d-flex flex-wrap flex-row gap-3 justify-content-center align-items-center">
+        <button className="btn btn-primary" onClick={handleOnClickPreviousPage}>
+          Previous
+        </button>
+        {`${pages.page}/${pages.totalPages}`}
+        <button className="btn btn-primary" onClick={handleOnClickNextPage}>
+          Next
+        </button>
+      </div>
     </>
   );
 }

@@ -31,7 +31,7 @@ export default function Categories({ setProducts, allProducts }) {
         <nav className='mt-5 mb-5 d-flex flex-wrap flex-row gap-3 align-items-center justify-content-center'>
             <button onClick={handleOnClick} className='btn btn-primary' value="Todas las categorías">Todas las categorías</button>
             {categories.length > 0 && categories.map((element, index) => (
-                <button onClick={handleOnClick} className='btn btn-secondary' value={element} key={index}>{element}</button>
+                <button onClick={handleOnClick} className='btn btn-secondary' value={element.name} key={index}>{element.name}</button>
             ))}
         </nav>
     </>
