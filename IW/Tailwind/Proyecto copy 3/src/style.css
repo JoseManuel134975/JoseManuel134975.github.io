@@ -3,12 +3,19 @@
 @theme {
     /* Colores personalizados */
     --color-cyan: hsl(176, 68%, 64%);
+    --color-dark-blue: hsl(217, 28%, 15%);
+    --color-dark-blue-1: hsl(216, 53%, 9%);
 }
 
 
 
 /* Clases de utilidad personalizadas */
 @layer utilities {
+    /* Filtro fumada histórica */
+    .ficon:hover{
+        filter: invert(80%) sepia(37%) saturate(7048%) hue-rotate(132deg) brightness(105%) contrast(104%);
+    }
+
     .bg-logo-light-mode{
         background-image: url('./images/logo-light-mode.svg');
     }
