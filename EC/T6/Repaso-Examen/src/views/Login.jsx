@@ -20,7 +20,7 @@ export default function Login() {
     if (
       users.find(
         (element) =>
-          element.name === login.name && element.password === login.pass
+          element.username === login.name && element.password === login.pass
       ) !== undefined
     ) {
       navigate("/Products");
@@ -45,13 +45,13 @@ export default function Login() {
       alert("Ese usuario ya existe, realiza un login.");
     } else {
       const newUser = {
-        name: login.name,
+        username: login.name,
         password: login.pass,
-        gmail: "",
+        email: "",
         id: users.length + 1,
       };
-      const post = await postAPI('http://localhost:3000/users', newUser)
-      alert(`Usuario ${post.name} registrado con éxito.`)
+      const post = await postAPI('https://fakestoreapi.com/users', newUser)
+      alert(`Usuario ${post.username} registrado con éxito.`)
     }
   };
 
@@ -65,7 +65,7 @@ export default function Login() {
 
   useEffect(() => {
     async function fetchData() {
-      const json = await getAPI("http://localhost:3000/users");
+      const json = await getAPI("https://fakestoreapi.com/users");
       setUsers([...json]);
     }
     fetchData();
@@ -74,23 +74,21 @@ export default function Login() {
   return (
     <>
       <form action="">
-        <label htmlFor="name">Name: </label>
-        <input onChange={handleOnChangeName} type="text" name="" id="" />
+        <label htmlFor="name">Username: </label>
+        <input onChange={handleOnChangeName} type="text" />
         <br />
-        <label htmlFor="pass">Pass: </label>
-        <input onChange={handleOnChangePass} type="password" name="" id="" />
+        <label htmlFor="pass">Password: </label>
+        <input onChange={handleOnChangePass} type="password" />
         <br />
         <input
           onClick={handleOnClickLogin}
           type="submit"
           value="Login"
-          name="login"
         />
         <input
           onClick={handleOnClickRegister}
           type="submit"
           value="Register"
-          name="register"
         />
       </form>
     </>

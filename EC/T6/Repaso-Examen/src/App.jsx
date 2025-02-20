@@ -3,7 +3,8 @@ import Login from './views/Login';
 import Products from './views/Products';
 import Details from './views/Details';
 import Cart from './views/Cart';
-import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.css'
 
 function App() {
   return (
