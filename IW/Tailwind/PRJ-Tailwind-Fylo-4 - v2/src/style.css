@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
+
+@theme {
+  /* Colores personalizados */
+  --color-cyan: hsl(176, 68%, 64%);
+  --color-dark-blue: hsl(217, 28%, 15%);
+  --color-dark-blue-1: hsl(216, 53%, 9%);
+  --color-dark-blue-2: hsl(218, 28%, 13%);
+  --color-dark-blue-3: hsl(219, 30%, 18%);
+
+  --color-accent-blue: hsl(198, 60%, 50%);
+  --color-light-red: hsl(0, 100%, 63%);
+
+  /* Familias tipográficas personalizadas */
+  --font-sans: "Raleway", sans-serif;
+  --font-opensans: "Open Sans", sans-serif;
+
+
+}
+
+/* Ejemplo de clases de utilidad personalizadas */
+@layer utilities {
+
+  .bg-logo-light-mode {
+      background-image: url('../assets/logo-light-mode.svg');
+    }
+  
+    .bg-logo-negro-mode {
+      background-image: url('../assets/logo-dark-mode.svg');
+    }
+
+  .bg-curvy-negro-mode {
+      background-image: url('../assets/bg-curvy-dark-mode.svg');
+    }
+
+
+  .ficon:hover {
+        filter: invert(80%) sepia(37%) saturate(7048%) hue-rotate(132deg) brightness(105%) contrast(104%);
+  }
+
+  .bg-curvy-light-mode {
+    background-image: url('../assets/bg-curvy-light-mode.svg');
+  }
+
+}
