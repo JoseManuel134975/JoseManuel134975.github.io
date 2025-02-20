@@ -10,7 +10,8 @@ export default function Products() {
   useEffect(() => {
     async function fetchData() {
       const response = await getAPI("https://fakestoreapi.com/products");
-      setProducts([...response]);
+      const data = response.slice(0, 10)
+      setProducts([...data]);
       setAllProducts([...response]);
     }
     fetchData();
@@ -20,7 +21,7 @@ export default function Products() {
     <>
       <Navbar></Navbar>
       <main>
-        <GridProducts products={products} setProducts={setProducts} allProducts={allProducts} />
+        <GridProducts products={products} setProducts={setProducts} allProducts={allProducts} setAllProducts={setAllProducts} />
       </main>
     </>
   );

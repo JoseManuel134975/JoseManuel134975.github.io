@@ -4,8 +4,9 @@ import Categories from "./Categories";
 import { getAPI } from "../utils/getAPI";
 import Search from "./Search";
 import useQuery from '../hooks/useQuery'
+import Pagination from "./Pagination";
 
-export default function GridProducts({ products, setProducts, allProducts }) {
+export default function GridProducts({ products, setProducts, allProducts, setAllProducts }) {
   const [localCart, setLocalCart] = useState({
     cart: [],
     totalProducts: 0,
@@ -13,6 +14,10 @@ export default function GridProducts({ products, setProducts, allProducts }) {
   const [categories, setCategories] = useState([]);
   const query = useQuery()
   const search = query.get('search')
+  const [pagination, setPagination] = useState({
+    currentPage: 1,
+    totalPages: 1
+  })
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(localCart));
@@ -55,6 +60,7 @@ export default function GridProducts({ products, setProducts, allProducts }) {
             />
           ))}
       </section>
+      <Pagination pagination={pagination} setPagination={setPagination} products={products} setProducts={setProducts} allProducts={allProducts} setAllProducts={setAllProducts} />
     </>
   );
 }
