@@ -36,10 +36,9 @@ export default function Footer({ setProducts, pagination, setPagination }) {
 
   return (
     <>
-      {console.log(pagination)}
       <Pagination>
         <Pagination.Prev onClick={handleOnClickPrevious} />
-        <Pagination.Item>{pagination.currentPage}</Pagination.Item>
+        <Pagination.Item>{pagination.currentPage}/{pagination.totalPages}</Pagination.Item>
         <Pagination.Next onClick={handleOnClickNext} />
       </Pagination>
     </>

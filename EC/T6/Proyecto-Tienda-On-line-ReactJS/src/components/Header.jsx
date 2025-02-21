@@ -52,7 +52,7 @@ function Header({ Search, categories, allProducts, setProducts, cart }) {
               <Nav.Link href="/Products">Home</Nav.Link>
               <Nav.Link href="/Details">Details</Nav.Link>
               <Nav.Link href="/">Logout</Nav.Link>
-              <Nav.Link href="/Cart">
+              <Nav.Link href="/Cart" >
                 <Cart size={24}></Cart>
                 <b className="ms-2 text-bg-danger badge rounded-circle p-2">{cart.totalProducts}</b>
               </Nav.Link>
