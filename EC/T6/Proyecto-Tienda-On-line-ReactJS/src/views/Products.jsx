@@ -5,6 +5,9 @@ import { API_ENDPOINT_PRODUCTS } from "../utils/urlsAPI";
 import { getAPI } from "../utils/getAPI";
 import Header from "../components/Header";
 import Main from "../components/Main";
+import Footer from "../components/Pagination";
+import LoadIcon from "../components/LoadIcon";
+import { limit } from "../utils/limitProducts";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -13,6 +16,10 @@ export default function Products() {
   const [pagination, setPagination] = useState({
     currentPage: 1,
     totalPages: 1,
+  });
+  const [cart, setCart] = useState({
+    cartProducts: [],
+    totalProducts: 0,
   });
 
   useEffect(() => {
@@ -23,7 +30,9 @@ export default function Products() {
       const allCategories = uniqueCategories.filter(
         (categorie) => categorie !== undefined
       );
-      const products = data.slice(0, 50);
+      const startIndex = (pagination.currentPage - 1) * limit;
+      const endIndex = startIndex + limit;
+      const products = data.slice(startIndex, endIndex);
       setProducts([...products]);
       setAllProducts([...data]);
       setCategories([...allCategories]);
@@ -32,23 +41,31 @@ export default function Products() {
   }, []);
 
   useEffect(() => {
-    let totalPages = Math.ceil(allProducts.length / 50);
-    setPagination({ ...pagination, currentPage: 1, totalPages: totalPages });
+    let totalPages = Math.ceil(allProducts.length / limit);
+    setPagination({ ...pagination, currentPage: pagination.currentPage, totalPages: totalPages });
   }, [products]);
 
   return (
     <>
-      {console.log(pagination)}
-      {console.log(products)}
-      {console.log(allProducts)}
-      {console.log(categories)}
       <Header
         Search={Search}
         categories={categories}
         allProducts={allProducts}
         setProducts={setProducts}
+        cart={cart}
       />
-      <Main GridProducts={GridProducts} products={products} />
+      <Main
+        GridProducts={GridProducts}
+        products={products}
+        cart={cart}
+        setCart={setCart}
+        LoadIcon={LoadIcon}
+      />
+      <Footer
+        setProducts={setProducts}
+        pagination={pagination}
+        setPagination={setPagination}
+      />
     </>
   );
 }

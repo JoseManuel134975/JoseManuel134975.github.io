@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { Cart } from "react-bootstrap-icons";
 import { useDebounce } from "../hooks/useDebounce";
 
-function Header({ Search, categories, allProducts, setProducts }) {
+function Header({ Search, categories, allProducts, setProducts, cart }) {
   const query = useQuery();
   const search = query.get("search");
   const debounceSearch = useDebounce(search, 1000);
@@ -23,13 +23,13 @@ function Header({ Search, categories, allProducts, setProducts }) {
     arr.filter((product) => {
       return (
         (product.bundle &&
-          product.bundle.name.toLowerCase().trim().includes(value)) ||
+          product.bundle.name.toLowerCase().trim().includes(value.toLowerCase().trim())) ||
         (product.brItems &&
-          product.brItems[0].name.toLowerCase().trim().includes(value)) ||
+          product.brItems[0].name.toLowerCase().trim().includes(value.toLowerCase().trim())) ||
         (product.tracks &&
-          product.tracks[0].title.toLowerCase().trim().includes(value)) ||
+          product.tracks[0].title.toLowerCase().trim().includes(value.toLowerCase().trim())) ||
         (product.instruments &&
-          product.instruments[0].name.toLowerCase().trim().includes(value))
+          product.instruments[0].name.toLowerCase().trim().includes(value.toLowerCase().trim()))
       );
     });
 
@@ -54,6 +54,7 @@ function Header({ Search, categories, allProducts, setProducts }) {
               <Nav.Link href="/">Logout</Nav.Link>
               <Nav.Link href="/Cart">
                 <Cart size={24}></Cart>
+                <b className="ms-2 text-bg-danger badge rounded-circle p-2">{cart.totalProducts}</b>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

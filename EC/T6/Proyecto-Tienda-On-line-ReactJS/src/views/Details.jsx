@@ -14,6 +14,10 @@ export default function Details() {
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [cart, setCart] = useState({
+    cartProducts: [],
+    totalProducts: 0,
+  });
 
   const handleOnClick = () => {
     navigate("/Products");
@@ -45,12 +49,12 @@ export default function Details() {
 
   return (
     <>
-      {console.log(product)}
       <Header
         Search={Search}
         categories={categories}
         allProducts={allProducts}
         setProducts={setProducts}
+        cart={cart}
       />
       <Button onClick={handleOnClick} variant="secondary">
         Return
