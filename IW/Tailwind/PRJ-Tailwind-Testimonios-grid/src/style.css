@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer utilities{
+    .bg-quote{
+        background-image: url('./img/bg-pattern-quotation.svg');
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 90% 0;
+    }
+}
