@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@layer utilities{
+    .bg-form{
+        background-image: url('./img/image.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

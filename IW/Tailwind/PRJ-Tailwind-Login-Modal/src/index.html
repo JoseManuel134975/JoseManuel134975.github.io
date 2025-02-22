@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-Modal</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body
+    class="flex h-screen w-screen items-center justify-center bg-pink-100 p-4"
+  >
+    <!-- Modal-Login -->
+    <div class="g-0 h-7xl flex w-7xl flex-row gap-0">
+      <!-- Form -->
+      <div
+        class="flex flex-col gap-12 md:rounded-tl-lg md:rounded-bl-lg sm:rounded-lg bg-white p-16 sm:w-4/4 md:w-3/4"
+      >
+        <!-- Form-Description -->
+        <div
+          class="flex flex-col gap-8 sm:items-center sm:text-center md:items-start md:text-start"
+        >
+          <h2 class="text-4xl font-bold">Log In</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+            totam ratione atque laboriosam corporis quae.
+          </p>
+        </div>
+        <form class="flex flex-col gap-12">
+          <!-- Input -->
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            class="peer rounded-lg border border-gray-300 p-8"
+          />
+          <p class="hidden text-red-600 peer-invalid:block">
+            Incorrect email address
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-row items-center justify-between">
+            <a href="#" class="text-teal-700">Forgot password</a>
+            <button
+              type="submit"
+              class="flex cursor-pointer flex-row items-center justify-center gap-4 rounded-lg border bg-teal-700 px-12 py-8 font-bold text-white"
+            >
+              <small class="text-[20px]">Next</small>
+              <svg
+                class="h-6 w-6 text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <hr class="text-gray-400" />
+
+          <small class="self-center text-gray-400">or log in with</small>
+
+          <!-- Google & Facebook -->
+          <div class="flex flex-row items-center justify-center gap-4">
+            <button
+              class="flex transform cursor-pointer flex-row items-center justify-center gap-4 rounded-lg border border-gray-300 py-3 duration-200 hover:translate-y-0.5 hover:shadow-2xl sm:px-16 md:px-12 lg:px-8"
+            >
+              <img src="./img/facebook.png" alt="Facebook" class="w-9" />
+              <h3>Facebook</h3>
+            </button>
+            <button
+              class="flex transform cursor-pointer flex-row items-center justify-center gap-4 rounded-lg border border-gray-300 py-3 duration-200 hover:translate-y-0.5 hover:shadow-2xl sm:px-16 md:px-12 lg:px-8"
+            >
+              <img src="./img/google.png" alt="Google" class="w-9" />
+              <h3>Facebook</h3>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Image -->
+      <div class="bg-form sm:w-0 md:w-2/4 rounded-tr-lg rounded-br-lg"></div>
+    </div>
+  </body>
+</html>
