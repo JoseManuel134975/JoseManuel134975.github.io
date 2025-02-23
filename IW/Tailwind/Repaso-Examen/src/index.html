@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repaso Examen</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="w-screen p-4">
+      <!-- Nav -->
+      <nav class="flex w-full flex-row items-center justify-between p-8">
+        <!-- Logo -->
+        <img src="../assets/logo-light-mode.svg" alt="logo" />
+        <!-- Menu -->
+        <div class="flex flex-row items-center gap-12">
+          <a href="#" class="hover:text-cyan-300">Funcionalidades</a>
+          <a href="#" class="hover:text-cyan-300">Testimonios</a>
+          <!-- Theme-Button -->
+          <button
+            id="theme-toggle"
+            class="rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          >
+            <!-- Icono Dark SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              id="moon-icon"
+              class="h-5 w-5"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
+              />
+            </svg>
+
+            <!-- Icono Light SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              id="sun-icon"
+              class="hidden h-5 w-5"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main
+      class="container mx-auto mt-7.5 flex flex-col items-center justify-center space-y-64"
+    >
+      <!-- Main section -->
+      <section
+        class="flex flex-col items-center justify-center gap-18 text-center leading-normal text-wrap md:p-8 lg:p-0"
+      >
+        <img src="../assets/illustration-intro.png" alt="intro" />
+        <h1 class="text-3xl font-bold">
+          Todos tus archivos en un lugar seguro, accesibles desde cualquier
+          lugar.
+        </h1>
+        <p class="text-[20px]">
+          Fylo almacena todos tus archivos más importantes en un lugar seguro.
+          Accede a ellos donde los necesites, comparte y colabora con amigos,
+          familiares y compañeros de trabajo.
+        </p>
+        <button
+          class="transform rounded-full bg-cyan-300 px-17 py-3 text-black duration-200 hover:scale-90"
+        >
+          Comenzar
+        </button>
+      </section>
+
+      <!-- Functions-Section -->
+      <section
+        class="flex flex-col items-center justify-center space-y-48 bg-[url(../assets/bg-curvy-light-mode.svg)] bg-contain bg-no-repeat md:p-8 lg:p-0"
+      >
+        <div
+          class="flex items-center sm:flex-col sm:justify-center sm:space-y-48 sm:space-x-0 md:flex-row md:justify-between md:space-y-0 md:space-x-48"
+        >
+          <div
+            class="flex flex-col items-center justify-center gap-2 text-center text-wrap"
+          >
+            <img src="../assets/icon-access-anywhere.svg" alt="access" />
+            <h3 class="text-2xl font-bold">
+              Accede a tu archivo desde cualquier lugar
+            </h3>
+            <p>
+              La capacidad de utilizar un smartphone, una tableta o un ordenador
+              para acceder a tu cuenta significa que tus archivos te acompañan a
+              todas partes.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col items-center justify-center gap-2 text-center text-wrap"
+          >
+            <img src="../assets/icon-security.svg" alt="security" />
+            <h3 class="text-2xl font-bold">
+              Seguridad en la que puedes confiar
+            </h3>
+            <p>
+              La autenticación de dos factores y el cifrado controlado por el
+              usuario son solo algunas de las funciones de seguridad que
+              ofrecemos para ayudar a proteger tus archivos.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center sm:flex-col sm:justify-center sm:space-y-48 sm:space-x-0 md:flex-row md:justify-between md:space-y-0 md:space-x-48"
+        >
+          <div
+            class="flex flex-col items-center justify-center gap-2 text-center text-wrap"
+          >
+            <img src="../assets/icon-collaboration.svg" alt="collaboration" />
+            <h3 class="text-2xl font-bold">
+              Accede a tu archivo desde cualquier lugar
+            </h3>
+            <p>
+              La capacidad de utilizar un smartphone, una tableta o un ordenador
+              para acceder a tu cuenta significa que tus archivos te acompañan a
+              todas partes.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col items-center justify-center gap-2 text-center text-wrap"
+          >
+            <img src="../assets/icon-any-file.svg" alt="any-file" />
+            <h3 class="text-2xl font-bold">
+              Seguridad en la que puedes confiar
+            </h3>
+            <p>
+              La autenticación de dos factores y el cifrado controlado por el
+              usuario son solo algunas de las funciones de seguridad que
+              ofrecemos para ayudar a proteger tus archivos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Productive-Section -->
+      <section
+        class="flex items-center sm:flex-col sm:justify-center sm:space-y-24 sm:space-x-0 md:flex-row md:justify-around md:space-y-0 md:space-x-24 md:p-8 lg:p-0"
+      >
+        <article>
+          <img
+            src="../assets/illustration-stay-productive.png"
+            alt="productive"
+          />
+        </article>
+        <article
+          class="flex flex-col justify-center space-y-4 sm:items-center sm:text-center md:items-start md:text-start"
+        >
+          <h2 class="text-3xl font-bold">
+            Mantente productivo, estés donde estés
+          </h2>
+          <p class="text-[18px]">
+            Never let location be an issue when accessing your files. Fylo has
+            you covered for all of your file storage needs.
+          </p>
+          <p class="text-[18px]">
+            Nunca permitas que la ubicación sea un problema al acceder a tus
+            archivos. Fylo te cubre en todas tus necesidades de almacenamiento
+            de archivos.
+          </p>
+          <div class="flex flex-row items-center gap-2">
+            <a href="#" class="text-cyan-300 underline"
+              >Descubre como funciona Fylo</a
+            >
+            <img
+              src="../assets/icon-arrow.svg"
+              alt="arrow"
+              class="w-6 cursor-pointer"
+            />
+          </div>
+        </article>
+      </section>
+
+      <!-- Testimonios-Section -->
+      <section
+        class="flex items-center justify-center sm:flex-col sm:space-y-12 md:p-8 lg:flex-row lg:space-y-0 lg:space-x-12 lg:p-0"
+      >
+        <article
+          class="flex flex-col gap-8 rounded-2xl bg-gray-200 p-8 text-start text-wrap"
+        >
+          <p>
+            Fylo ha mejorado la productividad de nuestro equipo en un orden de
+            magnitud. Desde que hicimos el cambio, nuestro equipo se ha
+            convertido en una máquina de colaboración bien engrasada.
+          </p>
+          <div class="flex flex-row items-center gap-6 text-start">
+            <img
+              src="../assets/profile-1.jpg"
+              alt="profile1"
+              class="w-14 rounded-full"
+            />
+            <div class="flex flex-col">
+              <h4 class="font-bold">Santish Patel</h4>
+              <small>Founder & CEO. Huddle</small>
+            </div>
+          </div>
+        </article>
+        <article
+          class="flex flex-col gap-8 rounded-2xl bg-gray-200 p-8 text-start text-wrap"
+        >
+          <p>
+            Fylo ha mejorado la productividad de nuestro equipo en un orden de
+            magnitud. Desde que hicimos el cambio, nuestro equipo se ha
+            convertido en una máquina de colaboración bien engrasada.
+          </p>
+          <div class="flex flex-row items-center gap-6 text-start">
+            <img
+              src="../assets/profile-2.jpg"
+              alt="profile2"
+              class="w-14 rounded-full"
+            />
+            <div class="flex flex-col">
+              <h4 class="font-bold">Santish Patel</h4>
+              <small>Founder & CEO. Huddle</small>
+            </div>
+          </div>
+        </article>
+        <article
+          class="flex flex-col gap-8 rounded-2xl bg-gray-200 p-8 text-start text-wrap"
+        >
+          <p>
+            Fylo ha mejorado la productividad de nuestro equipo en un orden de
+            magnitud. Desde que hicimos el cambio, nuestro equipo se ha
+            convertido en una máquina de colaboración bien engrasada.
+          </p>
+          <div class="flex flex-row items-center gap-6 text-start">
+            <img
+              src="../assets/profile-3.jpg"
+              alt="profile3"
+              class="w-14 rounded-full"
+            />
+            <div class="flex flex-col">
+              <h4 class="font-bold">Santish Patel</h4>
+              <small>Founder & CEO. Huddle</small>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Form -->
+      <div
+        class="flex flex-col items-center justify-center gap-8 rounded-2xl bg-gray-200 p-8 text-center text-wrap md:p-16"
+      >
+        <h2 class="text-3xl font-bold">Obtén acceso anticipado hoy</h2>
+        <p>
+          Registrarse toma solo un minuto y nuestro nivel inicial gratuito es
+          extremadamente generoso. Si tienes alguna pregunta, nuestro equipo de
+          soporte estará encantado de ayudarte
+        </p>
+        <form class="flex w-full flex-row items-center justify-center gap-8">
+          <input
+            type="text"
+            placeholder="email@example.com"
+            class="w-[55%] rounded-full bg-white px-8 py-4 outline-0"
+          />
+          <input
+            type="submit"
+            value="Empieza gratis"
+            class="transform rounded-full bg-cyan-300 px-8 py-4 duration-200 hover:scale-90"
+          />
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <footer
+        class="flex w-screen justify-center bg-blue-950 p-8 sm:flex-col sm:items-center sm:space-y-12 md:flex-row md:items-start md:space-y-0 md:space-x-16 lg:space-x-96"
+      >
+        <!-- Container of first div -->
+        <div class="flex flex-col gap-8">
+          <div class="flex flex-row items-center gap-8 font-bold text-white">
+            <img src="../assets/icon-phone.svg" alt="phone" />
+            <h3>+1-543-123-4567</h3>
+          </div>
+          <div class="flex flex-row items-center gap-8 font-bold text-white">
+            <img src="../assets/icon-email.svg" alt="email" />
+            <h3>example@fylo.com</h3>
+          </div>
+        </div>
+
+        <!-- Container of second fiv -->
+        <div class="flex flex-row gap-x-24">
+          <div class="flex flex-col gap-4 text-white">
+            <a href="#">About</a>
+            <a href="#">Jobs</a>
+            <a href="#">Press</a>
+            <a href="#">Blog</a>
+          </div>
+          <div class="flex flex-col gap-4 text-white">
+            <a href="#">Contact Us</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+
+        <!-- Container of final fiv -->
+        <div class="flex flex-row items-start gap-8">
+          <img
+            src="../assets/facebook.svg"
+            alt="facebook"
+            class="w-[40px] rounded-full bg-gray-700 p-2"
+          />
+          <img
+            src="../assets/twitter.svg"
+            alt="twitter"
+            class="w-[40px] rounded-full bg-gray-700 p-2"
+          />
+          <img
+            src="../assets/instagram.svg"
+            alt="instagram"
+            class="w-[40px] rounded-full bg-gray-700 p-2"
+          />
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

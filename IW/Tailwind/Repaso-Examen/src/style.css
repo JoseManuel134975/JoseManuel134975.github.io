@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@layer utilities{
+    .bg-cloud{
+        background-image: url('../assets/bg-curvy-light-mode.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
