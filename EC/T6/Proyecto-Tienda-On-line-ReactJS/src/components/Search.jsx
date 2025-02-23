@@ -21,7 +21,11 @@ export default function Search() {
 
   return (
     <>
-      <Form onSubmit={handleOnSubmit} inline>
+      <Form
+        className="mx-sm-auto mt-sm-2 mx-lg-0 mt-lg-0"
+        onSubmit={handleOnSubmit}
+        inline
+      >
         <Row>
           <Col xs="auto">
             <Form.Control

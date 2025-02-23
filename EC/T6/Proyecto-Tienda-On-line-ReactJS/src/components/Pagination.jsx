@@ -36,7 +36,7 @@ export default function Footer({ setProducts, pagination, setPagination }) {
 
   return (
     <>
-      <Pagination>
+      <Pagination className='mt-5'>
         <Pagination.Prev onClick={handleOnClickPrevious} />
         <Pagination.Item>{pagination.currentPage}/{pagination.totalPages}</Pagination.Item>
         <Pagination.Next onClick={handleOnClickNext} />

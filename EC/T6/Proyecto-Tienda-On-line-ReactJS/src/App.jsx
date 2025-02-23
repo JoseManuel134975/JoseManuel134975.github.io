@@ -5,6 +5,7 @@ import Products from './views/Products'
 import Details from './views/Details'
 import Cart from './views/Cart'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/styles.css'
 
 
 function App() {

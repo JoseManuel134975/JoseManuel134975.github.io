@@ -40,7 +40,6 @@ export default function Cart() {
 
   return (
     <>
-      {console.log(cart)}
       <Header
         Search={Search}
         categories={categories}

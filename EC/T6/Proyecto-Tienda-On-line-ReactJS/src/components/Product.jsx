@@ -5,33 +5,42 @@ import { Link } from "react-router";
 
 export default function Product({ element, cart, setCart }) {
   const addToCart = () => {
-    if(!cart.cartProducts.includes(element)) {
-      setCart({...cart, 
+    if (!cart.cartProducts.includes(element)) {
+      setCart({
+        ...cart,
         cartProducts: [...cart.cartProducts, element],
-        totalProducts: cart.totalProducts + 1
-      })
+        totalProducts: cart.totalProducts + 1,
+      });
     } else {
-      const index = cart.cartProducts.findIndex(product => product === element)
-      cart.cartProducts[index].quantity++
-      setCart({...cart, 
+      const index = cart.cartProducts.findIndex(
+        (product) => product === element
+      );
+      cart.cartProducts[index].quantity++;
+      setCart({
+        ...cart,
         cartProducts: [...cart.cartProducts],
-        totalProducts: cart.totalProducts
-      })
+        totalProducts: cart.totalProducts,
+      });
     }
-  }
+  };
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
-  }, [cart])
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <>
-      <Card className="col col-lg-3" style={{ width: "18rem" }}>
+      <Card
+        className="col col-12 col-lg-3 col-md-6 col-sm-12 bg-lightgray mx-lg-0 mx-sm-auto"
+        style={{ width: "18rem" }}
+      >
         <Link to={`/Details/${element.id}`}>
           <Card.Img
             variant="top"
             src={
               (element.bundle && element.bundle.image) ||
+              (element.newDisplayAsset &&
+                element.newDisplayAsset.renderImages[0].image) ||
               (element.brItems &&
                 element.brItems[0].images &&
                 (element.brItems[0].images.featured ||
@@ -41,7 +50,11 @@ export default function Product({ element, cart, setCart }) {
                 element.instruments[0].images &&
                 element.instruments[0].images.large)
             }
-          />        
+            alt={
+              (element.brItems && element.brItems[0].description) ||
+              (element.instruments && element.instruments[0].description)
+            }
+          />
         </Link>
         <Card.Body>
           <Card.Title>
@@ -51,7 +64,9 @@ export default function Product({ element, cart, setCart }) {
               (element.instruments && element.instruments[0].name)}
           </Card.Title>
           <Card.Text>{element.regularPrice} V-Bucks</Card.Text>
-          <Button onClick={addToCart} variant="primary">Add to cart</Button>
+          <Button onClick={addToCart} variant="primary">
+            Add to cart
+          </Button>
         </Card.Body>
       </Card>
     </>
