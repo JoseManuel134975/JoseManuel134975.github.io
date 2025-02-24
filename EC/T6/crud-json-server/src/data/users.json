@@ -1,0 +1,66 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "username": "juan_perez",
+      "email": "juan.perez@example.com",
+      "password": "securePass123",
+      "phone": "+34 600 123 456",
+      "address": {
+        "street": "Calle Mayor 10",
+        "city": "Madrid",
+        "zip": "28001",
+        "country": "España"
+      },
+      "orders": [
+        {
+          "order_id": 101,
+          "date": "2024-02-15",
+          "total": 59.99,
+          "status": "Enviado"
+        },
+        {
+          "order_id": 102,
+          "date": "2024-02-18",
+          "total": 120.5,
+          "status": "Procesando"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "username": "maria_lopez",
+      "email": "maria.lopez@example.com",
+      "password": "mariaSecure456",
+      "phone": "+34 600 654 321",
+      "address": {
+        "street": "Avenida de la Constitución 5",
+        "city": "Barcelona",
+        "zip": "08002",
+        "country": "España"
+      },
+      "orders": [
+        {
+          "order_id": 103,
+          "date": "2024-02-10",
+          "total": 35.75,
+          "status": "Entregado"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "username": "carlos_gomez",
+      "email": "carlos.gomez@example.com",
+      "password": "carlosPass789",
+      "phone": "+34 600 789 123",
+      "address": {
+        "street": "Calle del Sol 25",
+        "city": "Valencia",
+        "zip": "46001",
+        "country": "España"
+      },
+      "orders": []
+    }
+  ]
+}
