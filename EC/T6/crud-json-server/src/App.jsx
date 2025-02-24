@@ -1,9 +1,36 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { postAPI } from "./utils/postAPI";
+import axios from 'axios'
 
 export default function App() {
   const [users, setUsers] = useState([]);
+  const [newPost, setNewPost] = useState({ username: '', email: '' });
+  const [editPost, setEditPost] = useState(null);
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/posts')
+      .then(response => {
+        setUsers(response.data);
+      })
+      .catch(error => console.log(error));
+  }, []);
+
+  const handleOnEdit = (event) => {
+    axios.put(`http://localhost:3000/posts/${editPost.id}`, editPost)
+    .then(response => {
+      setUsers(users.map(user => user.id === editPost.id ? response.data : user));
+      setEditPost(null);
+    })
+    .catch(error => console.log(error));
+  }
+
+  const handleOnDelete = (id) => {
+    axios.delete(`http://localhost:3000/posts/${id}`)
+      .then(() => {
+        setUsers(users.filter(user => user.id !== id));
+      })
+      .catch(error => console.log(error));
+  }
 
   const {
     register,
@@ -11,47 +38,46 @@ export default function App() {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = async (data, event) => {
-    console.log(event.target)
-    if (event.target === "register") {
-      // data = {...data,
-      //   id: users.length + 1
-      // }
-      const post = await postAPI("http://localhost:3000/posts", data);
-      setUsers([...users, post]);
-    } else {
-      console.log("hola")
-    }
+  const onSubmit = (data, event) => {
+    axios.post('http://localhost:3000/posts', data)
+      .then(response => {
+        setUsers([...users, response.data]);
+        setNewPost({ username: '', email: '' });
+      })
+      .catch(error => console.log(error));
   };
 
   console.log(watch("example")); // watch input value by passing the name of it
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:3000/posts");
-      const data = await response.json();
-      setUsers([...data]);
-    };
-    fetchData();
-  }, []);
-
   return (
     <>
+      {/**
+       * Create
+       */}
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input defaultValue="test" {...register("username")} />
+        {/* register your input into the hook by invoking the "register" function */}
+        <input {...register("username")} />
 
-        <input {...register("password", { required: true })} />
+        {/* include validation with required or other standard HTML validation rules */}
+        <input {...register("email", { required: true })} />
+        {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
 
-        <input type="submit" value="Register" name="register" />
-        <input type="submit" value="Login" name="login" />
+        <input type="submit" value="Create" />
       </form>
 
-      {users.length > 0 && users.map((user, index) => (
-        <ul key={index}>
-          <li>{user.username}</li>
-        </ul>
-      ))}
+      {/**
+       * Read
+       */}
+      {users.length > 0 &&
+        users.map((user) => (
+          <ul key={user.id}>
+            <li>Nombre: {user.username}</li>
+            <li>Email: {user.email}</li>
+            <button onClick={() => handleOnEdit(user)}>Edit</button>
+            <button onClick={() => handleOnDelete(user.id)}>Delete</button>
+          </ul>
+        ))}
     </>
   );
 }
