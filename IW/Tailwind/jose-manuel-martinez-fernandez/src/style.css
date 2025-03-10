@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,700;1,700&display=swap');
+
+@theme {
+    --font-rubik: "Rubik";
+
+    --color-softBlue: hsl(231, 69%, 60%);
+    --color-grayishBlue: hsl(229, 8%, 60%);
+    --color-darkViolet: hsl(257, 27%, 26%);
+    --color-cyan: hsl(180, 66%, 49%);
+    --color-cyanLight: hsl(180, 66%, 60%);
+}
+
+@layer utilities {
+    .black-button {
+        @apply bg-black text-white flex items-center justify-start flex-row gap-4 py-3 px-6 rounded-sm text-start sm:w-[50%] md:w-[75%] lg:w-[30%] border-2 border-black
+    }
+
+    .black-button2 {
+        @apply bg-black text-white flex items-center justify-start flex-row gap-4 py-3 px-6 rounded-sm text-start sm:w-[50%] md:w-[75%] lg:w-[100%]
+    }
+
+    .bg-dots {
+        background-image: url('../assets/bg-dots.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 0 70%;
+    }
+
+    .rubik-400 {
+        font-family: "Rubik", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .rubik-600 {
+        font-family: "Rubik", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .rubik-700 {
+        font-family: "Rubik", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+}

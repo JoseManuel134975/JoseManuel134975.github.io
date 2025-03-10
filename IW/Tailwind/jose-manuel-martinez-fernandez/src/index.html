@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Tailwind</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="container sticky top-0">
+        <!-- NAV -->
+        <nav class="flex flex-row justify-between items-center p-8">
+            <!-- LOGO -->
+            <div class="flex flex-row items-center justify-center gap-4">
+                <img class="sm:w-[80px] md:w-[40px] lg:w-[80px]" src="../assets/firefox.png" alt="Firefox-Logo">
+                <h2 class="sm:text-3xl md:text-[14px] lg:text-3xl"><b>Firefox</b> Browser</h2>
+            </div>
+
+            <!-- MENU -->
+            <div class="sm:hidden md:flex flex-row items-center justify-center gap-8">
+                <a class="md:text-[18px] lg:text-2xl font-bold hover:bg-softBlue rounded-sm p-2 hover:text-white"
+                    href="#">Características</a>
+                <a class="md:text-[18px] lg:text-2xl font-bold hover:bg-yellow-500 hover:text-white rounded-sm p-2"
+                    href="#">Ayuda</a>
+                <a class="md:text-[18px] lg:text-2xl font-bold hover:bg-green-600 hover:text-white rounded-sm p-2"
+                    href="#">Componentes</a>
+                <a class="md:text-[18px] lg:text-2xl font-bold hover:bg-pink-500 hover:text-white rounded-sm p-2"
+                    href="#">Idiomas</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container mt-28">
+        <!-- Sección 1 -->
+        <section
+            class="container bg-[url(../assets/image_hero2.svg)] bg-no-repeat bg-right bg-contain flex flex-row md:justify-between sm:justify-center items-center p-8 md:gap-12">
+            <article class="flex flex-col gap-4 md:text-start sm:text-center">
+                <h1 class="sm:text-4xl md:text-5xl">Lorem ipsum dolor sit amet consectetur.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nihil consequatur voluptatem
+                    voluptatibus,
+                    error quibusdam dolore eum!</p>
+
+                <div class="flex md:flex-col lg:flex-row items-start justify-start gap-4">
+                    <button class="black-button hover:bg-white hover:text-black">
+                        <img src="../assets/logo_windows.png" alt="Windows" class="w-[40px]">
+                        <div class="flex flex-col items-start justify-start">
+                            <h3>Instalar en</h3>
+                            <h3>Windows</h3>
+                    </button>
+                    <button class="black-button hover:bg-white hover:text-black">
+                        <img src="../assets/apple-logo.png" alt="Apple" class="w-[40px]">
+                        <div class="flex flex-col items-start justify-start">
+                            <h3>Instalar en</h3>
+                            <h3>Mac OS</h3>
+                    </button>
+                </div>
+                </div>
+            </article>
+
+            <article>
+                <img src="../assets/image_hero1.png" alt="Hero1" class="sm:hidden md:block">
+            </article>
+        </section>
+
+        <!-- Sección 2 -->
+        <section class="mx-auto flex flex-col items-center justify-center space-y-24 mt-28">
+            <div class="flex flex-col items center justify-center text-center gap-4">
+                <h2 class="sm:text-3xl md:text-4xl lg:text-5xl font-bold">Download the extension</h2>
+                <p class="text-grayishBlue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eos
+                    perferendis deserunt nesciunt assumenda commodi.</p>
+            </div>
+
+            <!-- Grid -->
+            <div class="sm:flex flex-col items-center md:grid grid-cols-3 grid-rows-3 place-items-center justify-center gap-4">
+                <div
+                    class="row-span-1 bg-dots shadow-2xl rounded-sm p-8 flex flex-col items-center justify-center text-center col-span-1 gap-6">
+                    <img src="../assets/logo-chrome.svg" alt="Chrome">
+                    <h3 class="font-bold">Add to Chrome</h3>
+                    <h4 class="text-grayishBlue">Minimum version 62</h4>
+                    <button class="bg-softBlue transition-all duration-200 cursor-pointer hover:bg-white hover:text-softBlue border-2 border-softBlue text-white py-4 px-8 rounded-sm">Add & install Extesion</button>
+                </div>
+                <div
+                    class="row-span-2 bg-dots shadow-2xl rounded-sm p-8 flex flex-col items-center justify-center text-center col-span-1 gap-6">
+                    <img src="../assets/logo-firefox.svg" alt="Firefox">
+                    <h3 class="font-bold">Add to Firefox</h3>
+                    <h4 class="text-grayishBlue">Minimum version 55</h4>
+                    <button class="bg-softBlue transition-all duration-200 cursor-pointer hover:bg-white hover:text-softBlue border-2 border-softBlue text-white py-4 px-8 rounded-sm">Add & install Extesion</button>
+                </div>
+                <div
+                    class="row-span-3 bg-dots shadow-2xl rounded-sm p-8 flex flex-col items-center justify-center text-center col-span-1 gap-6">
+                    <img src="../assets/logo-opera.svg" alt="Opera">
+                    <h3 class="font-bold">Add to Opera</h3>
+                    <h4 class="text-grayishBlue">Minimum version 46</h4>
+                    <button class="bg-softBlue transition-all duration-200 cursor-pointer hover:bg-white hover:text-softBlue border-2 border-softBlue text-white py-4 px-8 rounded-sm">Add & install Extesion</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3 (formulario) -->
+         <section class="bg-[url(../assets/image_hero2.svg)] bg-center bg-contain bg-no-repeat flex flex-col mx-auto items-center justify-center space-y-48">
+            <h2 class="text-5xl">Pithfork Kickstarter Taxidermy</h2>
+            <img src="../assets/image_info1.png" alt="info1">
+            <form action="" class="flex sm:flex-col md:flex-row items-center justify-center gap-4 p-6 bg-darkViolet w-[80%] rounded-sm">
+                <input type="email" placeholder="Insert your email" class="bg-white p-4 sm:w-[100%] md:w-[70%] placeholder:text-amber-400 rounded-sm peer">
+                <p class="text-red-600 hidden peer-invalid:block">Email incorrect</p>
+                <input type="submit" value="Shorten It!" class="p-3 sm:w-[100%] md:w-[25%] bg-cyan rounded-sm text-white self-end hover:bg-cyanLight">
+            </form>
+         </section>
+
+         <!-- Sección 4 (artículos) -->
+          <section class="mt-28 mx-auto flex sm:flex-col md:flex-row items-center justify-center gap-16 p-8">
+            <article class="flex flex-col items-center justify-center gap-4">
+                <img src="../assets/image_info2.png" class="sm:order-3 md:order-1 bg-[url(../assets/image_hero2.svg)] bg-no-repeat bg-center bg-cover" alt="info1">
+                <h2 class="text-4xl order-2">Article 1</h2>
+                <p class="sm:order-1 md:order-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore officiis modi iure ex obcaecati velit veniam asperiores commodi sed ut. Molestias quam soluta voluptate aut magnam veritatis adipisci corporis? Iure!</p>
+            </article>
+
+            <article class="flex flex-col items-center justify-center gap-4">
+                <img src="../assets/image_info3.png" class="sm:order-3 md:order-1 bg-[url(../assets/image_hero2.svg)] bg-no-repeat bg-center bg-cover" alt="info2">
+                <h2 class="text-4xl order-2">Article 2</h2>
+                <p class="sm:order-1 md:order-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore officiis modi iure ex obcaecati velit veniam asperiores commodi sed ut. Molestias quam soluta voluptate aut magnam veritatis adipisci corporis? Iure!</p>
+            </article>
+          </section>
+
+          <!-- Sección 5 (footer) -->
+           <footer class="p-8 mt-28 container bg-linear-65 from-purple-500 to-pink-500 flex flex-row flex-wrap items-center justify-center gap-16">
+            <img src="../assets/firefox.png" alt="Firefox">
+            <div class="flex flex-col items-start justify-start gap-6">
+                <h2 class="text-white text-5xl">Disponible para móviles</h2>
+                <div class="flex flex-row items-center justify-start gap-4">
+                    <button class="black-button2 hover:bg-white hover:text-black">
+                        <img src="../assets/google-play.png" class="w-[60px]" alt="Google Play">
+                        <div class="flex flex-col items-center justify-start gap-2">
+                            <h4 class="text-[20px]">Disponible en</h4>
+                            <h3 class="text-2xl font-bold">Google Play</h3>
+                        </div>
+                    </button>
+                    <button class="black-button2 hover:bg-white hover:text-black">
+                        <img src="../assets/apple-logo.png" class="w-[60px]" alt="Apple iOS">
+                        <div class="flex flex-col items-center justify-start gap-2">
+                            <h4 class="text-[20px]">Disponible en</h4>
+                            <h3 class="text-2xl font-bold">Google Play</h3>
+                        </div>
+                    </button>
+                </div>
+                
+            </div>
+
+            <div class="flex flex-row items-center justify-center gap-8 w-full">
+                <a href=""><img src="../assets/facebook-f-brands.svg" alt="Facebook" class="w-[20px] text-white"></a>
+                <a href=""><img src="../assets/twitter-brands.svg" alt="Twitter" class="w-[40px]"></a>
+                <a href=""><img src="../assets/instagram-brands.svg" alt="Instagram" class="w-[40px]"></a>
+                <a href=""><img src="../assets/linkedin-in-brands.svg" alt="Linkedin" class="w-[40px]"></a>
+            </div>
+           </footer>
+    </main>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import Details from "./Details";
+// import Details from "./Details";
 
 export default function Product({ cart, setCart, product }) {
   const isInCart = cart.includes(product);
