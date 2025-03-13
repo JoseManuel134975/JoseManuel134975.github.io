@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cajas{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container">
+    <a href="{{ path('app_caja_new') }}" class="btn btn-primary">Crear un nuevo registro de caja</a>
+
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>FECHA</th>
+                <th>CANTIDAD</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for caja in cajas %}
+                <tr>
+                    <td>{{ caja.fecha|date("m/d/Y") }}</td>
+                    <td>{{ caja.cantidad|format_currency('EUR') }}</td>
+                    <td><a href="#" class="btn btn-primary">MODIFICAR</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<table class="table table-striped table-hover">
+  <thead>
+    <th>Autor</th>
+    <th>Contenido</th>
+    <th>Fecha</th>
+  </thead>
+  {% for publicacion in Publicacions %}
+  <tr>
+    <td>{{ publicacion.autor }}</td>
+    <td>{{ publicacion.contenido }}</td>
+    <td>{{ publicacion.fecha }}</td>
+    <td>
+      <a
+        href="{% url 'comentar' usuario.id publicacion.id %}"
+        class="btn btn-primary"
+        >Comentar</a
+      >
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      {% for comentario in publicacion.comentarios.all %}
+      {{comentario.texto}}
+      {% empty %}
+      No hay comentarios
+      {% endfor %}
+    </td>
+  </tr>
+    {% empty %}
+      <td colspan="3">No hay publicacions</td>
+    {% endfor %}
+
+    </td>
+</table>
+
+{% endblock %}

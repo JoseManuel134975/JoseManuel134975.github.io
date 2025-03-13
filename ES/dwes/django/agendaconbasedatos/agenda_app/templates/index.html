@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" value="guardar">Guardar</button>
+    </form>
+    <h3>Agenda de citas</h3>
+    <table>
+        {% for cita in citas %}
+            <tr>
+                <td>{{ cita.descripcion}}</td>
+                <td>{{ cita.fecha}}</td>
+                <td><a href="{% url 'cambiarcita' cita.id %}">Cambiar</a></td>
+                <td><a href="{% url 'eliminarcita' cita.id %}">Eliminar</a></td>
+                <td><a href="confirmar.html">Eliminar</a></td>
+            </tr>
+        {% empty %}
+            <tr><td>No hay citas para mostrar</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Proveedores{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container">
+    <a href="#" class="btn btn-primary">Crear un nuevo proveedor, tarjeta o ingreso</a>
+
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for proveedor in proveedores %}
+                <tr>
+                    <td>{{ proveedor.nombre }}</td>
+                    <td><a href="#" class="btn btn-primary">MODIFICAR</a></td>
+                    <td><a href="{{ path('app_proveedor_compras', { 'id': proveedor.id }) }}" class="btn btn-primary">VER COMPRAS DE ESTE PROVEEDOR</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Escuela de música
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="container mt-4">
+
+    {% for message in app.flashes('grabado') %}
+		<div class="header flash-notice alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+		<div class="column">
+			<table class="table table-striped table-hover mt-3">
+				<caption>
+					<tr>
+						<th colspan="2">Instrumentos que imparte</th>
+					</tr>
+					{% for instrumento in app.user.Instrumentos %}
+						<tr>
+							<td>{{ instrumento.nombre }}</td>
+						</tr>
+					{% endfor %}
+				</td>
+			</tr>
+		</caption>
+	</table>
+</div>
+<div class="column">
+	<table class="table table-striped table-hover mt-3">
+		<caption>
+			<tr>
+				<th colspan="2">Instrumentos que puede impartir</th>
+				<th colspan="2">Profesor</th>
+			</tr>
+			{% for instrumento in noImparte %}
+				<tr>
+					<td>{{ instrumento.nombre }}</td>
+					<td>{{ instrumento.profesor.nombreApellidos }}</td>
+					<td><a href="{{ path('app_impartir_instrumento', { 'instrumento': instrumento.id }) }}">Añadir</a></td>
+				</tr>
+			{% endfor %}
+		</caption>
+
+	</table>
+</div>
+
+<div class="column">
+	<table class="table table-striped table-hover mt-3">
+		<caption>
+			<tr>
+				<th colspan="2">Instrumentos para añadir</th>
+			</tr>
+            {% for instrumento in instrumentos %}
+                <tr>
+                    <td>{{ instrumento.nombre }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+				<td colspan="2"><a href="{{ path('app_grabar_clases') }}">Grabar</a></td>
+				<td colspan="2"><a href="{{ path('app_eliminar_clases') }}">Eliminar</a></td>
+			</tr>
+		</td>
+	</tr>
+</caption>
+
+<tfooter>
+	<tr></tr>
+
+</tfooter></table></div></div>{% endblock %}
