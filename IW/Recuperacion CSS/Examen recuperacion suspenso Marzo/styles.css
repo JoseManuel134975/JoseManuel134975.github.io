@@ -8,8 +8,8 @@
   margin: 0;
 }
 
-body{
-    font-family: "Raleway";
+body {
+  font-family: "Raleway";
 }
 
 a {
@@ -215,28 +215,30 @@ main h2 {
 }
 
 /* ABOUT US */
-.aboutUs {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-}
-
 .aboutUs article,
 .aboutUs img {
   width: 100%;
   height: 100%;
 }
 
-.aboutUs > article {
-  order: 1;
-  grid-column: 2/6;
-  grid-row: 2/6;
+.aboutUs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(7, 1fr);
 }
 
-.aboutUs img {
-  order: 2;
-  /* grid-column: ; */
+.aboutUs > article:first-child {
+  order: 1;
+  grid-column: 2/6;
+  grid-row: 1/4;
 }
+
+.aboutUs article:last-child {
+  order: 2;
+  grid-column: 1/5;
+  grid-row: 3/8;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -312,7 +314,7 @@ main h2 {
   }
 
   .header__title {
-    font-size: 0.90em;
+    font-size: 0.9em;
   }
 
   .header__nav {
