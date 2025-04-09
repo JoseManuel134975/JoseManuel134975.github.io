@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.clip-path {
+  background-color: crimson;
+  clip-path: polygon(0 0, 41% 0, 41% 100%, 0% 100%);
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-self: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+nav label {
+  align-self: flex-end;
+}
+
+#grid-img {
+  width: 300px;
+}
+
+main section {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+main section article:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main section article:last-child h2 {
+  font-size: 3em;
+}
+
+main section article:last-child p {
+  font-size: 1.25em;
+}
+
+#btn {
+  padding: 25px;
+  color: white;
+  background-color: crimson;
+  text-align: center;
+  width: 30%;
+}
+
+.navbar {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar .navbar-navigation {
+  display: flex;
+}
+
+.navbar .navbar-navigation .navbar-navigation-right {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgreen;
+  position: fixed;
+  right: -100vw;
+  transition: clip-path 0.8s ease, right 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle(0 at top right);
+}
+
+.nav-list .nav-list-item {
+  list-style: none;
+}
+
+.nav-list .nav-list-link {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 20px;
+  text-align: center;
+}
+
+@keyframes aparecer1 {
+    from{
+        transform: translateY(-1500%);
+        opacity: 25%;
+    }
+
+    50%{
+        opacity: 50%;
+    }
+
+    75%{
+        opacity: 75%;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right .nav-list .nav-list-item:first-child .nav-list-link{
+    animation: aparecer1 1s ease 0.5s;
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right .nav-list .nav-list-item:nth-child(2) .nav-list-link{
+    animation: aparecer1 1s ease 1s;
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right .nav-list .nav-list-item:last-child .nav-list-link{
+    animation: aparecer1 1s ease 1.5s;
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+  right: 0;
+  clip-path: circle(150% at top right);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu {
+  transform: rotateZ(90deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+  transform: rotateZ(-40deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+  opacity: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+  transform: rotateZ(40deg);
+}
+
+.hamburger-menu {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 10%;
+  right: 5%;
+  z-index: 10;
+}
+
+.hamburger-menu .menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: transform 0.5s;
+  background-color: grey;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+.menu .menu-line {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transform-origin: right;
+  transition: all 0.5s 0.5s;
+}
+
+@media (max-width: 768px) {
+  #grid-img {
+    width: 200px;
+  }
+
+  main section article:last-child h2 {
+    font-size: 1.75em;
+  }
+
+  main section article:last-child p {
+    font-size: 1em;
+  }
+
+  #btn {
+    width: 50%;
+  }
+}
+
+@media (max-width: 390px) {
+  main {
+    padding: 20px;
+  }
+
+  #grid-img {
+    width: 200px;
+    margin-top: 100px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  main {
+    align-items: center;
+    justify-content: center;
+  }
+
+  main section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .clip-path {
+    display: none;
+  }
+
+  main section article {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #btn {
+    width: 100%;
+  }
+}
