@@ -134,6 +134,14 @@ main section article:last-child p {
     }
 }
 
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right .nav-list .nav-list-item .nav-list-link{
+  overflow: hidden;
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right .nav-list .nav-list-item{
+  overflow: hidden;
+}
+
 .checkbox:checked ~ .navbar-navigation .navbar-navigation-right .nav-list .nav-list-item:first-child .nav-list-link{
     animation: aparecer1 1s ease 0.5s;
 }
