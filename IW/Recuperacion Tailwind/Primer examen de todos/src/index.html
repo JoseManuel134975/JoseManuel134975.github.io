@@ -9,7 +9,7 @@
   <body>
     <!-- HEADER -->
     <header
-      class="sticky top-0 mb-32 flex items-center bg-white p-8 sm:flex-col sm:gap-8 lg:flex-row lg:justify-between"
+      class="sticky top-0 flex items-center bg-white p-8 sm:flex-col sm:gap-8 lg:flex-row lg:justify-between"
     >
       <div class="flex flex-row items-center gap-4">
         <img
@@ -44,7 +44,9 @@
     </header>
 
     <!-- SECOND HEADER? -->
-    <section class="flex flex-row items-center justify-between gap-8 p-8 bg-[url(assets/image_hero2.svg)] bg-no-repeat bg-right bg-size-[800px]">
+    <section
+      class="flex h-[600px] items-center justify-between gap-8 bg-no-repeat p-8 sm:flex-col sm:bg-none lg:flex-row lg:bg-[url(assets/image_hero2.svg)] lg:bg-size-[700px] lg:bg-right"
+    >
       <article class="flex flex-col gap-4">
         <h2 class="text-5xl">Lorem ipsum dolor sit amet consectetur.</h2>
         <p>
@@ -54,7 +56,7 @@
         <div class="flex flex-row gap-4">
           <a
             href="#"
-            class="flex flex-row items-center justify-center gap-4 rounded-md bg-black py-4 pr-32 pl-4"
+            class="flex flex-row items-center justify-center gap-4 rounded-md bg-black py-4 pr-32 pl-4 md:w-[50%] lg:w-auto"
           >
             <img
               src="assets/logo_windows.png"
@@ -62,13 +64,13 @@
               class="w-[50px]"
             />
             <div class="flex flex-col gap-2">
-              <p class="text-white">INSTALAR EN</p>
-              <b class="text-white">WINDOWS</b>
+              <p class="text-white sm:text-[12px]">INSTALAR EN</p>
+              <b class="text-white sm:text-[14px]">WINDOWS</b>
             </div>
           </a>
           <a
             href="#"
-            class="flex flex-row items-center justify-center gap-4 rounded-md bg-black py-4 pr-32 pl-4"
+            class="flex flex-row items-center justify-center gap-4 rounded-md bg-black py-4 pr-32 pl-4 md:w-[50%] lg:w-auto"
           >
             <img
               src="assets/apple-logo.png"
@@ -76,14 +78,77 @@
               class="w-[50px]"
             />
             <div class="flex flex-col gap-2">
-              <p class="text-white">INSTALAR EN</p>
-              <b class="text-white">Mac OS</b>
+              <p class="text-white sm:text-[12px]">INSTALAR EN</p>
+              <b class="text-white sm:text-[14px]">Mac OS</b>
             </div>
           </a>
         </div>
       </article>
       <article>
-        <img src="assets/image_hero1.png" alt="Navegador" />
+        <img
+          src="assets/image_hero1.png"
+          class="sm:w-screen lg:w-auto"
+          alt="Navegador"
+        />
+      </article>
+    </section>
+
+    <!-- EXTENSION SECTION -->
+    <section
+      class="mx-auto mt-64 flex w-[70%] flex-col items-center justify-center gap-8 p-8 text-center"
+    >
+      <h2 class="text-5xl font-bold">Download the extension</h2>
+      <p class="text-gray-500">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsam
+        facere deleniti necessitatibus debitis libero explicabo blanditiis
+        dolorem repudiandae molestiae?
+      </p>
+      <article class="flex sm:flex-col lg:flex-row gap-8 p-4">
+        <div
+          class="relative flex flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl -z-10"
+        >
+          <img src="./assets/logo-chrome.svg" alt="Logo Chrome" />
+          <h3 class="font-bold">Add to Chrome</h3>
+          <p class="text-gray-500">Minimum version 62</p>
+          <a href="#" class="rounded-md bg-blue-700 p-4 text-white"
+            >Add & install extension</a
+          >
+          <img
+            src="./assets/bg-dots.svg"
+            class="absolute top-56.5 w-full"
+            alt=""
+          />
+        </div>
+        <div
+          class="relative flex translate-y-10 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl -z-10"
+        >
+          <img src="./assets/logo-firefox.svg" alt="Logo Firefox" />
+          <h3 class="font-bold">Add to Firefox</h3>
+          <p class="text-gray-500">Minimum version 55</p>
+          <a href="#" class="rounded-md bg-blue-700 p-4 text-white"
+            >Add & install extension</a
+          >
+          <img
+          src="./assets/bg-dots.svg"
+          class="absolute top-56.5 w-full"
+          alt=""
+        />
+        </div>
+        <div
+          class="relative flex translate-y-20 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl -z-10"
+        >
+          <img src="./assets/logo-opera.svg" alt="Logo Opera" />
+          <h3 class="font-bold">Add to Opera</h3>
+          <p class="text-gray-500">Minimum version 46</p>
+          <a href="#" class="rounded-md bg-blue-700 p-4 text-white"
+            >Add & install extension</a
+          >
+          <img
+          src="./assets/bg-dots.svg"
+          class="absolute top-56.5 w-full"
+          alt=""
+        />
+        </div>
       </article>
     </section>
   </body>
