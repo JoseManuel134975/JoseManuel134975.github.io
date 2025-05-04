@@ -9,7 +9,7 @@
   <body>
     <!-- HEADER -->
     <header
-      class="sticky top-0 flex items-center bg-white p-8 sm:flex-col sm:gap-8 lg:flex-row lg:justify-between"
+      class="sticky top-0 z-50 flex items-center bg-white p-8 sm:flex-col sm:gap-8 lg:flex-row lg:justify-between"
     >
       <div class="flex flex-row items-center gap-4">
         <img
@@ -103,9 +103,9 @@
         facere deleniti necessitatibus debitis libero explicabo blanditiis
         dolorem repudiandae molestiae?
       </p>
-      <article class="flex sm:flex-col lg:flex-row gap-8 p-4">
+      <article class="flex gap-8 p-4 sm:flex-col lg:flex-row w-full items-center justify-center">
         <div
-          class="relative flex flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl -z-10"
+          class="relative -z-10 flex flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
         >
           <img src="./assets/logo-chrome.svg" alt="Logo Chrome" />
           <h3 class="font-bold">Add to Chrome</h3>
@@ -120,7 +120,7 @@
           />
         </div>
         <div
-          class="relative flex translate-y-10 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl -z-10"
+          class="relative -z-10 flex translate-y-10 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
         >
           <img src="./assets/logo-firefox.svg" alt="Logo Firefox" />
           <h3 class="font-bold">Add to Firefox</h3>
@@ -129,13 +129,13 @@
             >Add & install extension</a
           >
           <img
-          src="./assets/bg-dots.svg"
-          class="absolute top-56.5 w-full"
-          alt=""
-        />
+            src="./assets/bg-dots.svg"
+            class="absolute top-56.5 w-full"
+            alt=""
+          />
         </div>
         <div
-          class="relative flex translate-y-20 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl -z-10"
+          class="relative -z-10 flex translate-y-20 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
         >
           <img src="./assets/logo-opera.svg" alt="Logo Opera" />
           <h3 class="font-bold">Add to Opera</h3>
@@ -144,12 +144,152 @@
             >Add & install extension</a
           >
           <img
-          src="./assets/bg-dots.svg"
-          class="absolute top-56.5 w-full"
-          alt=""
-        />
+            src="./assets/bg-dots.svg"
+            class="absolute top-56.5 w-full"
+            alt=""
+          />
         </div>
       </article>
     </section>
+
+    <!-- FORM SECTION -->
+    <section
+      class="relative mt-64 mb-16 flex flex-col items-center justify-center gap-40 p-8 text-center"
+    >
+      <h2 class="text-5xl">Pitchfork Kickstarter Taxidermy</h2>
+      <img src="./assets/image_info1.png" alt="Info1" />
+      <form
+        action=""
+        class="absolute top-[100%] flex items-center justify-center gap-4 rounded-md bg-blue-900 p-8 sm:w-[75%] sm:flex-col lg:w-[55%] lg:flex-row"
+      >
+        <input
+          type="text"
+          placeholder="Insert your email"
+          class="rounded-md bg-white p-4 placeholder:text-yellow-400 sm:w-full lg:w-[80%]"
+        />
+        <input
+          type="submit"
+          value="Shorten It!"
+          class="rounded-sm bg-cyan-400 px-6 py-2 text-white sm:w-full lg:w-[20%] lg:self-end"
+        />
+      </form>
+      <svg
+        class="absolute -z-10 sm:top-60 md:top-50 lg:top-30 lg:w-[1400px]"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1242 532"
+      >
+        <path
+          fill="none"
+          stroke="#ffba2d"
+          stroke-width="2"
+          d="M1198.8 232.3c4.7 3 6.1 9.1 3.2 13.8l-.2.3c-2.8 4.5-1.3 10.4 3.2 13.2 4.6 2.8 10.5 1.5 13.4-2.9l.2-.3c3.1-4.7 9.4-6 14.2-3.1 4.8 3 6.3 9.3 3.3 14.1-8.9 14.1-27.8 18.3-42 9.5-14.3-8.8-18.7-27.4-9.8-41.4 3-4.7 9.3-6.2 14.1-3.3l.2.1h.2z"
+        ></path>
+        <linearGradient
+          id="a2"
+          x1="1046.5737"
+          x2="1180.3937"
+          y1="142.2743"
+          y2="50.0583"
+          gradientTransform="matrix(1 0 0 -1 0 519.0001)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#ffda65"></stop>
+          <stop offset="1" stop-color="#ff9741"></stop>
+        </linearGradient>
+        <circle cx="1096.9" cy="411.4" r="120.5" fill="url(#a2)"></circle>
+        <linearGradient
+          id="b2"
+          x1="-83.934"
+          x2="122.2983"
+          y1="-272.8492"
+          y2="-30.4322"
+          gradientTransform="matrix(.766 -.6428 -.6428 -.766 175.4476 172.2943)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#c857f1"></stop>
+          <stop offset="1" stop-color="#2ebffc"></stop>
+        </linearGradient>
+        <path
+          fill="url(#b2)"
+          d="M45.1 300.6l323-271C421.4-15.3 501-8.3 545.8 45.1l.2.2c44.8 53.4 37.8 132.9-15.5 177.7l-323 271C154 538.7 74.4 531.8 29.7 478.4l-.2-.2c-44.8-53.3-37.8-132.9 15.6-177.6z"
+        ></path>
+        <path
+          fill="none"
+          stroke="#ff008b"
+          stroke-width="2"
+          d="M130.5 193.8L522.4 58.9c52.9-18.2 110.5 9.9 128.7 62.8h0c18.2 52.9-9.9 110.5-62.8 128.7L196.5 385.3c-52.9 18.2-110.5-9.9-128.7-62.8h0c-18.3-52.9 9.8-110.5 62.7-128.7z"
+        ></path>
+        <circle cx="811.9" cy="81.2" r="12" fill="#ff008b"></circle>
+        <linearGradient
+          id="c2"
+          x1="733.0189"
+          x2="647.999"
+          y1="-193.4654"
+          y2="-16.5744"
+          gradientTransform="scale(1 -1) rotate(32.997 1111.38555617 211.5247949)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#f80089"></stop>
+          <stop offset="1" stop-color="#b833e1"></stop>
+        </linearGradient>
+        <path
+          fill="url(#c2)"
+          d="M678 256.3L981.8 59.1c58.4-37.9 136.5-21.3 174.5 37.1l.1.2c37.9 58.4 21.3 136.5-37.1 174.5L815.5 468.1C757.1 506 679 489.4 641.1 431l-.1-.2c-38-58.4-21.4-136.5 37-174.5z"
+        ></path>
+      </svg>
+    </section>
+
+    <!-- FLEX SECTION -->
+    <section
+      class="mt-8 flex items-center gap-20 bg-gray-200 p-32 text-center sm:flex-col lg:flex-row lg:justify-between"
+    >
+      <article
+        class="flex flex-col items-center justify-center gap-8 p-4 text-center"
+      >
+        <img src="./assets/image_info2.png" class="w-[500px]" alt="Info2" />
+        <h3 class="text-4xl">Article 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quas
+          doloremque et magni repudiandae suscipit quis fugiat eaque possimus
+          mollitia vel, maxime fugit officia aspernatur eveniet, corporis
+          quibusdam aliquam hic!
+        </p>
+      </article>
+      <article
+        class="flex flex-col items-center justify-center gap-8 p-4 text-center"
+      >
+        <img src="./assets/image_info3.png" class="w-[500px]" alt="Info3" />
+        <h3 class="text-4xl">Article 2</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quas
+          doloremque et magni repudiandae suscipit quis fugiat eaque possimus
+          mollitia vel, maxime fugit officia aspernatur eveniet, corporis
+          quibusdam aliquam hic!
+        </p>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="mt-10 flex flex-col items-center justify-center gap-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-12"
+    >
+      <article
+        class="flex items-center justify-center gap-8 p-4 sm:flex-col lg:flex-row"
+      >
+        <div class="p-4">
+          <img
+            src="./assets/firefox.png"
+            class="sm:hidden lg:block"
+            alt="Firefox png"
+          />
+        </div>
+        <div class="flex flex-col items-center justify-center gap-4 p-4">
+          <h2 class="text-5xl text-white">Disponible para móviles</h2>
+          <div class="flex flex-row gap-4 p-4"></div>
+        </div>
+      </article>
+
+      <nav class="flex w-[50%] flex-row gap-4 p-4"></nav>
+    </footer>
   </body>
 </html>
