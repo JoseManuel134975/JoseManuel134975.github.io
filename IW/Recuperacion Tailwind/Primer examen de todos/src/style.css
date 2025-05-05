@@ -1,2 +1,29 @@
 @import "tailwindcss";
 
+@layer components{
+    .btn-component{
+        @apply flex flex-row items-center justify-center gap-4 rounded-md bg-black py-4 pr-32 pl-4 md:w-[50%] lg:w-auto transition-all duration-200 hover:bg-white border-2 hover:border-black;
+    }
+
+    .btn-component-footer{
+        @apply flex flex-row items-center justify-center gap-4 rounded-md bg-black py-4 pr-32 pl-4 sm:w-[60%] lg:w-auto transition-all duration-200 hover:bg-white;
+    }
+}
+
+@layer utilities{
+    .btn-component:hover div p, .btn-component:hover div b{
+        color: black;
+    }
+
+    .btn-component:hover img{
+        background-color: black;
+    }
+
+    .btn-component-footer:hover div p, .btn-component:hover div b{
+        color: black;
+    }
+
+    .btn-component-footer:hover img{
+        background-color: black;
+    }
+}

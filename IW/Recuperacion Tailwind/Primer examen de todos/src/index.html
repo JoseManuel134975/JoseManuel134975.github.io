@@ -54,10 +54,7 @@
           debitis quaerat est dicta! Minus dolor quasi nobis?
         </p>
         <div class="flex flex-row gap-4">
-          <a
-            href="#"
-            class="flex flex-row items-center justify-center gap-4 rounded-md bg-black py-4 pr-32 pl-4 md:w-[50%] lg:w-auto"
-          >
+          <a href="#" class="btn-component">
             <img
               src="assets/logo_windows.png"
               alt="Logo Windows"
@@ -68,10 +65,7 @@
               <b class="text-white sm:text-[14px]">WINDOWS</b>
             </div>
           </a>
-          <a
-            href="#"
-            class="flex flex-row items-center justify-center gap-4 rounded-md bg-black py-4 pr-32 pl-4 md:w-[50%] lg:w-auto"
-          >
+          <a href="#" class="btn-component">
             <img
               src="assets/apple-logo.png"
               alt="Logo Apple"
@@ -103,14 +97,18 @@
         facere deleniti necessitatibus debitis libero explicabo blanditiis
         dolorem repudiandae molestiae?
       </p>
-      <article class="flex gap-8 p-4 sm:flex-col lg:flex-row w-full items-center justify-center">
+      <article
+        class="flex w-full items-center justify-center gap-8 p-4 sm:flex-col lg:flex-row"
+      >
         <div
-          class="relative -z-10 flex flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
+          class="relative flex flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
         >
           <img src="./assets/logo-chrome.svg" alt="Logo Chrome" />
           <h3 class="font-bold">Add to Chrome</h3>
           <p class="text-gray-500">Minimum version 62</p>
-          <a href="#" class="rounded-md bg-blue-700 p-4 text-white"
+          <a
+            href="#"
+            class="rounded-md bg-blue-700 p-4 text-white transition-all duration-200 cursor-pointer border-2 hover:border-blue-700 hover:bg-white hover:text-blue-700"
             >Add & install extension</a
           >
           <img
@@ -120,12 +118,12 @@
           />
         </div>
         <div
-          class="relative -z-10 flex translate-y-10 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
+          class="relative flex translate-y-10 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
         >
           <img src="./assets/logo-firefox.svg" alt="Logo Firefox" />
           <h3 class="font-bold">Add to Firefox</h3>
           <p class="text-gray-500">Minimum version 55</p>
-          <a href="#" class="rounded-md bg-blue-700 p-4 text-white"
+          <a href="#" class="rounded-md bg-blue-700 p-4 text-white transition-all duration-200 cursor-pointer border-2 hover:border-blue-700 hover:bg-white hover:text-blue-700"
             >Add & install extension</a
           >
           <img
@@ -135,12 +133,12 @@
           />
         </div>
         <div
-          class="relative -z-10 flex translate-y-20 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
+          class="relative flex translate-y-20 transform flex-col items-center justify-center gap-6 rounded-sm p-6 text-center shadow-2xl sm:w-full lg:w-auto"
         >
           <img src="./assets/logo-opera.svg" alt="Logo Opera" />
           <h3 class="font-bold">Add to Opera</h3>
           <p class="text-gray-500">Minimum version 46</p>
-          <a href="#" class="rounded-md bg-blue-700 p-4 text-white"
+          <a href="#" class="rounded-md bg-blue-700 p-4 text-white transition-all duration-200 cursor-pointer border-2 hover:border-blue-700 hover:bg-white hover:text-blue-700"
             >Add & install extension</a
           >
           <img
@@ -163,15 +161,17 @@
         class="absolute top-[100%] flex items-center justify-center gap-4 rounded-md bg-blue-900 p-8 sm:w-[75%] sm:flex-col lg:w-[55%] lg:flex-row"
       >
         <input
-          type="text"
+          type="email"
           placeholder="Insert your email"
-          class="rounded-md bg-white p-4 placeholder:text-yellow-400 sm:w-full lg:w-[80%]"
+          class="rounded-md bg-white p-4 placeholder:text-yellow-400 sm:w-full lg:w-[80%] peer"
         />
         <input
           type="submit"
           value="Shorten It!"
-          class="rounded-sm bg-cyan-400 px-6 py-2 text-white sm:w-full lg:w-[20%] lg:self-end"
+          class="rounded-sm bg-cyan-400 px-6 py-2 text-white sm:w-full lg:w-[20%] lg:self-end hover:bg-cyan-300"
         />
+        <p class="text-red-600 hidden peer-invalid:block">Email incorrect</p>
+
       </form>
       <svg
         class="absolute -z-10 sm:top-60 md:top-50 lg:top-30 lg:w-[1400px]"
@@ -283,13 +283,101 @@
             alt="Firefox png"
           />
         </div>
-        <div class="flex flex-col items-center justify-center gap-4 p-4">
-          <h2 class="text-5xl text-white">Disponible para móviles</h2>
-          <div class="flex flex-row gap-4 p-4"></div>
+        <div class="flex flex-col gap-8 p-4">
+          <h2 class="text-5xl text-white sm:text-center lg:text-start">
+            Disponible para móviles
+          </h2>
+          <div
+            class="flex items-center justify-center gap-4 sm:flex-col lg:flex-row"
+          >
+            <a href="#" class="btn-component-footer">
+              <img
+                src="assets/google-play.png"
+                alt="Logo Google Play"
+                class="w-[50px]"
+              />
+              <div class="flex flex-col gap-2">
+                <p class="text-white sm:text-[12px]">DISPONIBLE EN</p>
+                <b class="text-white sm:text-[14px]">GOOGLE PLAY</b>
+              </div>
+            </a>
+            <a href="#" class="btn-component-footer">
+              <img
+                src="assets/apple-logo.png"
+                alt="Logo Apple"
+                class="w-[50px]"
+              />
+              <div class="flex flex-col gap-2">
+                <p class="text-white sm:text-[12px]">DISPONIBLE EN</p>
+                <b class="text-white sm:text-[14px]">APP STORE</b>
+              </div>
+            </a>
+          </div>
         </div>
       </article>
 
-      <nav class="flex w-[50%] flex-row gap-4 p-4"></nav>
+      <nav
+        class="mx-auto flex w-[50%] flex-row items-center justify-center gap-4 p-4"
+      >
+        <span
+          class="transform transition-all duration-500 hover:scale-130 [&>svg]:h-10 [&>svg]:w-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="white"
+            viewBox="0 0 320 512"
+          >
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+            <path
+              d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
+            />
+          </svg>
+        </span>
+        <!-- Instagram -->
+        <span
+          class="transform transition-all duration-500 hover:scale-130 [&>svg]:h-10 [&>svg]:w-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="white"
+            viewBox="0 0 448 512"
+          >
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+            <path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            />
+          </svg>
+        </span>
+        <!-- Linkedin -->
+        <span
+          class="transform transition-all duration-500 hover:scale-130 [&>svg]:h-10 [&>svg]:w-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="white"
+            viewBox="0 0 448 512"
+          >
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+            <path
+              d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+            />
+          </svg>
+        </span>
+        <span
+          class="transform transition-all duration-500 hover:scale-130 [&>svg]:h-10 [&>svg]:w-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="white"
+            viewBox="0 0 512 512"
+          >
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+            />
+          </svg>
+        </span>
+      </nav>
     </footer>
   </body>
 </html>
