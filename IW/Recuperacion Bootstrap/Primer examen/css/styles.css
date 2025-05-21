@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: "Montserrat";
+}
+
+.nav-link{
+    color: white;
+    transition: all 0.10s linear;
+}
+
+.nav-link:hover{
+    color: orange;
+    transform: scale(1.1);
+}
+
+header{
+    background-image: url(../images/header-background.jpg);
+    background-repeat: no-repeat;
+    height: 1200px;
+    z-index: 10;
+}
+
+.capa{
+    z-index: -10;
+}
+
+.div-animated-1{
+    background-image: url(../images/header-slide-1.jpg);
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 50%;
+}
+
+.div-animated-2{
+    background-color: orange;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.div-text{
+    margin-top: 300px;
+}
+
+.btn-pop{
+    background-color: orange;
+    transition: all 0.10s linear;
+}
+
+.btn-pop:hover{
+    background-color: #ffbe45;
+}
+
+.btn-simple{
+    background-color: transparent;
+    color: white;
+    transition: all 0.10s linear;
+}
+
+.btn-simple:hover{
+    background-color: white;
+    color: black;
+}
+
+/* .offcanvas{
+    z-index: 1;
+} */
+
+/* .offcanvas-body{
+    z-index: 40;
+} */
+
+.offcanvas-body ul li{
+    width: 100%;
+    background-color: #212529;
+
+}
+
+.offcanvas-body ul > li:first-child{
+    background-color: orange;
+}
+
+.offcanvas-body ul li a{
+    color: white;
+}
+
+.offcanvas-body ul li:hover{
+    background-color: orange;
+}
+
+.offcanvas-body ul li a:hover{
+    color: white;
+    transform: none;
+}
+
+
+
+
+
+@media (max-width: 960px) {
+    .div-animated-1{
+        width: 100%;
+    }
+}
