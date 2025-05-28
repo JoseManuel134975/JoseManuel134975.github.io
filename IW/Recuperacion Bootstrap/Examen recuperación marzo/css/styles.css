@@ -1,0 +1,29 @@
+#img-person{
+    width: 400px;
+}
+
+#cloud-btn{
+    width: 175px;
+    color: white;
+}
+
+#cloud-btn:hover{
+    background-color: white;
+    color: black;
+}
+
+#cloud-btn i{
+    color: white;
+}
+
+#cloud-btn:hover i{
+    color: black;
+}
+
+
+
+@media (max-width: 960px) {
+    #img-person{
+        width: 100%;
+    }
+}
